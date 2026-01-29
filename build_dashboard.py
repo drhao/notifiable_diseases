@@ -385,6 +385,17 @@ def parse_source_category(source_cat):
             return int(val_str)
     return 99
 
+def parse_category_sort_key(classification):
+    if not classification: return 99, ""
+    match = re.search(r'第([一二三四五0-9]+)類', classification)
+    if match:
+        val_str = match.group(1)
+        cn_map = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5}
+        val = cn_map.get(val_str)
+        if not val and val_str.isdigit(): val = int(val_str)
+        if val: return val, f"第{val_str}類"
+    return 99, ""
+
 def main():
     try:
         with open("diseases.json", "r", encoding="utf-8") as f:
