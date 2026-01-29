@@ -15,11 +15,12 @@ def main():
     results = []
     
     for i, disease in enumerate(links):
-        print(f"[{i+1}/{len(links)}] Processing {disease['name']}...")
-        content = get_pdf_content(disease['url'])
+        print(f"[{i+1}/{len(links)}] Processing {disease['name']} ({disease.get('source_category', 'N/A')})...")
+        content, pdf_path = get_pdf_content(disease['url'], disease['name'])
         
         if content:
             disease['content'] = content
+            disease['pdf_path'] = pdf_path
             structured_fields = parse_disease_content(content)
             disease.update(structured_fields)
             results.append(disease)
@@ -40,7 +41,7 @@ def main():
         import pandas as pd
         df = pd.DataFrame(results)
         
-        cols = ["name", "url", "臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"]
+        cols = ["name", "url", "source_category", "pdf_path", "臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"]
         existing_cols = df.columns.tolist()
         final_cols = [c for c in cols if c in existing_cols]
         
