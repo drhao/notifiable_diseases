@@ -165,13 +165,40 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             background: #f9f9f9;
         }
 
-        /* Category Header Row in Table */
+        /* Ensure scrolling lands correctly below header */
+        .category-header-row {
+            scroll-margin-top: 180px;
+        }
+
         .category-header-row td {
             background: #f1f1f1;
             font-weight: 700;
             color: #000;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border-top: 2px solid #e5e5e5;
+        }
+
+        /* Nav Buttons */
+        .nav-btn {
+            background: #fff;
+            border: 1px solid #e5e5e5;
             padding: 0.5rem 1rem;
-            font-size: 0.9rem;
+            border-radius: 6px; /* slightly more square for better touch */
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            color: #333;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .nav-btn:hover {
+            border-color: #000;
+            color: #000;
+            background: #fafafa;
+            transform: translateY(-1px);
         }
 
         .toggle-btn {
@@ -188,13 +215,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         
         .tag {
             display: inline-block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             padding: 2px 6px;
             background: var(--tag-bg);
             border-radius: 4px;
             color: var(--text-secondary);
-            margin-top: 4px;
+            margin-left: 8px;
             border: 1px solid var(--border-color);
+            vertical-align: middle;
         }
         
         .pdf-link {
@@ -203,7 +231,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             text-decoration: none;
             opacity: 0.5;
             display: block;
-            margin-top: 4px;
+            margin-top: 6px;
         }
         .pdf-link:hover { opacity: 1; text-decoration: underline; }
 
@@ -214,7 +242,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <header>
         <div class="header-top">
             <h1>TW Notifiable Diseases</h1>
-            <input type="text" id="searchInput" placeholder="Search...">
+            <input type="text" id="searchInput" placeholder="Search diseases...">
         </div>
         <div class="category-nav" id="catNav">
             <!-- Buttons injected by JS -->
@@ -245,19 +273,18 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         const tbody = document.getElementById('tableBody');
         const catNav = document.getElementById('catNav');
         const searchInput = document.getElementById('searchInput');
-        const tableContainer = document.getElementById('tableContainer');
 
         const COLS = ["臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"];
 
         // Group categories for navigation
         // Key map for sorting/labels
-        const CAT_ORDER = [1, 2, 3, 4, 5, 99];
+        const CAT_ORDER = [1, 5, 2, 3, 4, 99];
         const CAT_LABELS = {
-            1: "第一類 Category 1",
-            2: "第二類 Category 2",
-            3: "第三類 Category 3",
-            4: "第四類 Category 4",
-            5: "第五類 Category 5",
+            1: "Cat 1 第一類",
+            2: "Cat 2 第二類",
+            3: "Cat 3 第三類",
+            4: "Cat 4 第四類",
+            5: "Cat 5 第五類",
             99: "Other 其他"
         };
 
@@ -271,17 +298,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 (d.content && d.content.toLowerCase().includes(f))
             );
 
-            // If filtering, we just show list. If not, we show categories headers.
-            const isFiltered = filter.length > 0;
-            
             let lastCat = null;
             const catsFound = new Set();
             
             filtered.forEach((d, index) => {
                 const currentCat = d.sort_key || 99;
                 
-                // Add Section Header if category changes (only if not filtering heavily, though user might want it)
-                // Let's always add it for structure if sorted.
                 if (currentCat !== lastCat) {
                     lastCat = currentCat;
                     catsFound.add(currentCat);
@@ -296,11 +318,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
                 const tr = document.createElement('tr');
                 
-                // Name Col
+                // Name Col with tag inline
                 let html = `<td>
-                    <div style="font-weight:600">${d.name}</div>
-                    ${d.category_tag ? `<span class="tag">${d.category_tag}</span>` : ''}
-                    <a href="${d.url}" target="_blank" class="pdf-link">PDF Source</a>
+                    <div><span style="font-weight:600">${d.name}</span>${d.category_tag ? `<span class="tag">${d.category_tag}</span>` : ''}</div>
+                    <a href="${d.url}" target="_blank" class="pdf-link">View PDF</a>
                 </td>`;
                 
                 COLS.forEach(key => {
@@ -316,36 +337,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 tbody.appendChild(tr);
             });
             
-            // Generate Nav Buttons based on what's visible
+            // Generate Nav Buttons
             CAT_ORDER.forEach(c => {
                 if (catsFound.has(c)) {
                     const btn = document.createElement('button');
                     btn.className = 'nav-btn';
-                    btn.textContent = CAT_LABELS[c].split(' ')[0]; // Just Chinese part for short btn
-                    btn.title = CAT_LABELS[c];
+                    btn.textContent = CAT_LABELS[c];
                     btn.onclick = () => {
                         const el = document.getElementById(`cat-${c}`);
                         if(el) {
-                            // Scroll container to element
-                            // el.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
-                            // Sticky header might block it, so we need offset.
-                            
-                            // Simple offset calculation
-                            const headerOffset = 180; // approx header height
-                            const elementPosition = el.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                            
-                           // Since we are scrolling the BODY mostly or table container?
-                           // We set body/main scroll.
-                           // Actually the table is in a container.
-                           // Wait, if we use browser native scrollIntoView on body...
-                           
-                           // Using scrollIntoView on the row usually puts it at top of view.
-                           // But we have sticky header covering it.
-                           // Let's use simple logic:
-                           
-                           const y = el.getBoundingClientRect().top + window.pageYOffset - 140;
-                           window.scrollTo({top: y, behavior: 'smooth'});
+                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                     };
                     catNav.appendChild(btn);
@@ -391,7 +392,9 @@ def main():
         d['sort_key'] = sort_key
         d['category_tag'] = tag
 
-    data.sort(key=lambda x: (x['sort_key'], x['name']))
+    # Sort order: 1, 5, 2, 3, 4, others (99)
+    custom_order = {1: 0, 5: 1, 2: 2, 3: 3, 4: 4, 99: 5}
+    data.sort(key=lambda x: (custom_order.get(x['sort_key'], 5), x['name']))
     json_str = json.dumps(data, ensure_ascii=False).replace("</script>", "<\\/script>")
     
     with open("dashboard.html", "w", encoding="utf-8") as f:
