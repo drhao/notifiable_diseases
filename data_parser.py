@@ -68,9 +68,9 @@ def parse_disease_content(content):
     current_section = None
     buffer = []
 
-    # Regex to match: Optional numeral (一、 or 壹、 or 1.) + Header Name
-    # matches: "一、臨床條件", "壹、臨床條件", "臨床條件", " 1. 臨床條件" etc.
-    header_pattern = re.compile(r'^\s*(?:[一二三四五六壹貳參肆伍陸0-9]\s*[、.]?\s*)?(' + '|'.join(headers_map) + r')')
+    # Regex to match: Optional numeral (一、 or 壹、 or 1.) + optional prefix (e.g. "AFP ") + Header Name
+    # matches: "一、臨床條件", "一、 AFP 臨床條件", "壹、臨床條件", " 1. 臨床條件" etc.
+    header_pattern = re.compile(r'^\s*(?:[一二三四五六壹貳參肆伍陸0-9]\s*[、.]?\s*)?(?:\S+\s+)?(' + '|'.join(headers_map) + r')')
 
     for line in lines:
         stripped_line = line.strip()
