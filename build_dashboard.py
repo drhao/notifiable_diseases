@@ -332,10 +332,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         </td>`;
                     } else {
                         const text = d[key] || "";
-                        const isLong = text.length > 150;
                         html += `<td>
-                            <div class="cell-content ${isLong ? 'long' : ''}">${text}</div>
-                            ${isLong ? '<button class="toggle-btn" onclick="toggle(this)">Show More</button>' : ''}
+                            <div class="cell-content">${text}</div>
+                            ${text ? '<button class="toggle-btn" onclick="toggle(this)" style="display:none">Show More</button>' : ''}
                         </td>`;
                     }
                 });
@@ -360,7 +359,17 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 }
             });
             
-             document.querySelectorAll('.toggle-btn').forEach(btn => btn.style.display = 'inline-block');
+            // Helper to check overflow
+            setTimeout(() => {
+                document.querySelectorAll('.cell-content').forEach(div => {
+                    if (div.scrollHeight > div.clientHeight) {
+                         const btn = div.nextElementSibling;
+                         if (btn && btn.classList.contains('toggle-btn')) {
+                             btn.style.display = 'inline-block';
+                         }
+                    }
+                });
+            }, 0);
         }
 
         window.toggle = function(btn) {
