@@ -247,7 +247,7 @@
 
         // Group categories for navigation
         // Key map for sorting/labels
-        const CAT_ORDER = [1, 2, 3, 4, 5, 99];
+        const CAT_ORDER = [1, 5, 2, 3, 4, 99];
         const CAT_LABELS = {
             1: "第一類 Category 1",
             2: "第二類 Category 2",
@@ -294,8 +294,10 @@
                 
                 // Name Col
                 let html = `<td>
-                    <div style="font-weight:600">${d.name}</div>
-                    ${d.category_tag ? `<span class="tag">${d.category_tag}</span>` : ''}
+                    <div style="font-weight:600; display:flex; align-items:center; gap:8px;">
+                        ${d.name}
+                        ${d.category_tag ? `<span class="tag" style="white-space:nowrap; margin-top:0;">${d.category_tag}</span>` : ''}
+                    </div>
                     <a href="${d.url}" target="_blank" class="pdf-link">PDF Source</a>
                 </td>`;
                 
