@@ -5,7 +5,36 @@ Can be run independently to test parsing on local PDFs.
 import re
 import os
 import json
+import unicodedata
 import pdfplumber
+
+def deduplicate_chars(text, n=4):
+    """
+    Remove repeated character sequences caused by PDF extraction issues.
+    e.g., '臨臨臨臨床床床床' -> '臨床' when n=4
+    """
+    if not text:
+        return text
+    result = []
+    i = 0
+    while i < len(text):
+        char = text[i]
+        # Check if next n-1 chars are the same
+        if i + n <= len(text) and all(text[i+j] == char for j in range(n)):
+            result.append(char)
+            i += n  # Skip the repeated chars
+        else:
+            result.append(char)
+            i += 1
+    return ''.join(result)
+
+def normalize_text(text):
+    """Normalize Unicode text to handle CJK compatibility characters."""
+    # NFKC normalization converts compatibility characters to their standard forms
+    text = unicodedata.normalize('NFKC', text)
+    # Handle quadruple-repeated chars from some PDF extractions
+    text = deduplicate_chars(text, 4)
+    return text
 
 def parse_disease_content(content):
     """
@@ -32,6 +61,9 @@ def parse_disease_content(content):
         "檢體採檢送驗事項"
     ]
 
+    # Normalize Unicode to handle CJK compatibility characters
+    content = normalize_text(content)
+    
     lines = content.split('\n')
     current_section = None
     buffer = []
