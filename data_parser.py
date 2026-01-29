@@ -104,6 +104,59 @@ def parse_disease_content(content):
     return sections
 
 
+def extract_english_name(content):
+    """
+    Extracts English name from the first few lines of content.
+    Typically found inside parentheses: (English Name) or （English Name）
+    """
+    # Look at the first 300 characters or 6 lines (to avoid picking up sub-types in clinical conditions)
+    head_lines = content.split("\n")[:6]
+    head = "\n".join(head_lines)
+    
+    # Strategy 1: Pattern to find content inside parens
+    # Matches ( English Name ) or （ English Name ）, possibly multi-line
+    pattern = re.compile(r'[（\(]([\s\S]*?)[）\)]')
+    
+    matches = pattern.findall(head)
+    for m in matches:
+        # Filter out short things like (一) or (1)
+        cleaned = m.strip().replace("\n", " ")
+        cleaned = re.sub(r'\s+', ' ', cleaned) # collapse spaces
+        
+        # Must be longer than 2 chars
+        if len(cleaned) <= 2:
+            continue
+            
+        # Must NOT contain Chinese characters
+        # Range of common CJK characters: 4E00-9FFF
+        if re.search(r'[\u4e00-\u9fff]', cleaned):
+            continue
+            
+        # Must contain at least one English letter
+        if not re.search(r'[a-zA-Z]', cleaned):
+            continue
+
+        return cleaned
+
+    # Strategy 2: If no parenthesized name found, look for a line that is mostly English
+    # usually on line 2 or 3
+    for line in head_lines[:6]:
+        line = line.strip()
+        if not line: 
+            continue
+        
+        # Skip if it looks like "一、" or "附件"
+        if re.match(r'^[一二三四五六0-9]', line) or "附件" in line:
+            continue
+            
+        # Check if line is purely English/Punctuation (allow some symbols)
+        # Remove common punctuation allowed in names: - , space
+        check = re.sub(r'[A-Za-z\s\-,]', '', line)
+        if len(check) == 0 and len(line) > 3:
+             return line
+
+    return ""
+
 def main():
     """
     Independent execution: Read local PDFs and test the parser.
@@ -148,11 +201,13 @@ def main():
             continue
             
         # Parse
-        parsed = parse_disease_content(text)
+        normalized_text = normalize_text(text)
+        parsed = parse_disease_content(normalized_text) # parse_disease_content already normalizes, but it's safe to do it again or pass stripped
+        english_name = extract_english_name(normalized_text) # Extract English name from CLEAN text
         
         # Check if parsing found anything
         filled_sections = sum(1 for v in parsed.values() if v)
-        print(f"Parsed {disease_name}: found {filled_sections}/6 sections")
+        print(f"Parsed {disease_name}: found {filled_sections}/6 sections, English: {english_name}")
         
         # Update existing record - try to find by name (handle _ vs / differences)
         record = None
@@ -167,11 +222,13 @@ def main():
             for k, v in parsed.items():
                 record[k] = v
             record['content'] = normalize_text(text.strip())
+            record['english_name'] = english_name
             updated_data.append(record)
         else:
             # Create new record stub (no url available)
             new_record = {'name': disease_name, 'content': normalize_text(text.strip())}
             new_record.update(parsed)
+            new_record['english_name'] = english_name
             updated_data.append(new_record)
             print(f"  Warning: No existing record found for {disease_name}")
             

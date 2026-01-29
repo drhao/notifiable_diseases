@@ -242,7 +242,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <header>
         <div class="header-top">
             <h1>TW Notifiable Diseases</h1>
-            <input type="text" id="searchInput" placeholder="Search diseases...">
+            <div style="display:flex; gap:1rem; align-items:center">
+                <select id="sortSelect" style="padding:0.5rem; border-radius:6px; border:1px solid #e5e5e5; font-size:0.9rem">
+                    <option value="category">Sort by Category</option>
+                    <option value="name">Sort by English Name</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Search diseases...">
+            </div>
         </div>
         <div class="category-nav" id="catNav">
             <!-- Buttons injected by JS -->
@@ -273,6 +279,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         const tbody = document.getElementById('tableBody');
         const catNav = document.getElementById('catNav');
         const searchInput = document.getElementById('searchInput');
+        const sortSelect = document.getElementById('sortSelect');
+        
+        // Initial Sort State
+        let currentSort = 'category'; 
 
         const COLS = ["臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"];
 
@@ -293,20 +303,42 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             catNav.innerHTML = '';
             
             const f = filter.toLowerCase();
-            const filtered = DATA.filter(d => 
+            let filtered = DATA.filter(d => 
                 d.name.toLowerCase().includes(f) || 
+                (d.english_name && d.english_name.toLowerCase().includes(f)) ||
                 (d.content && d.content.toLowerCase().includes(f))
             );
+            
+            // Apply Sorting
+            if (currentSort === 'name') {
+                // Sort by English Name -> Chinese Name
+                filtered.sort((a, b) => {
+                    const enA = (a.english_name || a.name).toLowerCase();
+                    const enB = (b.english_name || b.name).toLowerCase();
+                    return enA.localeCompare(enB);
+                });
+                
+                // Hide Category Nav when sorting by name
+                catNav.style.display = 'none';
+                
+            } else {
+                // Sort by Category Sort Key (which is already done in Python, but we can ensure it here)
+                // Actually DATA comes sorted by category key from Python.
+                // We just need to ensure we process them in order for grouping separators.
+                
+                 catNav.style.display = 'flex';
+            }
 
             let lastCat = null;
             const catsFound = new Set();
             
             filtered.forEach((d, index) => {
                 const currentCat = d.sort_key || 99;
+                catsFound.add(currentCat);
                 
-                if (currentCat !== lastCat) {
+                // Add Category Header Row if we are in Category Sort Mode
+                if (currentSort === 'category' && currentCat !== lastCat) {
                     lastCat = currentCat;
-                    catsFound.add(currentCat);
                     
                     // Row for anchor
                     const headerRow = document.createElement('tr');
@@ -318,9 +350,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
                 const tr = document.createElement('tr');
                 
-                // Name Col with tag inline
+                // Name Col with tag inline + English Name
                 let html = `<td>
                     <div><span style="font-weight:600">${d.name}</span>${d.category_tag ? `<span class="tag">${d.category_tag}</span>` : ''}</div>
+                    ${d.english_name ? `<div style="font-size:0.8rem; color:#555; margin-top:2px">${d.english_name}</div>` : ''}
                     <a href="${d.url}" target="_blank" class="pdf-link">View PDF</a>
                 </td>`;
                 
@@ -379,6 +412,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }
 
         searchInput.addEventListener('input', e => render(e.target.value));
+        sortSelect.addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            render(searchInput.value);
+        });
 
         render();
     </script>
