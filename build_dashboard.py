@@ -141,7 +141,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         /* Essential for Line Breaks */
         .cell-content {
             white-space: pre-wrap; /* Preserves extract newlines */
-            max-height: 120px;
+            max-height: 200px;
             overflow: hidden;
             position: relative;
         }
