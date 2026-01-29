@@ -370,27 +370,40 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
-def parse_category_sort_key(classification):
-    if not classification: return 99, ""
-    match = re.search(r'第([一二三四五0-9]+)類', classification)
+def parse_source_category(source_cat):
+    """Convert source_category string to sort key."""
+    if not source_cat:
+        return 99
+    cn_map = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5}
+    match = re.search(r'第([一二三四五0-9]+)類', source_cat)
     if match:
         val_str = match.group(1)
-        cn_map = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5}
         val = cn_map.get(val_str)
-        if not val and val_str.isdigit(): val = int(val_str)
-        if val: return val, f"第{val_str}類"
-    return 99, ""
+        if val:
+            return val
+        if val_str.isdigit():
+            return int(val_str)
+    return 99
 
 def main():
     try:
         with open("diseases.json", "r", encoding="utf-8") as f:
             data = json.load(f)
-    except FileNotFoundError: return
+    except FileNotFoundError:
+        print("diseases.json not found")
+        return
 
     for d in data:
-        sort_key, tag = parse_category_sort_key(d.get("疾病分類", ""))
-        d['sort_key'] = sort_key
-        d['category_tag'] = tag
+        # Use source_category from scraper if available, fallback to parsing 疾病分類
+        source_cat = d.get('source_category', '')
+        if source_cat:
+            d['sort_key'] = parse_source_category(source_cat)
+            d['category_tag'] = source_cat
+        else:
+            # Fallback to parsing from content
+            sort_key, tag = parse_category_sort_key(d.get("疾病分類", ""))
+            d['sort_key'] = sort_key
+            d['category_tag'] = tag
 
     # Sort order: 1, 5, 2, 3, 4, others (99)
     custom_order = {1: 0, 5: 1, 2: 2, 3: 3, 4: 4, 99: 5}
@@ -399,6 +412,8 @@ def main():
     
     with open("dashboard.html", "w", encoding="utf-8") as f:
         f.write(HTML_TEMPLATE.replace("__DATA_PLACEHOLDER__", json_str))
+    
+    print(f"Generated dashboard.html with {len(data)} diseases.")
 
 if __name__ == "__main__":
     main()
