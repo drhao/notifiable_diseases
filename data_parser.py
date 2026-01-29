@@ -149,18 +149,26 @@ def main():
         filled_sections = sum(1 for v in parsed.values() if v)
         print(f"Parsed {disease_name}: found {filled_sections}/6 sections")
         
-        # Update existing record
-        if disease_name in existing_map:
-            record = existing_map[disease_name]
-            record.update(parsed)
-            # Ensure content is updated too if we re-read PDF text (optional, but good for consistency)
-            record['content'] = text.strip() 
+        # Update existing record - try to find by name (handle _ vs / differences)
+        record = None
+        for name, r in existing_map.items():
+            # Match by normalizing both names
+            if name.replace("/", "_") == disease_name.replace("/", "_"):
+                record = r
+                break
+        
+        if record:
+            # Only update the parsed fields, keep existing url, source_category, etc.
+            for k, v in parsed.items():
+                record[k] = v
+            record['content'] = normalize_text(text.strip())
             updated_data.append(record)
         else:
-            # Create new record stub
-            new_record = {'name': disease_name, 'content': text.strip()}
+            # Create new record stub (no url available)
+            new_record = {'name': disease_name, 'content': normalize_text(text.strip())}
             new_record.update(parsed)
             updated_data.append(new_record)
+            print(f"  Warning: No existing record found for {disease_name}")
             
         processed_count += 1
 
