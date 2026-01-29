@@ -68,19 +68,24 @@ def parse_disease_content(content):
     current_section = None
     buffer = []
 
-    # Regex to match: Optional numeral (一、 or 壹、 or 1.) + optional prefix (e.g. "AFP ") + Header Name
-    # matches: "一、臨床條件", "一、 AFP 臨床條件", "壹、臨床條件", " 1. 臨床條件" etc.
-    header_pattern = re.compile(r'^\s*(?:[一二三四五六壹貳參肆伍陸0-9]\s*[、.]?\s*)?(?:\S+\s+)?(' + '|'.join(headers_map) + r')')
+    # Regex to match: numeral (一、 or 壹、 or 1.) + optional prefix (e.g. "AFP ") + Header Name + end or colon
+    # The header should be at end of line or followed by colon/whitespace only
+    # matches: "一、 臨床條件", "一、 AFP 臨床條件", NOT "臨床條件一、(二)..."
+    header_pattern = re.compile(
+        r'^\s*([一二三四五六壹貳參肆伍陸0-9])\s*[、.]\s*'  # Require numeral
+        r'(?:\S+\s+)?'  # Optional prefix like "AFP "
+        r'(' + '|'.join(headers_map) + r')'  # Header name
+        r'\s*[:：]?\s*$'  # End of line (optionally with colon)
+    )
 
     for line in lines:
         stripped_line = line.strip()
         match = header_pattern.match(stripped_line)
         
         if match:
-             header_name = match.group(1)
+             header_name = match.group(2)  # Group 2 is the header name (group 1 is the numeral)
              
              # Check if this strictly matches one of our known headers
-             # (Regex group 1 is the header name from the list)
              if header_name in sections:
                  # Save previous section
                  if current_section and current_section in sections:
