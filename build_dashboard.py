@@ -437,10 +437,10 @@ def main():
     data.sort(key=lambda x: (custom_order.get(x['sort_key'], 5), x['name']))
     json_str = json.dumps(data, ensure_ascii=False).replace("</script>", "<\\/script>")
     
-    with open("dashboard.html", "w", encoding="utf-8") as f:
+    with open("index.html", "w", encoding="utf-8") as f:
         f.write(HTML_TEMPLATE.replace("__DATA_PLACEHOLDER__", json_str))
     
-    print(f"Generated dashboard.html with {len(data)} diseases.")
+    print(f"Generated index.html with {len(data)} diseases.")
 
 if __name__ == "__main__":
     main()
