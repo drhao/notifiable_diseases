@@ -321,12 +321,19 @@
                 </td>`;
                 
                 COLS.forEach(key => {
-                    const text = d[key] || "";
-                    const isLong = text.length > 150;
-                    html += `<td>
-                        <div class="cell-content ${isLong ? 'long' : ''}">${text}</div>
-                        ${isLong ? '<button class="toggle-btn" onclick="toggle(this)">Show More</button>' : ''}
-                    </td>`;
+                    // For 檢體採檢送驗事項, show PDF link instead of content
+                    if (key === "檢體採檢送驗事項") {
+                        html += `<td>
+                            <a href="${d.url}" target="_blank" class="pdf-link" style="opacity:1">詳見 PDF</a>
+                        </td>`;
+                    } else {
+                        const text = d[key] || "";
+                        const isLong = text.length > 150;
+                        html += `<td>
+                            <div class="cell-content ${isLong ? 'long' : ''}">${text}</div>
+                            ${isLong ? '<button class="toggle-btn" onclick="toggle(this)">Show More</button>' : ''}
+                        </td>`;
+                    }
                 });
                 
                 tr.innerHTML = html;
