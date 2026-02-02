@@ -280,10 +280,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <div class="header-top">
             <div>
                 <h1>TW Notifiable Diseases</h1>
-                <div style="font-size:0.8rem; color:#666; font-weight:400; margin-top:4px">Last Updated: <!-- LAST_UPDATED --></div>
+                <div style="font-size:0.8rem; color:#666; font-weight:400; margin-top:4px">最後更新: <!-- LAST_UPDATED --></div>
             </div>
             <div style="display:flex; gap:1rem; align-items:center">
-                <button onclick="openModal()" class="nav-btn">About / Help</button>
+                <button onclick="openModal()" class="nav-btn">關於 / About</button>
                 <select id="sortSelect" style="padding:0.5rem; border-radius:6px; border:1px solid #e5e5e5; font-size:0.9rem">
                     <option value="category">Sort by Category</option>
                     <option value="name">Sort by English Name</option>
@@ -319,20 +319,24 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <div id="aboutModal" class="modal-overlay">
         <div class="modal">
             <span class="close-modal" onclick="closeModal()">&times;</span>
-            <h2>About This Dashboard</h2>
-            <p>This dashboard compiles official data on Notifiable Diseases in Taiwan (法定傳染病) from Taiwan CDC PDF documents.</p>
-            <h3>Features:</h3>
+            <h2>關於本儀表板 (About)</h2>
+            <p>
+                本儀表板旨在提供一個清晰、易於檢索的介面，彙整台灣衛生福利部疾病管制署 (Taiwan CDC) 公告之法定傳染病定義。
+                所有資料皆由官方 PDF 文件經自動化程式解析後呈現，方便醫療人員與研究者快速查閱。
+            </p>
+            <h3>主要功能：</h3>
             <ul>
-                 <li><b>Search:</b> Filter by disease name (English/Chinese) or content keywords.</li>
-                 <li><b>Sort:</b> Toggle between "Category" view (default) and "English Name" view.</li>
-                 <li><b>Details:</b> Click "Show More" to expand full text descriptions.</li>
-                 <li><b>PDFs:</b> Direct links to source PDFs for full details.</li>
-                 <li><b>Classification:</b> Color-coded case definitions (Suspected, Probable, Confirmed).</li>
+                 <li><b>快速搜尋 (Search):</b> 支援中英文病名及內容關鍵字即時篩選。</li>
+                 <li><b>分類瀏覽 (Sort):</b> 可依照法定傳染病分類（第一類至第五類）或英文病名排序。</li>
+                 <li><b>詳細內容 (Details):</b> 點擊「Show More」可展開完整的臨床條件、通報定義等詳細規範。</li>
+                 <li><b>原始文件 (PDF):</b> 點擊連結可直接下載或閱覽 CDC 原始 PDF 檔案。</li>
+                 <li><b>病例分類 (Classification):</b> 自動標示並以顏色區分「可能病例 (Suspected)」、「極可能病例 (Probable)」與「確定病例 (Confirmed)」。</li>
             </ul>
              <br>
              <p style="font-size:0.9rem; color:#888; border-top:1px solid #eee; padding-top:1rem">
-                Data based on Taiwan CDC resources.<br>
-                Last Updated: <!-- LAST_UPDATED -->
+                資料來源：台灣衛生福利部疾病管制署 (Taiwan CDC)。<br>
+                本專案為資訊整合工具，非官方網站，內容僅供參考，實際規範請以 CDC 公告為準。<br>
+                系統最後更新時間: <!-- LAST_UPDATED -->
              </p>
         </div>
     </div>
