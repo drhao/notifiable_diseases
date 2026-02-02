@@ -371,7 +371,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                             html += `<div style="margin-bottom:8px"><strong style="color:#e65100; font-size:0.85em">可能病例 Suspected</strong><br>${d.suspected_case}</div>`;
                         }
                         if (d.probable_case) {
-                            html += `<div style="margin-bottom:8px"><strong style="color:#f57f17; font-size:0.85em">極可能病例 Probable</strong><br>${d.probable_case}</div>`;
+                            html += `<div style="margin-bottom:8px"><strong style="color:#eab308; font-size:0.85em">極可能病例 Probable</strong><br>${d.probable_case}</div>`;
                         }
                         if (d.confirmed_case) {
                             html += `<div><strong style="color:#d32f2f; font-size:0.85em">確定病例 Confirmed</strong><br>${d.confirmed_case}</div>`;
