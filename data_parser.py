@@ -58,6 +58,7 @@ def parse_disease_content(content):
         "流行病學條件",
         "通報定義",
         "疾病分類",
+        "病例分類", # Alias for 疾病分類
         "檢體採檢送驗事項"
     ]
 
@@ -85,6 +86,10 @@ def parse_disease_content(content):
         if match:
              header_name = match.group(2)  # Group 2 is the header name (group 1 is the numeral)
              
+             # Handle aliases
+             if header_name == "病例分類":
+                 header_name = "疾病分類"
+
              # Check if this strictly matches one of our known headers
              if header_name in sections:
                  # Save previous section
