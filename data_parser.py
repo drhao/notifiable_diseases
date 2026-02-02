@@ -200,14 +200,132 @@ def main():
             print(f"Error reading {filename}: {e}")
             continue
             
+def parse_case_definitions(classification_text):
+    """
+    Parses '疾病分類' text to extract structured case definitions.
+    Returns a dict with 'suspected_case', 'probable_case', 'confirmed_case'.
+    """
+    if not classification_text:
+        return {}
+
+    definitions = {
+        'suspected_case': '',
+        'probable_case': '',
+        'confirmed_case': ''
+    }
+    
+    # Normalize for easier matching
+    text = normalize_text(classification_text)
+    
+    # We want to split by keywords but keep the content.
+    # Keywords: 可能病例, 極可能病例, 確定病例
+    # Usually preceded by (一), (二) etc.
+    
+    # Strategy: Find all indices of these keywords
+    # Map keyword -> "suspected_case", etc.
+    key_map = {
+        "極可能病例": "probable_case", # Must check "極可能" before "可能" to avoid partial match if we regex naively
+        "可能病例": "suspected_case",
+        "確定病例": "confirmed_case"
+    }
+    
+    # We can iterate through the lines and see if a line STARTS with one of these (ignoring numbering)
+    lines = text.split('\n')
+    current_key = None
+    buffer = []
+    
+    # Pattern: ^\s*(\(.*\)|[0-9]+\.|[一二三四]+\、)?\s*(keyword)\s*[:：]?
+    # Matches: "(一) 可能病例:", "1. 確定病例", "確定病例："
+    pattern = re.compile(r'^\s*(?:[\(（][一二三四0-9]+[\)）]|[0-9]+\.|[一二三四]\、)?\s*(極可能病例|可能病例|確定病例)\s*[:：]?')
+    
+    for line in lines:
+        line = line.strip()
+        match = pattern.match(line)
+        if match:
+            # We found a new header
+            found_keyword = match.group(1)
+            
+            # Save previous buffer
+            if current_key:
+                definitions[current_key] = "\n".join(buffer).strip()
+            
+            # Start new section
+            current_key = key_map.get(found_keyword)
+            # Add the rest of the line (after the header) to buffer?
+            # e.g. "(一) 可能病例: some text..." -> "some text..."
+            # Or keep the whole line? User probably wants the content.
+            # Usually the header line implies the title, we can strip it or keep it.
+            # If we want structured data PROBABLY we strip the header title "可能病例".
+            
+            # Let's remove the header part from the line
+            # match.end() gives end of match
+            content_part = line[match.end():].strip()
+            buffer = [content_part] if content_part else []
+            
+        elif current_key:
+            buffer.append(line)
+            
+    # Save last buffer
+    if current_key:
+        definitions[current_key] = "\n".join(buffer).strip()
+        
+    return definitions
+
+def main():
+    """
+    Independent execution: Read local PDFs and test the parser.
+    Updates diseases.json if it exists.
+    """
+    pdf_dir = "pdfs"
+    json_path = "diseases.json"
+    
+    if not os.path.exists(pdf_dir):
+        print(f"Directory {pdf_dir} not found.")
+        return
+
+    print(f"Testing parser on files in {pdf_dir}/...")
+    
+    processed_count = 0
+    updated_data = []
+    
+    # Load existing JSON to preserve other fields (url, source_category) if we want to save back
+    existing_map = {}
+    if os.path.exists(json_path):
+        with open(json_path, "r", encoding="utf-8") as f:
+            existing_data = json.load(f)
+            for d in existing_data:
+                existing_map[d['name']] = d
+    
+    files = [f for f in os.listdir(pdf_dir) if f.endswith(".pdf")]
+    
+    for filename in sorted(files):
+        disease_name = filename.replace(".pdf", "").replace("_", "/")
+        pdf_path = os.path.join(pdf_dir, filename)
+        
+        # Extract text via pdfplumber
+        text = ""
+        try:
+            with pdfplumber.open(pdf_path) as pdf:
+                for page in pdf.pages:
+                    extract = page.extract_text()
+                    if extract:
+                        text += extract + "\n"
+        except Exception as e:
+            print(f"Error reading {filename}: {e}")
+            continue
+            
         # Parse
         normalized_text = normalize_text(text)
         parsed = parse_disease_content(normalized_text) # parse_disease_content already normalizes, but it's safe to do it again or pass stripped
         english_name = extract_english_name(normalized_text) # Extract English name from CLEAN text
         
+        # Parse Case Definitions from '疾病分類'
+        case_defs = parse_case_definitions(parsed.get("疾病分類", ""))
+        parsed.update(case_defs)
+        
         # Check if parsing found anything
         filled_sections = sum(1 for v in parsed.values() if v)
-        print(f"Parsed {disease_name}: found {filled_sections}/6 sections, English: {english_name}")
+        print(f"Parsed {disease_name}: found {filled_sections}/9 sections, English: {english_name}")
         
         # Update existing record - try to find by name (handle _ vs / differences)
         record = None

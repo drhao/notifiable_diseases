@@ -363,6 +363,28 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         html += `<td>
                             <a href="${d.url}" target="_blank" class="pdf-link" style="opacity:1">詳見 PDF</a>
                         </td>`;
+                    } else if (key === "疾病分類" && (d.suspected_case || d.probable_case || d.confirmed_case)) {
+                        // Render structured case definitions
+                        html += `<td><div class="cell-content">`;
+                        
+                        if (d.suspected_case) {
+                            html += `<div style="margin-bottom:8px"><strong style="color:#e65100; font-size:0.85em">可能病例 Suspected</strong><br>${d.suspected_case}</div>`;
+                        }
+                        if (d.probable_case) {
+                            html += `<div style="margin-bottom:8px"><strong style="color:#f57f17; font-size:0.85em">極可能病例 Probable</strong><br>${d.probable_case}</div>`;
+                        }
+                        if (d.confirmed_case) {
+                            html += `<div><strong style="color:#d32f2f; font-size:0.85em">確定病例 Confirmed</strong><br>${d.confirmed_case}</div>`;
+                        }
+                        
+                        // If there is leftover text in "疾病分類" that wasn't parsed? 
+                        // Our parser splits by keys, so we only captured what was under keys.
+                        // d['疾病分類'] contains the full original text.
+                        // We can just show the structured parts.
+                        
+                        html += `</div>
+                        <button class="toggle-btn" onclick="toggle(this)" style="display:none">Show More</button>
+                        </td>`;
                     } else {
                         const text = d[key] || "";
                         html += `<td>
