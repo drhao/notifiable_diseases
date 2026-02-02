@@ -574,13 +574,20 @@ def main():
     data.sort(key=lambda x: (custom_order.get(x['sort_key'], 5), x['name']))
     json_str = json.dumps(data, ensure_ascii=False).replace("</script>", "<\\/script>")
     
-    # Determine last updated time from diseases.json mtime (proxy for data update)
-    json_path = "diseases.json"
-    if os.path.exists(json_path):
-        ts = os.path.getmtime(json_path)
+    # Determine last updated time
+    # Priority: metadata.json > diseases.json mtime > now
+    last_updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    
+    if os.path.exists("metadata.json"):
+        try:
+            with open("metadata.json", "r", encoding="utf-8") as f:
+                meta = json.load(f)
+                last_updated = meta.get("last_updated", last_updated)
+        except Exception:
+            pass # Fallback
+    elif os.path.exists("diseases.json"):
+        ts = os.path.getmtime("diseases.json")
         last_updated = datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M")
-    else:
-        last_updated = datetime.now().strftime("%Y-%m-%d %H:%M")
 
     html_content = HTML_TEMPLATE.replace("__DATA_PLACEHOLDER__", json_str)
     html_content = html_content.replace("<!-- LAST_UPDATED -->", last_updated)
