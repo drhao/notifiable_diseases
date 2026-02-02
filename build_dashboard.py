@@ -1,6 +1,7 @@
 import json
 import os
 import re
+from datetime import datetime
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="zh-TW">
@@ -253,14 +254,36 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }
         .pdf-link:hover { opacity: 1; text-decoration: underline; }
 
+        /* Modal */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 1000;
+            display: none; justify-content: center; align-items: center;
+        }
+        .modal {
+            background: #fff; padding: 2rem; border-radius: 12px;
+            max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .modal h2 { margin-bottom: 1rem; color: var(--text-primary); }
+        .modal p, .modal ul { margin-bottom: 1rem; color: #444; line-height: 1.6; }
+        .modal ul { list-style: disc; padding-left: 1.5rem; }
+        .close-modal {
+            float: right; cursor: pointer; font-size: 1.8rem; line-height: 0.8; color: #888;
+        }
+        .close-modal:hover { color: #000; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-top">
-            <h1>TW Notifiable Diseases</h1>
+            <div>
+                <h1>TW Notifiable Diseases</h1>
+                <div style="font-size:0.8rem; color:#666; font-weight:400; margin-top:4px">Last Updated: <!-- LAST_UPDATED --></div>
+            </div>
             <div style="display:flex; gap:1rem; align-items:center">
+                <button onclick="openModal()" class="nav-btn">About / Help</button>
                 <select id="sortSelect" style="padding:0.5rem; border-radius:6px; border:1px solid #e5e5e5; font-size:0.9rem">
                     <option value="category">Sort by Category</option>
                     <option value="name">Sort by English Name</option>
@@ -290,6 +313,28 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 <!-- Rows -->
             </tbody>
         </table>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal-overlay">
+        <div class="modal">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>About This Dashboard</h2>
+            <p>This dashboard compiles official data on Notifiable Diseases in Taiwan (法定傳染病) from Taiwan CDC PDF documents.</p>
+            <h3>Features:</h3>
+            <ul>
+                 <li><b>Search:</b> Filter by disease name (English/Chinese) or content keywords.</li>
+                 <li><b>Sort:</b> Toggle between "Category" view (default) and "English Name" view.</li>
+                 <li><b>Details:</b> Click "Show More" to expand full text descriptions.</li>
+                 <li><b>PDFs:</b> Direct links to source PDFs for full details.</li>
+                 <li><b>Classification:</b> Color-coded case definitions (Suspected, Probable, Confirmed).</li>
+            </ul>
+             <br>
+             <p style="font-size:0.9rem; color:#888; border-top:1px solid #eee; padding-top:1rem">
+                Data based on Taiwan CDC resources.<br>
+                Last Updated: <!-- LAST_UPDATED -->
+             </p>
+        </div>
     </div>
 
     <script>
@@ -451,6 +496,21 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             btn.textContent = div.classList.contains('expanded') ? 'Show Less' : 'Show More';
         }
 
+        // Modal Functions
+        window.openModal = function() {
+            document.getElementById('aboutModal').style.display = 'flex';
+        }
+        window.closeModal = function() {
+            document.getElementById('aboutModal').style.display = 'none';
+        }
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('aboutModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
         searchInput.addEventListener('input', e => render(e.target.value));
         sortSelect.addEventListener('change', (e) => {
             currentSort = e.target.value;
@@ -514,10 +574,14 @@ def main():
     data.sort(key=lambda x: (custom_order.get(x['sort_key'], 5), x['name']))
     json_str = json.dumps(data, ensure_ascii=False).replace("</script>", "<\\/script>")
     
-    with open("index.html", "w", encoding="utf-8") as f:
-        f.write(HTML_TEMPLATE.replace("__DATA_PLACEHOLDER__", json_str))
+    last_updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    html_content = HTML_TEMPLATE.replace("__DATA_PLACEHOLDER__", json_str)
+    html_content = html_content.replace("<!-- LAST_UPDATED -->", last_updated)
     
-    print(f"Generated index.html with {len(data)} diseases.")
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(html_content)
+    
+    print(f"Generated index.html with {len(data)} diseases. Updated: {last_updated}")
 
 if __name__ == "__main__":
     main()
