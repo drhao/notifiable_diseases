@@ -165,6 +165,24 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             background: #f9f9f9;
         }
 
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            th:first-child, td:first-child {
+                width: 150px;
+                min-width: 150px;
+            }
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            #searchInput {
+                width: 100%;
+            }
+        }
+
         /* Ensure scrolling lands correctly below header */
         .category-header-row {
             scroll-margin-top: 180px;
