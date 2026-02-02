@@ -574,12 +574,32 @@ def main():
     data.sort(key=lambda x: (custom_order.get(x['sort_key'], 5), x['name']))
     json_str = json.dumps(data, ensure_ascii=False).replace("</script>", "<\\/script>")
     
-    last_updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+    # Determine last updated time from diseases.json mtime (proxy for data update)
+    json_path = "diseases.json"
+    if os.path.exists(json_path):
+        ts = os.path.getmtime(json_path)
+        last_updated = datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M")
+    else:
+        last_updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+
     html_content = HTML_TEMPLATE.replace("__DATA_PLACEHOLDER__", json_str)
     html_content = html_content.replace("<!-- LAST_UPDATED -->", last_updated)
     
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_content)
+
+    # Update README.md
+    readme_path = "README.md"
+    if os.path.exists(readme_path):
+        with open(readme_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        # Replace date line
+        new_content = re.sub(r"\*\*最後更新日期:\*\*.*", f"**最後更新日期:** {last_updated}", content)
+        
+        with open(readme_path, "w", encoding="utf-8") as f:
+            f.write(new_content)
+        print("Updated README.md timestamp.")
     
     print(f"Generated index.html with {len(data)} diseases. Updated: {last_updated}")
 
