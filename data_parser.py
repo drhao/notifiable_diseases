@@ -106,6 +106,11 @@ def parse_disease_content(content):
     if current_section and current_section in sections:
         sections[current_section] = "\n".join(buffer).strip()
         
+    # Parse Case Definitions automatically
+    # Note: parse_case_definitions is defined later in the file, but available at runtime
+    case_defs = parse_case_definitions(sections.get("疾病分類", ""))
+    sections.update(case_defs)
+        
     return sections
 
 
