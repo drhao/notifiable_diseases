@@ -280,7 +280,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <div class="header-top">
             <div>
                 <h1>台灣法定傳染病病例定義總覽 | Taiwan Notifiable Disease Case Definitions</h1>
-                <div style="font-size:0.8rem; color:#666; font-weight:400; margin-top:4px">最後更新: <!-- LAST_UPDATED --></div>
+                <div style="font-size:0.8rem; color:#666; font-weight:400; margin-top:4px">最後更新： <!-- LAST_UPDATED --></div>
             </div>
             <div style="display:flex; gap:1rem; align-items:center">
                 <button onclick="openModal()" class="nav-btn">關於 / About</button>
@@ -326,17 +326,17 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             </p>
             <h3>主要功能：</h3>
             <ul>
-                 <li><b>快速搜尋 (Search):</b> 支援中英文病名及內容關鍵字即時篩選。</li>
-                 <li><b>分類瀏覽 (Sort):</b> 可依照法定傳染病分類（第一類至第五類）或英文病名排序。</li>
-                 <li><b>詳細內容 (Details):</b> 點擊「Show More」可展開完整的臨床條件、通報定義等詳細規範。</li>
-                 <li><b>原始文件 (PDF):</b> 點擊連結可直接下載或閱覽 CDC 原始 PDF 檔案。</li>
-                 <li><b>病例分類 (Classification):</b> 自動標示並以顏色區分「可能病例 (Suspected)」、「極可能病例 (Probable)」與「確定病例 (Confirmed)」。</li>
+                 <li><b>快速搜尋 (Search)：</b> 支援中英文病名及內容關鍵字即時篩選。</li>
+                 <li><b>分類瀏覽 (Sort)：</b> 可依照法定傳染病分類（第一類至第五類）或英文病名排序。</li>
+                 <li><b>詳細內容 (Details)：</b> 點擊「Show More」可展開完整的臨床條件、通報定義等詳細規範。</li>
+                 <li><b>原始文件 (PDF)：</b> 點擊連結可直接下載或閱覽 CDC 原始 PDF 檔案。</li>
+                 <li><b>病例分類 (Classification)：</b> 自動標示並以顏色區分「可能病例 (Suspected)」、「極可能病例 (Probable)」與「確定病例 (Confirmed)」。</li>
             </ul>
              <br>
              <p style="font-size:0.9rem; color:#888; border-top:1px solid #eee; padding-top:1rem">
                 資料來源：台灣衛生福利部疾病管制署 (Taiwan CDC)。<br>
                 本專案為資訊整合工具，非官方網站，內容僅供參考，實際規範請以 CDC 公告為準。<br>
-                系統最後更新時間: <!-- LAST_UPDATED -->
+                系統最後更新時間： <!-- LAST_UPDATED -->
              </p>
         </div>
     </div>

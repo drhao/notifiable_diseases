@@ -32,6 +32,20 @@ def normalize_text(text):
     """Normalize Unicode text to handle CJK compatibility characters."""
     # NFKC normalization converts compatibility characters to their standard forms
     text = unicodedata.normalize('NFKC', text)
+    
+    # Convert common half-width punctuation to full-width
+    # , -> ，, : -> ：, ; -> ；, ! -> ！, ? -> ？, ( -> （, ) -> ）
+    punct_map = str.maketrans({
+        ',': '，',
+        ':': '：',
+        ';': '；',
+        '!': '！',
+        '?': '？',
+        '(': '（',
+        ')': '）'
+    })
+    text = text.translate(punct_map)
+
     # Handle quadruple-repeated chars from some PDF extractions
     text = deduplicate_chars(text, 4)
     return text
@@ -146,7 +160,7 @@ def extract_english_name(content):
         if not re.search(r'[a-zA-Z]', cleaned):
             continue
 
-        return cleaned
+        return cleaned.replace('，', ',').replace('：', ':')
 
     # Strategy 2: If no parenthesized name found, look for a line that is mostly English
     # usually on line 2 or 3
@@ -160,10 +174,10 @@ def extract_english_name(content):
             continue
             
         # Check if line is purely English/Punctuation (allow some symbols)
-        # Remove common punctuation allowed in names: - , space
-        check = re.sub(r'[A-Za-z\s\-,]', '', line)
+        # Remove common punctuation allowed in names: - , space, and full-width comma
+        check = re.sub(r'[A-Za-z\s\-,，]', '', line)
         if len(check) == 0 and len(line) > 3:
-             return line
+             return line.replace('，', ',').replace('：', ':')
 
     return ""
 
