@@ -191,6 +191,13 @@ def main():
 
     with open("disease_manuals.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
+        
+    try:
+        import pandas as pd
+        df_all = pd.DataFrame(results)
+        df_all.to_csv("disease_manuals.csv", index=False, encoding="utf-8-sig")
+    except ImportError:
+        pass
     
     print(f"Finished parsing {len(results)} manuals.")
 
