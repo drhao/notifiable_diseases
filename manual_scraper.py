@@ -148,7 +148,46 @@ def main():
             **parsed_sections
         }
         results.append(record)
+        
+        # Save individual JSON and CSV
+        manual_data_dir = "manual_data"
+        os.makedirs(manual_data_dir, exist_ok=True)
+        safe_name = name.replace('/', '_')
+        indiv_json_path = os.path.join(manual_data_dir, f"{safe_name}.json")
+        indiv_csv_path = os.path.join(manual_data_dir, f"{safe_name}.csv")
+        
+        with open(indiv_json_path, "w", encoding="utf-8") as f:
+            json.dump(record, f, ensure_ascii=False, indent=2)
+            
+        try:
+            import pandas as pd
+            df_indiv = pd.DataFrame([record])
+            df_indiv.to_csv(indiv_csv_path, index=False, encoding="utf-8-sig")
+        except ImportError:
+            pass
+            
         time.sleep(0.5)
+
+    # Save index
+    index_records = []
+    for r in results:
+        safe_name = r['name'].replace('/', '_')
+        index_records.append({
+            'name': r['name'],
+            'pdf_url': r['url'],
+            'json_path': f"manual_data/{safe_name}.json",
+            'csv_path': f"manual_data/{safe_name}.csv"
+        })
+        
+    with open("manuals_index.json", "w", encoding="utf-8") as f:
+        json.dump(index_records, f, ensure_ascii=False, indent=2)
+        
+    try:
+        import pandas as pd
+        df_index = pd.DataFrame(index_records)
+        df_index.to_csv("manuals_index.csv", index=False, encoding="utf-8-sig")
+    except ImportError:
+        pass
 
     with open("disease_manuals.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
@@ -157,3 +196,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
