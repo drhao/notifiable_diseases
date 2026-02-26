@@ -282,7 +282,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 <h1>台灣法定傳染病病例定義總覽 | Taiwan Notifiable Disease Case Definitions</h1>
                 <div style="font-size:0.8rem; color:#666; font-weight:400; margin-top:4px">最後更新： <!-- LAST_UPDATED --></div>
             </div>
-            <div style="display:flex; gap:1rem; align-items:center">
+            <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+                <a href="manuals.html" class="nav-btn primary" style="background: #000; color: #fff; text-decoration: none;">📄 防治工作手冊 (Manuals)</a>
                 <button onclick="openModal()" class="nav-btn">關於 / About</button>
                 <select id="sortSelect" style="padding:0.5rem; border-radius:6px; border:1px solid #e5e5e5; font-size:0.9rem">
                     <option value="category">Sort by Category</option>
