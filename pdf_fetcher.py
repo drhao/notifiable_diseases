@@ -82,23 +82,15 @@ def fetch_disease_links():
     return diseases
 
 
-def get_pdf_content(viewer_url, disease_name):
+def get_actual_pdf_url(viewer_url):
     """
-    Download PDF from viewer page, save locally, and extract text content.
-    Uses pdfplumber for text extraction.
-    Returns tuple: (text_content, local_pdf_path) or (None, None) on failure.
+    Get the actual PDF download URL from the viewer page.
     """
     try:
-        # Ensure PDF directory exists
-        os.makedirs(PDF_DIR, exist_ok=True)
-        
-        # 1. Get viewer page
         res = requests.get(viewer_url, timeout=10)
         res.raise_for_status()
         
         soup = BeautifulSoup(res.content, 'html.parser')
-        
-        # 2. Find PDF link
         pdf_link_tag = soup.select_one('a.viewer-button')
         if not pdf_link_tag:
             embed_tag = soup.select_one('embed')
@@ -108,25 +100,33 @@ def get_pdf_content(viewer_url, disease_name):
                     pdf_href = pdf_href.split('#')[0]
             else:
                 print(f"  No PDF link found in {viewer_url}")
-                return None, None
+                return None
         else:
             pdf_href = pdf_link_tag.get('href')
             
-        full_pdf_url = urljoin(BASE_URL, pdf_href)
+        return urljoin(BASE_URL, pdf_href)
+    except Exception as e:
+        print(f"  Error finding PDF URL on {viewer_url}: {e}")
+        return None
+
+def download_and_extract_pdf(full_pdf_url, disease_name):
+    """
+    Download PDF from the actual PDF url, save locally, and extract text content.
+    Uses pdfplumber for text extraction.
+    Returns tuple: (text_content, local_pdf_path) or (None, None) on failure.
+    """
+    try:
+        os.makedirs(PDF_DIR, exist_ok=True)
         
-        # 3. Download PDF
         pdf_res = requests.get(full_pdf_url, timeout=15)
         pdf_res.raise_for_status()
         
-        # 4. Save PDF locally
-        # Sanitize filename
         safe_name = re.sub(r'[<>:"/\\|?*]', '_', disease_name)
         pdf_path = os.path.join(PDF_DIR, f"{safe_name}.pdf")
         
         with open(pdf_path, 'wb') as f:
             f.write(pdf_res.content)
         
-        # 5. Extract Text using pdfplumber
         text = ""
         with pdfplumber.open(pdf_path) as pdf:
             for page in pdf.pages:
@@ -137,5 +137,6 @@ def get_pdf_content(viewer_url, disease_name):
         return text.strip(), pdf_path
         
     except Exception as e:
-        print(f"  Error processing {viewer_url}: {e}")
+        print(f"  Error processing {full_pdf_url}: {e}")
         return None, None
+

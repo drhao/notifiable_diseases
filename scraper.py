@@ -4,11 +4,17 @@ scraper.py - Main script to fetch and parse Taiwan CDC notifiable disease defini
 import json
 import time
 
-from pdf_fetcher import fetch_disease_links, get_pdf_content
+from pdf_fetcher import fetch_disease_links, get_actual_pdf_url, download_and_extract_pdf
 from data_parser import parse_disease_content
 
 
 def main():
+    try:
+        with open("diseases.json", "r", encoding="utf-8") as f:
+            existing_data = {d['name']: d for d in json.load(f)}
+    except FileNotFoundError:
+        existing_data = {}
+
     links = fetch_disease_links()
     print(f"Found {len(links)} unique disease links.")
     
@@ -20,7 +26,27 @@ def main():
         
         record = {'name': disease['name'], 'category': disease.get('source_category', 'N/A'), 'status': 'Fail', 'issues': []}
         
-        content, pdf_path = get_pdf_content(disease['url'], disease['name'])
+        actual_pdf_url = get_actual_pdf_url(disease['url'])
+        
+        if not actual_pdf_url:
+            print(f"  Failed to get PDF URL for {disease['name']}")
+            record['issues'].append("No PDF Link")
+            status_records.append(record)
+            continue
+            
+        disease['actual_pdf_url'] = actual_pdf_url
+        
+        # Check cache
+        old_disease = existing_data.get(disease['name'])
+        if old_disease and old_disease.get('actual_pdf_url') == actual_pdf_url and old_disease.get('content'):
+            print(f"  Unchanged! Skipping download.")
+            old_disease['source_category'] = disease.get('source_category', old_disease.get('source_category'))
+            results.append(old_disease)
+            record['status'] = 'Success'
+            status_records.append(record)
+            continue
+        
+        content, pdf_path = download_and_extract_pdf(actual_pdf_url, disease['name'])
         
         if content:
             disease['content'] = content

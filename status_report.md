@@ -1,5 +1,5 @@
 # Scraper Status Report
-**Execution Time:** 2026-02-02 09:58
+**Execution Time:** 2026-03-30 11:39
 
 ## Summary
 - **Total Diseases Found:** 73
@@ -19,7 +19,7 @@
 | 瘧疾 | ✅ Success | 第二類 | - |
 | 茲卡病毒感染症 | ✅ Success | 第二類 | - |
 | 西尼羅熱 | ✅ Success | 第二類 | - |
-| 流行性斑疹傷寒 | ❌ Fail | 第二類 | **Download/Extract Failed** |
+| 流行性斑疹傷寒 | ❌ Fail | 第二類 | **No PDF Link** |
 | 腸道出血性大腸桿菌感染症 | ✅ Success | 第二類 | - |
 | 傷寒 | ✅ Success | 第二類 | - |
 | 副傷寒 | ✅ Success | 第二類 | - |
