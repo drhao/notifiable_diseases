@@ -347,6 +347,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                  <li><b>詳細內容 (Details)：</b> 點擊「Show More」可展開完整的臨床條件、通報定義等詳細規範。</li>
                  <li><b>原始文件 (PDF)：</b> 點擊連結可直接下載或閱覽 CDC 原始 PDF 檔案。</li>
                  <li><b>病例分類 (Classification)：</b> 自動標示並以顏色區分「可能病例 (Suspected)」、「極可能病例 (Probable)」與「確定病例 (Confirmed)」。</li>
+                 <li><b>自動追蹤更新 (Auto-Update)：</b> 系統自動監控官網發布之最新 PDF，於 30 日內有異動時以 <span class="badge-update" style="margin:0 4px; pointer-events:none;">✨ 剛更新</span> 提示。</li>
+                 <li><b>文字差異高亮 (Text Diff)：</b> 自動比對新舊版文件，刪除文字以<del>灰色刪除線</del>標示，新增文字以<b style="color: #ea580c; background: #ffedd5;">亮橘色粗體</b>高亮顯示。</li>
             </ul>
              <br>
              <p style="font-size:0.9rem; color:#888; border-top:1px solid #eee; padding-top:1rem">
