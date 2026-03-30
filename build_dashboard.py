@@ -478,14 +478,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         // Render structured case definitions
                         html += `<td><div class="cell-content">`;
                         
+                        const printCase = (caseRaw, caseDiff) => {
+                            if (!caseRaw) return '';
+                            return (isUpdated && caseDiff) ? caseDiff : caseRaw;
+                        };
+                        
                         if (d.suspected_case) {
-                            html += `<div style="margin-bottom:8px"><strong style="color:#eab308; font-size:0.85em">可能病例 Suspected</strong><br>${d.suspected_case}</div>`;
+                            html += `<div style="margin-bottom:8px"><strong style="color:#eab308; font-size:0.85em">可能病例 Suspected</strong><br>${printCase(d.suspected_case, d.suspected_case_diff)}</div>`;
                         }
                         if (d.probable_case) {
-                            html += `<div style="margin-bottom:8px"><strong style="color:#f97316; font-size:0.85em">極可能病例 Probable</strong><br>${d.probable_case}</div>`;
+                            html += `<div style="margin-bottom:8px"><strong style="color:#f97316; font-size:0.85em">極可能病例 Probable</strong><br>${printCase(d.probable_case, d.probable_case_diff)}</div>`;
                         }
                         if (d.confirmed_case) {
-                            html += `<div><strong style="color:#ef4444; font-size:0.85em">確定病例 Confirmed</strong><br>${d.confirmed_case}</div>`;
+                            html += `<div><strong style="color:#ef4444; font-size:0.85em">確定病例 Confirmed</strong><br>${printCase(d.confirmed_case, d.confirmed_case_diff)}</div>`;
                         }
                         
                         // If there is leftover text in "疾病分類" that wasn't parsed? 
@@ -497,7 +502,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         <button class="toggle-btn" onclick="toggle(this)" style="display:none">Show More</button>
                         </td>`;
                     } else {
-                        const text = d[key] || "";
+                        const text = (isUpdated && d[key + "_diff"]) ? d[key + "_diff"] : (d[key] || "");
                         html += `<td>
                             <div class="cell-content">${text}</div>
                             ${text ? '<button class="toggle-btn" onclick="toggle(this)" style="display:none">Show More</button>' : ''}

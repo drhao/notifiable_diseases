@@ -3,9 +3,29 @@ scraper.py - Main script to fetch and parse Taiwan CDC notifiable disease defini
 """
 import json
 import time
+import difflib
 
 from pdf_fetcher import fetch_disease_links, get_actual_pdf_url, download_and_extract_pdf
 from data_parser import parse_disease_content
+
+def diff_texts(old_text, new_text):
+    if not old_text:
+        return new_text
+    if not new_text:
+        return ""
+        
+    matcher = difflib.SequenceMatcher(None, old_text, new_text)
+    result = []
+    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+        if tag == 'equal':
+            result.append(new_text[j1:j2])
+        elif tag == 'insert' or tag == 'replace':
+            if tag == 'replace':
+                result.append(f'<del style="color: #9ca3af;">{old_text[i1:i2]}</del>')
+            result.append(f'<b style="color: #ea580c; background: #ffedd5;">{new_text[j1:j2]}</b>')
+        elif tag == 'delete':
+            result.append(f'<del style="color: #9ca3af;">{old_text[i1:i2]}</del>')
+    return "".join(result)
 
 
 def main():
@@ -69,6 +89,15 @@ def main():
             disease['pdf_path'] = pdf_path
             structured_fields = parse_disease_content(content)
             disease.update(structured_fields)
+            
+            # Compute diffs if updated
+            if record.get('updated_now') and old_disease:
+                for k in ["臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項", "suspected_case", "probable_case", "confirmed_case"]:
+                    val_old = old_disease.get(k, "")
+                    val_new = disease.get(k, "")
+                    if val_old != val_new:
+                        disease[k + "_diff"] = diff_texts(val_old, val_new)
+            
             results.append(disease)
             
             record['status'] = 'Success'
