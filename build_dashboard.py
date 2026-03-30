@@ -244,6 +244,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             vertical-align: middle;
         }
         
+        .badge-update {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            background: #fef08a; /* yellow-200 */
+            color: #854d0e; /* yellow-800 */
+            border: 1px solid #fde047; /* yellow-300 */
+            border-radius: 4px;
+            margin-left: 6px;
+            font-weight: 500;
+            vertical-align: middle;
+        }
+        
         .pdf-link {
             font-size: 0.75rem;
             color: #000;
@@ -296,6 +309,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             <!-- Buttons injected by JS -->
         </div>
     </header>
+
+    <div id="recentUpdatesBanner" style="display:none; padding: 0.8rem 1rem; margin-bottom: 1rem; background: #fffbeb; border: 1px solid #fde047; border-radius: 8px; font-size: 0.9rem; color: #854d0e; line-height: 1.5;"></div>
 
     <div class="table-container" id="tableContainer">
         <table id="mainTable">
@@ -365,6 +380,31 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             5: "Cat 5 第五類",
             99: "Other 其他"
         };
+        
+        // Find Recently Updated (last 30 days)
+        const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+        const now = Date.now();
+        const recentUpdates = [];
+        const recentUpdateSet = new Set();
+        
+        DATA.forEach(d => {
+            if (d.last_pdf_update) {
+                const updateTime = new Date(d.last_pdf_update).getTime();
+                if (now - updateTime <= THIRTY_DAYS_MS) {
+                    recentUpdates.push(d);
+                    recentUpdateSet.add(d.name);
+                }
+            }
+        });
+        
+        const banner = document.getElementById('recentUpdatesBanner');
+        if (recentUpdates.length > 0) {
+            banner.style.display = 'block';
+            let html = `<strong>✨ 剛更新 (最近30天內):</strong> `;
+            const links = recentUpdates.map(d => `<a href="#" onclick="searchInput.value='${d.name}'; render(searchInput.value); return false;" style="color:#a16207; font-weight:500; text-decoration:none;">${d.name}</a>`);
+            html += links.join("、");
+            banner.innerHTML = html;
+        }
 
         function render(filter = '') {
             tbody.innerHTML = '';
@@ -418,9 +458,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
                 const tr = document.createElement('tr');
                 
+                const isUpdated = recentUpdateSet.has(d.name);
+                const updatedBadgeHtml = isUpdated ? `<span class="badge-update">✨ 剛更新</span>` : '';
+                
                 // Name Col with tag inline + English Name
                 let html = `<td>
-                    <div><span style="font-weight:600">${d.name}</span>${d.category_tag ? `<span class="tag">${d.category_tag}</span>` : ''}</div>
+                    <div><span style="font-weight:600">${d.name}</span>${d.category_tag ? `<span class="tag">${d.category_tag}</span>` : ''}${updatedBadgeHtml}</div>
                     ${d.english_name ? `<div style="font-size:0.8rem; color:#555; margin-top:2px">${d.english_name}</div>` : ''}
                     <a href="${d.url}" target="_blank" class="pdf-link">View PDF</a>
                 </td>`;

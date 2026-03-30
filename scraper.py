@@ -20,11 +20,15 @@ def main():
     
     results = []
     status_records = []
+    updated_diseases = []
+    
+    from datetime import datetime
+    now_date_str = datetime.now().strftime("%Y-%m-%d")
     
     for i, disease in enumerate(links):
         print(f"[{i+1}/{len(links)}] Processing {disease['name']} ({disease.get('source_category', 'N/A')})...")
         
-        record = {'name': disease['name'], 'category': disease.get('source_category', 'N/A'), 'status': 'Fail', 'issues': []}
+        record = {'name': disease['name'], 'category': disease.get('source_category', 'N/A'), 'status': 'Fail', 'issues': [], 'updated_now': False}
         
         actual_pdf_url = get_actual_pdf_url(disease['url'])
         
@@ -41,10 +45,22 @@ def main():
         if old_disease and old_disease.get('actual_pdf_url') == actual_pdf_url and old_disease.get('content'):
             print(f"  Unchanged! Skipping download.")
             old_disease['source_category'] = disease.get('source_category', old_disease.get('source_category'))
+            # Preserve last update date if exists
+            if 'last_pdf_update' not in old_disease:
+                old_disease['last_pdf_update'] = now_date_str # Initialize for older records
             results.append(old_disease)
             record['status'] = 'Success'
             status_records.append(record)
             continue
+            
+        # If we reach here, it's either new or updated
+        if old_disease:
+            disease['last_pdf_update'] = now_date_str
+            updated_diseases.append(disease['name'])
+            record['updated_now'] = True
+            print(f"  Update detected: {disease['name']}")
+        else:
+            disease['last_pdf_update'] = now_date_str
         
         content, pdf_path = download_and_extract_pdf(actual_pdf_url, disease['name'])
         
@@ -94,24 +110,32 @@ def main():
     with open("metadata.json", "w", encoding="utf-8") as f:
         json.dump({"last_updated": now_str}, f)
 
-    with open("metadata.json", "w", encoding="utf-8") as f:
-        json.dump({"last_updated": now_str}, f)
-
     # Generate Status Report
-    generate_report(status_records, len(links), now_str)
+    generate_report(status_records, len(links), now_str, updated_diseases)
 
     print("Done.")
 
 
-def generate_report(records, total_links, timestamp):
+def generate_report(records, total_links, timestamp, updated_diseases=None):
     """Generates status_report.md"""
-    
+    if updated_diseases is None:
+        updated_diseases = []
+        
     success_count = sum(1 for r in records if r['status'] == 'Success')
     fail_count = total_links - success_count
     
     lines = []
     lines.append(f"# Scraper Status Report")
     lines.append(f"**Execution Time:** {timestamp}")
+    lines.append(f"")
+    
+    lines.append(f"## 📢 Latest PDF Updates")
+    if updated_diseases:
+        lines.append(f"The following disease definitions were updated in this run:  ")
+        for ud in updated_diseases:
+            lines.append(f"- **{ud}**")
+    else:
+        lines.append(f"*No updates detected in this run.*")
     lines.append(f"")
     
     lines.append(f"## Summary")
@@ -128,6 +152,9 @@ def generate_report(records, total_links, timestamp):
         status_icon = "✅" if r['status'] == 'Success' else "❌"
         issues_str = ", ".join(r['issues']) if r['issues'] else "-"
         
+        if r.get('updated_now'):
+            status_icon += " 💡 Updated"
+            
         # Make issues red if critical
         if r['status'] == 'Fail':
             issues_str = f"**{issues_str}**"
