@@ -6,6 +6,8 @@ import requests
 import urllib.parse
 from bs4 import BeautifulSoup
 import pdfplumber
+from datetime import datetime
+from scraper import diff_texts
 
 def get_manual_links(base_url="https://www.cdc.gov.tw/Category/DiseaseManual/bU9xd21vK0l5S3gwb3VUTldqdVNnQT09"):
     """Fetches the list of all disease manual links from the main page."""
@@ -95,6 +97,14 @@ def main():
     pdf_dir = "manual_pdfs"
     os.makedirs(pdf_dir, exist_ok=True)
     
+    try:
+        with open("disease_manuals.json", "r", encoding="utf-8") as f:
+            existing_data = {d['name']: d for d in json.load(f)}
+    except FileNotFoundError:
+        existing_data = {}
+    
+    now_date_str = datetime.now().strftime("%Y-%m-%d")
+    
     print("Fetching manual list...")
     links = get_manual_links()
     print(f"Found {len(links)} manual links.")
@@ -111,21 +121,27 @@ def main():
             print(f"  Could not find PDF link for {name}")
             continue
             
+        old_record = existing_data.get(name)
+        if old_record and old_record.get('url') == pdf_url and old_record.get('疾病概述'):
+            print(f"  Unchanged! Skipping download.")
+            if 'last_pdf_update' not in old_record:
+                old_record['last_pdf_update'] = now_date_str
+            results.append(old_record)
+            continue
+            
+        print(f"  Update detected: {name}")
+            
         pdf_path = os.path.join(pdf_dir, f"{name.replace('/', '_')}.pdf")
         
-        # Download if not exists
-        if not os.path.exists(pdf_path):
-            try:
-                r = requests.get(pdf_url, headers={"User-Agent": "Mozilla/5.0"})
-                if r.status_code == 200:
-                    with open(pdf_path, 'wb') as f:
-                        f.write(r.content)
-                else:
-                    print(f"  Failed to download PDF, status {r.status_code}")
-                    continue
-            except Exception as e:
-                print(f"  Download error: {e}")
-                continue
+        # Download
+        try:
+            r = requests.get(pdf_url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
+            r.raise_for_status()
+            with open(pdf_path, 'wb') as f:
+                f.write(r.content)
+        except Exception as e:
+            print(f"  Download error: {e}")
+            continue
         
         # Extract text
         text = ""
@@ -145,8 +161,17 @@ def main():
         record = {
             'name': name,
             'url': pdf_url, # Reference direct PDF
+            'last_pdf_update': now_date_str,
             **parsed_sections
         }
+        
+        if old_record:
+            for k in ["疾病概述", "致病原", "流行病學", "傳染窩", "傳染方式", "潛伏期", "可傳染期", "感受性及抵抗力", "病例定義", "檢體採檢送驗事項", "防疫措施"]:
+                val_old = old_record.get(k, "")
+                val_new = parsed_sections.get(k, "")
+                if val_old != val_new:
+                    record[k + "_diff"] = diff_texts(val_old, val_new)
+                    
         results.append(record)
         
         # Save individual JSON and CSV

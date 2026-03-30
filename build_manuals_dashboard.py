@@ -192,6 +192,31 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }
         .pdf-link:hover { text-decoration: underline; color: #1d4ed8; }
 
+        .pdf-link:hover { text-decoration: underline; color: #1d4ed8; }
+
+        .badge-update {
+            display: inline-block;
+            background: #fef08a;
+            color: #854d0e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 6px;
+            vertical-align: middle;
+            border: 1px solid #fde047;
+        }
+        
+        #recentUpdatesBanner {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            display: none;
+        }
+
         /* Modal */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -228,6 +253,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </div>
     </header>
 
+    <div id="recentUpdatesBanner"></div>
+    
     <div class="table-container" id="tableContainer">
         <table id="mainTable">
             <thead>
@@ -284,9 +311,35 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             "疾病概述", "致病原", "流行病學", "傳染窩", "傳染方式", 
             "潛伏期", "可傳染期", "感受性及抵抗力", "病例定義", "檢體採檢送驗事項", "防疫措施"
         ];
+        
+        const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
         function render(filter = '') {
             tbody.innerHTML = '';
+            
+            // Calculate Recent Updates
+            const now = Date.now();
+            const recentUpdates = [];
+            const recentUpdateSet = new Set();
+            
+            DATA.forEach(d => {
+                if (d.last_pdf_update) {
+                    const updateTime = new Date(d.last_pdf_update).getTime();
+                    if (now - updateTime <= THIRTY_DAYS_MS) {
+                        recentUpdates.push(d.name);
+                        recentUpdateSet.add(d.name);
+                    }
+                }
+            });
+            
+            const banner = document.getElementById('recentUpdatesBanner');
+            if (recentUpdates.length > 0) {
+                const namesHtml = recentUpdates.map(name => `<a href="javascript:searchInput.value='${name}';render('${name}')" style="color:#b45309; text-decoration:underline; margin-right:8px; font-weight:500">${name}</a>`).join('');
+                banner.innerHTML = `<span style="font-weight:600; color:#92400e;">✨ 剛更新 (最近30天內):</span> ${namesHtml}`;
+                banner.style.display = 'block';
+            } else {
+                banner.style.display = 'none';
+            }
             
             const f = filter.toLowerCase();
             let filtered = DATA.filter(d => {
@@ -303,14 +356,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
             filtered.forEach(d => {
                 const tr = document.createElement('tr');
+                const isUpdated = recentUpdateSet.has(d.name);
+                const updatedBadgeHtml = isUpdated ? `<span class="badge-update">✨ 剛更新</span>` : '';
                 
                 let html = `<td>
-                    <div style="font-weight:600; font-size:1.05rem; margin-bottom:4px;">${d.name}</div>
+                    <div style="font-weight:600; font-size:1.05rem; margin-bottom:4px;">${d.name}${updatedBadgeHtml}</div>
                     <a href="${d.url}" target="_blank" class="pdf-link">下載 PDF 手冊 📥</a>
                 </td>`;
                 
                 COLS.forEach(key => {
-                    const text = d[key] || "";
+                    const text = (isUpdated && d[key + "_diff"]) ? d[key + "_diff"] : (d[key] || "");
                     html += `<td>
                         <div class="cell-content">${text}</div>
                         ${text.length > 100 ? '<button class="toggle-btn" onclick="toggle(this)" style="display:none">Show More</button>' : ''}

@@ -1,27 +1,149 @@
-﻿name,url,疾病概述,致病原,流行病學,傳染窩,傳染方式,潛伏期,可傳染期,感受性及抵抗力,病例定義,檢體採檢送驗事項,防疫措施
-流行性腮腺炎,https://www.cdc.gov.tw/Uploads/files/201712/cb6ca637-4fa0-41e6-8173-c49a05c36b8f.pdf,"流行性腮腺炎是急性病毒性疾病，好發於腮腺，有時亦侵舌下腺或顎下腺。
+﻿name,url,last_pdf_update,疾病概述,致病原,流行病學,傳染窩,傳染方式,潛伏期,可傳染期,感受性及抵抗力,病例定義,檢體採檢送驗事項,防疫措施,疾病概述_diff,流行病學_diff,傳染方式_diff,潛伏期_diff,可傳染期_diff,感受性及抵抗力_diff,病例定義_diff,檢體採檢送驗事項_diff,防疫措施_diff
+流行性腮腺炎,https://www.cdc.gov.tw/Uploads/5797b428-bdb4-46a9-b742-fcfe8d138b4b.pdf,2026-03-30,"流行性腮腺炎是急性病毒性疾病，好發於腮腺，有時亦侵舌下腺或顎下腺。
 （一）臨床表徵：發燒、頭痛、腮腺（耳下腺）腫大、一個或多個唾液腺腫大且壓痛
 。
-（二）前趨症狀：1～2天的疲倦、食慾不振，接下來為腮腺疼痛、發燒、喉嚨痛，有
+（二）前趨症狀：1～2 天的疲倦、食慾不振，接下來為腮腺疼痛、發燒、喉嚨痛，有
 時伴隨顎下腺的症狀。
-（三）併發症：20～30％成年男性會併發睪丸炎，多為單側，若為雙側，可能導致不
-孕；5％成年女性則可能併發卵巢炎，但很少會引發不孕症。流行性腮腺炎在早
-期或晚期常侵犯中樞神經系統而造成無菌性腦膜炎（Aseptic meningitis）。併發
-腦炎（Encephalitis）之發生率為 1~2/100,000，平均致死率為 1％。腦膜腦炎和
-睪丸炎亦可在唾液腺不被侵犯下發生，其他併發症如永久神經性耳聾，通常是
-單側，則較少發生。
+（三）併發症：20～30% 成年男性會併發睪丸炎，多為單側，若為雙側，可能導致不
+孕；成年女性則可能併發乳腺炎或卵巢炎，但很少會引發不孕症。流行性腮腺
+炎在早期或晚期可能侵犯中樞神經系統而造成無菌性腦膜炎（Aseptic
+meningitis）。腦膜腦炎和睪丸炎亦可在唾液腺不被侵犯下發生。其他併發症如
+胰臟炎及永久神經性耳聾（通常是單側），則較少發生。併發腦炎
+（Encephalitis）的情形較為罕見，發生率為 1~2/100,000，平均致死率為 1%。
+曾接種疫苗者如感染，發生併發症的風險則較未曾接種疫苗者低。
 （四）懷孕最初 3 個月感染流行性腮腺炎會增加流產的機率，但目前並無肯定的證據
-顯示懷孕期間感染流行性腮腺炎會導致先天性畸型。",副黏液病毒屬（paramyxoviridae）之流行性腮腺炎病毒。,"國外資料顯示未接種流行性腮腺炎疫苗之成人中，80％皆有抗體產生，暴露的人中
-約有三分之一屬無症狀感染。大部分小於 2 歲的幼兒感染為沒有明顯症狀的感染。
-依據國內資料，全年均有通報病例，並且盛行於 9歲以前，以4～9歲為最高峰。臺
-灣流行概況詳見衛生福利部疾病管制署「傳染病統計資料查詢系統」",人。,經飛沫及直接接觸感染病人之唾液傳染。,"約16－18天(最短 12天，最長25天)。
+顯示懷孕期間感染流行性腮腺炎會導致先天性畸型。
+（五）我國自 2006 年起實施流行性腮腺炎通報個案全面採檢，因檢驗確診個案比例
+低於 1%，且國人 MMR 疫苗接種完成率高，自 2008 年 6 月 1 日起，修訂採檢
+條件為「符合臨床病例定義且與其他確定或疑似病例有流行病學上之關聯者」
+才需採檢送驗。為掌握我國流行性腮腺炎流行情形，自2026 年 3 月 1 日起調整
+通報個案均須進行檢體採檢送驗。",副黏液病毒屬（paramyxoviridae）之流行性腮腺炎病毒。,"國外資料顯示未接種流行性腮腺炎疫苗之成人中，80% 皆有抗體產生，暴露的人中
+約有三分之一屬無症狀感染。在未接種疫苗的族群中，感染年齡高峰為 4～9 歲的
+學齡兒童，大部分小於 2 歲的幼兒感染為沒有明顯症狀的感染。推行疫苗接種後，
+全球流行性腮腺炎發生率及嚴重併發症大幅降低，病例多發生於青少年與年輕成
+人。自 2000 年中期起， MMR 疫苗接種完成率高的國家，如美國、英國、紐西蘭、
+加拿大、荷蘭、西班牙、挪威等，皆曾報告流行性腮腺炎群聚感染事件。研究報
+告指出，造成疫苗失敗可能因素，包含病毒抗原變異、疫苗接種產生的免疫力隨
+時間衰退，以及長時間或頻繁的密切接觸而增加病毒暴露量等。臺灣流行概況詳見
+衛生福利部疾病管制署「傳染病統計資料查詢系統」。",人。,經飛沫及直接接觸感染病人之唾液或呼吸道分泌物傳染。,約 16－18 天 (最短 12 天，最長 25 天)。,"流行性腮腺炎自腮腺腫大發生前 48 小時至發生後 5 日傳染力最強，但發生前 7 天
+至發生後 9 天可能即具傳染力，發病後 15 天內尿液中仍可能帶病毒。無症狀感染
+亦具傳染性。","一般人皆可被感染，曾接種疫苗或曾經感染過的人仍可能被感染。流行性腮腺炎
+一般需要透過密切接觸進行傳播，特別是在曾接種疫苗之族群。",詳見衛生福利部疾病管制署「傳染病病例定義暨防疫檢體採檢送驗事項」。,"自 2026 年 3 月 1 日起，通報個案均須進行檢體採檢送驗。由於血清學檢測結果易受疫苗
+接種史及其他病原體感染影響，檢驗方式調整以病毒核酸檢驗或病毒培養為主。腮腺
+炎症狀發生前後之病毒檢驗陽性率最高，隨後迅速下降，因此建議最佳採檢時間點為
+腮腺腫大發生後之 3 天內。採檢項目為頰腔擦拭液 1 支，冷藏送疾病管制署檢驗及
+疫苗研製中心進行檢驗。頰腔擦拭液採樣前請先按摩腮腺部位 30秒，再以無菌病
+毒拭子之棉棒擦拭咽喉兩頰內側腮腺部位，插入病毒保存輸送管。詳細檢體採檢送
+驗事項請參閱「傳染病檢體採檢手冊」。","（一）預防接種
+1. 可接種麻疹、腮腺炎、德國麻疹混合疫苗（MMR 疫苗），MMR 疫苗接種可
+在 1 歲後任何時間開始實施。流行性腮腺炎易感宿主應於青春期前完成接種。
+2. 我國自 1992 年起針對滿 15 個月之幼兒接種一劑 MMR 疫苗，並於 1992-1994
+年及 2001-2004 年間，分別對國三以下學生及國小五年級以下學童陸續進行
+補種一劑 MMR 疫苗，2001 年 9 月起即針對國小新生常規接種第二劑 MMR
+疫苗。自 2006 年起將第一劑 MMR 改為滿 12-15 個月接種，而自 2009 年 4 月
+起再將第一劑 MMR 改為出生滿 12 個月接種。
+3. 現行常規防接種時程：出生滿 12 個月及滿 5 歲至國小入學前各接種一劑
+MMR 疫苗。
+4. 接種注意事項請見衛生福利部疾病管制署「疫苗簡介」網頁。
+（二）病人、接觸者及周遭環境之處理
+1. 通報病例：醫師發現符合通報定義之病患時，應於 1 週內通報。通報定義詳
+見衛生福利部疾病管制署「傳染病病例定義暨防疫檢體採檢送驗事項」。
+2. 檢驗：所有「流行性腮腺炎通報病例」均須進行檢體採檢及送驗。
+3. 隔離：自腮腺開始腫大起隔離 5 日，隔離時應採行呼吸道防治措施。
+4. 消毒：消毒任何曾受鼻、喉分泌物污染之物品。
+5. 檢疫：易感染宿主於暴露後 12～25 天宜避免上學或上班。
+6. 疫情調查：所有「流行性腮腺炎通報病例」均須進行疫情調查，了解是否出
+現聚集事件。
+7. 接觸者處理：易感宿主(未曾接種過疫苗或不清楚疫苗史或沒有腮腺炎 IgG
+抗體者)於暴露後注射免疫球蛋白並不能預防流行性腮腺炎之發生；易感宿
+主應接種疫苗，以降低下次被感染之機會。
+（三）大流行之措施
+易感染宿主應接受預防注射，尤其是可能有暴露感染之虞者，不需以血清學
+試驗檢測流行性腮腺炎抗體。
+流行性腮腺炎之傳染途徑、診斷、檢驗、防治及處置流程
+致病因子在 飛 接 致病因子 流行病學特徵
+唾液或呼吸 沫 觸
+感 感 流行性腮腺 1. 急性病毒性疾病
+道 分 泌 物
+染 染 炎病毒 2. 好發於春、冬二季
+中，以其為
+3. 以 4～9 歲孩童為高峰，成
+媒介感染
+人也會感染
+4. 發生前 6～7 日至發生後 9
+日為可傳染期
+潛伏期：約 12～25 日
+(1) 前趨症狀：疲 病例定義 傳染病防治法
+倦、食慾不
+第 39 條規定
+振、腮腺疼痛、 症 一種急性發作，單或
+1 週內向主管機關報
+發燒、喉嚨痛、 雙側腮腺(或其他唾
+告（第三類傳染病）
+顎下腺症狀 液腺)疼痛，自限性
+(2) 臨床表徵： 腫脹持續 2 天以 傳染病防治法
+狀
+發燒、頭痛、腮 上，且無其他明顯原 第 43、44、45 條規定
+腺腫大、唾液腺 因， 或經實驗室診
+腫大且壓痛 斷 ， 高 度 懷 疑 由 採取適當防治措施，
+必要時得隔離治療
+mumps virus 引起。
+(1)無菌性腦膜炎 (2)腦炎
+併發症 (3)睪丸炎 (4)卵巢炎
+(5)乳腺炎 (6) 神經性耳聾
+(7) 胰臟炎
+預防 流行性腮腺炎疫苗或 MMR 疫苗
+(1) 所有通報病例皆需進行檢體採檢送驗。
+檢查 (2) 採檢項目為頰腔擦拭液 1 支，冷藏送疾病管制署檢驗中心進行檢
+驗。","流行性腮腺炎是急性病毒性疾病，好發於腮腺，有時亦侵舌下腺或顎下腺。
+（一）臨床表徵：發燒、頭痛、腮腺（耳下腺）腫大、一個或多個唾液腺腫大且壓痛
+。
+（二）前趨症狀：1～2<b style=""color: #ea580c; background: #ffedd5;""> </b>天的疲倦、食慾不振，接下來為腮腺疼痛、發燒、喉嚨痛，有
+時伴隨顎下腺的症狀。
+（三）併發症：20～30<del style=""color: #9ca3af;"">％</del><b style=""color: #ea580c; background: #ffedd5;"">% </b>成年男性會併發睪丸炎，多為單側，若為雙側，可能導致不
+孕；<del style=""color: #9ca3af;"">5％</del>成年女性則可能併發<b style=""color: #ea580c; background: #ffedd5;"">乳腺炎或</b>卵巢炎，但很少會引發不孕症。流行性腮腺<b style=""color: #ea580c; background: #ffedd5;"">
+</b>炎在早<del style=""color: #9ca3af;"">
+</del>期或晚期<del style=""color: #9ca3af;"">常</del><b style=""color: #ea580c; background: #ffedd5;"">可能</b>侵犯中樞神經系統而造成無菌性腦膜炎（Aseptic<del style=""color: #9ca3af;""> </del><b style=""color: #ea580c; background: #ffedd5;"">
+</b>meningitis）。<b style=""color: #ea580c; background: #ffedd5;"">腦膜腦炎和睪丸炎亦可在唾液腺不被侵犯下發生。其他</b>併發<del style=""color: #9ca3af;"">
+</del><b style=""color: #ea580c; background: #ffedd5;"">症如
+胰臟炎及永久神經性耳聾（通常是單側），則較少發生。併發</b>腦炎<b style=""color: #ea580c; background: #ffedd5;"">
+</b>（Encephalitis）<del style=""color: #9ca3af;"">之</del><b style=""color: #ea580c; background: #ffedd5;"">的情形較為罕見，</b>發生率為 1~2/100,000，平均致死率為 1<del style=""color: #9ca3af;"">％。腦膜腦炎和
+睪丸炎亦可在唾液腺不被侵犯下</del><b style=""color: #ea580c; background: #ffedd5;"">%。
+曾接種疫苗者如感染，</b>發生<del style=""color: #9ca3af;"">，其他</del>併發症<del style=""color: #9ca3af;"">如永久神經性耳聾，通常是
+單側，</del><b style=""color: #ea580c; background: #ffedd5;"">的風險</b>則較<del style=""color: #9ca3af;"">少發生</del><b style=""color: #ea580c; background: #ffedd5;"">未曾接種疫苗者低</b>。
+（四）懷孕最初 3 個月感染流行性腮腺炎會增加流產的機率，但目前並無肯定的證據
+顯示懷孕期間感染流行性腮腺炎會導致先天性畸型。<b style=""color: #ea580c; background: #ffedd5;"">
+（五）我國自 2006 年起實施流行性腮腺炎通報個案全面採檢，因檢驗確診個案比例
+低於 1%，且國人 MMR 疫苗接種完成率高，自 2008 年 6 月 1 日起，修訂採檢
+條件為「符合臨床病例定義且與其他確定或疑似病例有流行病學上之關聯者」
+才需採檢送驗。為掌握我國流行性腮腺炎流行情形，自2026 年 3 月 1 日起調整
+通報個案均須進行檢體採檢送驗。</b>","國外資料顯示未接種流行性腮腺炎疫苗之成人中，80<del style=""color: #9ca3af;"">％</del><b style=""color: #ea580c; background: #ffedd5;"">% </b>皆有抗體產生，暴露的人中
+約有三分之一屬無症狀感染。<b style=""color: #ea580c; background: #ffedd5;"">在未接種疫苗的族群中，感染年齡高峰為 4～9 歲的
+學齡兒童，</b>大部分小於 2 歲的幼兒感染為沒有明顯症狀的感染。<del style=""color: #9ca3af;"">
+依據</del><b style=""color: #ea580c; background: #ffedd5;"">推行疫苗接種後，
+全球流行性腮腺炎發生率及嚴重併發症大幅降低，病例多發生於青少年與年輕成
+人。自 2000 年中期起， MMR 疫苗接種完成率高的</b>國<del style=""color: #9ca3af;"">內資料，全年均有通</del><b style=""color: #ea580c; background: #ffedd5;"">家，如美國、英國、紐西蘭、
+加拿大、荷蘭、西班牙、挪威等，皆曾</b>報<del style=""color: #9ca3af;"">病例，並且盛行於 9歲</del><b style=""color: #ea580c; background: #ffedd5;"">告流行性腮腺炎群聚感染事件。研究報
+告指出，造成疫苗失敗可能因素，包含病毒抗原變異、疫苗接種產生的免疫力隨
+時間衰退，</b>以<del style=""color: #9ca3af;"">前，以4～9歲為最高峰</del><b style=""color: #ea580c; background: #ffedd5;"">及長時間或頻繁的密切接觸而增加病毒暴露量等</b>。臺<del style=""color: #9ca3af;"">
+</del>灣流行概況詳見<b style=""color: #ea580c; background: #ffedd5;"">
+</b>衛生福利部疾病管制署「傳染病統計資料查詢系統」<b style=""color: #ea580c; background: #ffedd5;"">。</b>","經飛沫及直接接觸感染病人之唾液<b style=""color: #ea580c; background: #ffedd5;"">或呼吸道分泌物</b>傳染。","約<b style=""color: #ea580c; background: #ffedd5;""> </b>16－18<b style=""color: #ea580c; background: #ffedd5;""> </b>天<b style=""color: #ea580c; background: #ffedd5;""> </b>(最短 12<b style=""color: #ea580c; background: #ffedd5;""> </b>天，最長<b style=""color: #ea580c; background: #ffedd5;""> </b>25<b style=""color: #ea580c; background: #ffedd5;""> </b>天)。<del style=""color: #9ca3af;"">
 流行性腮腺炎(Mumps)－1
-2018年1月修訂","流行性腮腺炎發生前 7 天至發生後 9 天即具傳染力，發病前 48 小時至發病後 5 日
-感染力最強，病發後 15天內尿液中仍可能帶病毒。無症狀感染亦具傳染性。",一般人皆可被感染，感染後通常可終生免疫。,詳見「台灣法定傳染病病例定義」。,"自2008年6 月1 日起，「符合臨床病例定義且與其他確定或疑似病例有流行病學上
-之關聯者」，才需進行檢體採檢送驗。採檢項目為血清至少2 mL、頰腔擦拭液1支
-，冷藏送疾病管制署檢驗中心進行檢驗。頰腔擦拭液採樣前請先按摩腮腺部位 30
-秒，再以無菌病毒拭子之棉棒擦拭咽喉兩頰內側腮腺部位，插入病毒保存輸送管。
-詳細檢體採檢送驗事項請參閱「傳染病檢體採檢手冊」。
+2018年1月修訂</del>","流行性腮腺炎<b style=""color: #ea580c; background: #ffedd5;"">自腮腺腫大</b>發生<del style=""color: #9ca3af;"">前 7 天至發生後 9 天即具傳染力，發病</del>前 48 小時至發<del style=""color: #9ca3af;"">病</del><b style=""color: #ea580c; background: #ffedd5;"">生</b>後 5 日<del style=""color: #9ca3af;"">
+感</del><b style=""color: #ea580c; background: #ffedd5;"">傳</b>染力最強，<b style=""color: #ea580c; background: #ffedd5;"">但發生前 7 天
+至發生後 9 天可能即具傳染力，發</b>病<del style=""color: #9ca3af;"">發</del>後 15<b style=""color: #ea580c; background: #ffedd5;""> </b>天內尿液中仍可能帶病毒。無症狀感染<b style=""color: #ea580c; background: #ffedd5;"">
+</b>亦具傳染性。","一般人皆可被感染，<b style=""color: #ea580c; background: #ffedd5;"">曾接種疫苗或曾經</b>感染<del style=""color: #9ca3af;"">後通常</del><b style=""color: #ea580c; background: #ffedd5;"">過的人仍</b>可<del style=""color: #9ca3af;"">終生免</del><b style=""color: #ea580c; background: #ffedd5;"">能被感染。流行性腮腺炎
+一般需要透過密切接觸進行傳播，特別是在曾接種</b>疫<b style=""color: #ea580c; background: #ffedd5;"">苗之族群</b>。","詳見<b style=""color: #ea580c; background: #ffedd5;"">衛生福利部疾病管制署</b>「<del style=""color: #9ca3af;"">台灣法定</del>傳染病病例定義<b style=""color: #ea580c; background: #ffedd5;"">暨防疫檢體採檢送驗事項</b>」。","自<b style=""color: #ea580c; background: #ffedd5;""> </b>20<del style=""color: #9ca3af;"">08</del><b style=""color: #ea580c; background: #ffedd5;"">26 </b>年<del style=""color: #9ca3af;"">6</del><b style=""color: #ea580c; background: #ffedd5;""> 3</b> 月<b style=""color: #ea580c; background: #ffedd5;""> </b>1 日起，<del style=""color: #9ca3af;"">「符合臨床病例定義且與</del><b style=""color: #ea580c; background: #ffedd5;"">通報個案均須進行檢體採檢送驗。由於血清學檢測結果易受疫苗
+接種史及</b>其他<del style=""color: #9ca3af;"">確定</del><b style=""color: #ea580c; background: #ffedd5;"">病原體感染影響，檢驗方式調整以病毒核酸檢驗</b>或<del style=""color: #9ca3af;"">疑似病例有流行病學上
+</del><b style=""color: #ea580c; background: #ffedd5;"">病毒培養為主。腮腺
+炎症狀發生前後</b>之<del style=""color: #9ca3af;"">關聯者」，才需進行檢體採檢送驗</del><b style=""color: #ea580c; background: #ffedd5;"">病毒檢驗陽性率最高，隨後迅速下降，因此建議最佳採檢時間點為
+腮腺腫大發生後之 3 天內</b>。採檢項目為<del style=""color: #9ca3af;"">血清至少2 mL、</del>頰腔擦拭液<b style=""color: #ea580c; background: #ffedd5;""> </b>1<b style=""color: #ea580c; background: #ffedd5;""> </b>支<del style=""color: #9ca3af;"">
+</del>，冷藏送疾病管制署檢驗<b style=""color: #ea580c; background: #ffedd5;"">及
+疫苗研製</b>中心進行檢驗。頰腔擦拭液採樣前請先按摩腮腺部位 30<del style=""color: #9ca3af;"">
+</del>秒，再以無菌病<b style=""color: #ea580c; background: #ffedd5;"">
+</b>毒拭子之棉棒擦拭咽喉兩頰內側腮腺部位，插入病毒保存輸送管。<del style=""color: #9ca3af;"">
+</del>詳細檢體採檢送<b style=""color: #ea580c; background: #ffedd5;"">
+</b>驗事項請參閱「傳染病檢體採檢手冊」。<del style=""color: #9ca3af;"">
 （一）檢驗：檢查血液中 IgM、IgG 抗體是否存在或增加及針對頰腔擦拭液進行病毒
 培養或病毒核酸檢驗。
 （二）抗體檢驗結果的意義
@@ -29,79 +151,92 @@
 配合是否接種疫苗及接種時間來判定。
 ２、IgM 抗體陰性而 IgG抗體陽性表示為曾感染或曾接種疫苗。
 ３、若 IgM 與 IgG抗體皆呈陰性，不確定為未感染或已感染但尚未出現抗體，距
-發病日10～14天再採第二次血液以確定。","（一）預防接種
-１、可接種麻疹、腮腺炎、德國麻疹混合疫苗（MMR 疫苗），MMR疫苗接種可
-在1歲後任何時間開始實施。流行性腮腺炎易感宿主應於青春期前完成接種
+發病日10～14天再採第二次血液以確定。</del>","（一）預防接種
+<del style=""color: #9ca3af;"">１、</del><b style=""color: #ea580c; background: #ffedd5;"">1. </b>可接種麻疹、腮腺炎、德國麻疹混合疫苗（MMR 疫苗），MMR<b style=""color: #ea580c; background: #ffedd5;""> </b>疫苗接種可
+在<del style=""color: #9ca3af;"">1</del><b style=""color: #ea580c; background: #ffedd5;""> 1 </b>歲後任何時間開始實施。流行性腮腺炎易感宿主應於青春期前完成接種<del style=""color: #9ca3af;"">
 。
-２、我國自1992 年起針對滿15個月之幼兒接種一劑 MMR 疫苗，並於 1992-1994
+２、</del><b style=""color: #ea580c; background: #ffedd5;"">。
+2. </b>我國自<b style=""color: #ea580c; background: #ffedd5;""> </b>1992 年起針對滿<b style=""color: #ea580c; background: #ffedd5;""> </b>15<b style=""color: #ea580c; background: #ffedd5;""> </b>個月之幼兒接種一劑 MMR 疫苗，並於 1992-1994
 年及 2001-2004 年間，分別對國三以下學生及國小五年級以下學童陸續進行
 補種一劑 MMR 疫苗，2001 年 9 月起即針對國小新生常規接種第二劑 MMR
-流行性腮腺炎(Mumps)－2
+<del style=""color: #9ca3af;"">流行性腮腺炎(Mumps)－2
 2018年1月修訂
-疫苗。自 2006 年起將第一劑 MMR 改為滿 12-15 個月接種，而自 2009 年 4
-月起再將第一劑 MMR 改為出生滿 12個月接種。
-３、現行常規防接種時程：出生滿12個月及滿5歲至國小入學前各接種一劑MMR
-疫苗。
-４、接種注意事項請見衛生福利部疾病管制署「國內常規疫苗簡介」網頁。
+</del>疫苗。自 2006 年起將第一劑 MMR 改為滿 12-15 個月接種，而自 2009 年 4<del style=""color: #9ca3af;"">
+</del><b style=""color: #ea580c; background: #ffedd5;""> </b>月<b style=""color: #ea580c; background: #ffedd5;"">
+</b>起再將第一劑 MMR 改為出生滿 12<b style=""color: #ea580c; background: #ffedd5;""> </b>個月接種。
+<del style=""color: #9ca3af;"">３、</del><b style=""color: #ea580c; background: #ffedd5;"">3. </b>現行常規防接種時程：出生滿<del style=""color: #9ca3af;"">12</del><b style=""color: #ea580c; background: #ffedd5;""> 12 </b>個月及滿<b style=""color: #ea580c; background: #ffedd5;""> </b>5<b style=""color: #ea580c; background: #ffedd5;""> </b>歲至國小入學前各接種一劑<b style=""color: #ea580c; background: #ffedd5;"">
+</b>MMR<del style=""color: #9ca3af;"">
+</del><b style=""color: #ea580c; background: #ffedd5;""> </b>疫苗。
+<del style=""color: #9ca3af;"">４、</del><b style=""color: #ea580c; background: #ffedd5;"">4. </b>接種注意事項請見衛生福利部疾病管制署「<del style=""color: #9ca3af;"">國內常規</del>疫苗簡介」網頁。
 （二）病人、接觸者及周遭環境之處理
-１、通報病例：醫師發現符合臨床病例定義之病患時，應於１週內通報。
-通報定義：符合前述病例定義之「臨床病例」或「實驗室診斷」，即可逕行
+<del style=""color: #9ca3af;"">１、</del><b style=""color: #ea580c; background: #ffedd5;"">1. </b>通報病例：醫師發現符合<del style=""color: #9ca3af;"">臨床病例</del><b style=""color: #ea580c; background: #ffedd5;"">通報</b>定義之病患時，應於<del style=""color: #9ca3af;"">１</del><b style=""color: #ea580c; background: #ffedd5;""> 1 </b>週內通報。<del style=""color: #9ca3af;"">
+</del>通報定義<del style=""color: #9ca3af;"">：符合前述</del><b style=""color: #ea580c; background: #ffedd5;"">詳
+見衛生福利部疾病管制署「傳染病</b>病例定義<del style=""color: #9ca3af;"">之</del><b style=""color: #ea580c; background: #ffedd5;"">暨防疫檢體採檢送驗事項」。
+2. 檢驗：所有</b>「<del style=""color: #9ca3af;"">臨床</del><b style=""color: #ea580c; background: #ffedd5;"">流行性腮腺炎通報</b>病例」<del style=""color: #9ca3af;"">或「實</del><b style=""color: #ea580c; background: #ffedd5;"">均須進行檢體採檢及送</b>驗<del style=""color: #9ca3af;"">室診斷」，即可逕行
 通報。
-２、隔離：自腮腺開始腫大起隔離5日，隔離時應採行呼吸道防治措施。
-３、消毒：消毒任何曾受鼻、喉分泌物污染之物品。
-４、檢疫：易感染宿主於暴露後 12～25天宜避免上學或上班。
-５、疫情調查：所有「流行性腮腺炎通報病例」均須進行疫情調查，了解是否出
-現聚集事件，若「符合臨床病例定義且與其他確定或疑似病例有流行病學上
+２、</del><b style=""color: #ea580c; background: #ffedd5;"">。
+3. </b>隔離：自腮腺開始腫大起隔離<b style=""color: #ea580c; background: #ffedd5;""> </b>5<b style=""color: #ea580c; background: #ffedd5;""> </b>日，隔離時應採行呼吸道防治措施。
+<del style=""color: #9ca3af;"">３、</del><b style=""color: #ea580c; background: #ffedd5;"">4. </b>消毒：消毒任何曾受鼻、喉分泌物污染之物品。
+<del style=""color: #9ca3af;"">４、</del><b style=""color: #ea580c; background: #ffedd5;"">5. </b>檢疫：易感染宿主於暴露後 12～25<b style=""color: #ea580c; background: #ffedd5;""> </b>天宜避免上學或上班。
+<del style=""color: #9ca3af;"">５、</del><b style=""color: #ea580c; background: #ffedd5;"">6. </b>疫情調查：所有「流行性腮腺炎通報病例」均須進行疫情調查，了解是否出
+現聚集事件<del style=""color: #9ca3af;"">，若「符合臨床病例定義且與其他確定或疑似病例有流行病學上
 之關聯者」之採檢條件，則請完成檢體採集等相關工作，以釐清疫情發展之
 規模。
-６、接觸者處理：易感宿主(未曾接種過疫苗或不清楚疫苗史或沒有腮腺炎 IgG
+６、</del><b style=""color: #ea580c; background: #ffedd5;"">。
+7. </b>接觸者處理：易感宿主(未曾接種過疫苗或不清楚疫苗史或沒有腮腺炎 IgG
 抗體者)於暴露後注射免疫球蛋白並不能預防流行性腮腺炎之發生；易感宿
 主應接種疫苗，以降低下次被感染之機會。
-７、治療方法：無。
-（三）大流行之措施
-易感染宿主應接受預防注射，尤其是可能有暴露感染之虞者，不需以血清學試
-驗檢測流行性腮腺炎抗體。
+<del style=""color: #9ca3af;"">７、治療方法：無。
+</del>（三）大流行之措施
+易感染宿主應接受預防注射，尤其是可能有暴露感染之虞者，不需以血清學<b style=""color: #ea580c; background: #ffedd5;"">
+</b>試<del style=""color: #9ca3af;"">
+</del>驗檢測流行性腮腺炎抗體。<del style=""color: #9ca3af;"">
 流行性腮腺炎(Mumps)－3
-2018年1月修訂
+2018年1月修訂</del>
 流行性腮腺炎之傳染途徑、診斷、檢驗、防治及處置流程
 致病因子在 飛 接 致病因子 流行病學特徵
-唾液中，以 沫 觸
+唾液<del style=""color: #9ca3af;"">中，以</del><b style=""color: #ea580c; background: #ffedd5;"">或呼吸</b> 沫 觸
 感 感 流行性腮腺 1. 急性病毒性疾病
-其為媒介感
+<del style=""color: #9ca3af;"">其為媒介感</del><b style=""color: #ea580c; background: #ffedd5;"">道 分 泌 物</b>
 染 染 炎病毒 2. 好發於春、冬二季
-染
-3. 以4～9歲孩童為高峰，成
-人也會感染
-4. 發生前6～7日至發生後9
+<del style=""color: #9ca3af;"">染</del><b style=""color: #ea580c; background: #ffedd5;"">中，以其為</b>
+3. 以<b style=""color: #ea580c; background: #ffedd5;""> </b>4～9<b style=""color: #ea580c; background: #ffedd5;""> </b>歲孩童為高峰，成
+<b style=""color: #ea580c; background: #ffedd5;"">媒介感染
+</b>人也會感染
+4. 發生前<b style=""color: #ea580c; background: #ffedd5;""> </b>6～7<b style=""color: #ea580c; background: #ffedd5;""> </b>日至發生後<b style=""color: #ea580c; background: #ffedd5;""> </b>9
 日為可傳染期
-潛伏期：約12～25日
-(1)前趨症狀： 病例定義 傳染病防治法
-疲倦、食慾不 第39條規定
-一種急性發作，單或
-振、腮腺疼痛、 症 1週內向主管機關報
-雙側腮腺(或其他唾
-發燒、喉嚨痛、 告（第三類傳染病）
-顎下腺症狀
-液腺)疼痛，自限性
-(2)臨床表徵： 腫脹持續 2 天以 傳染病防治法
-上，且無其他明顯原 第43、44、45條規定
-發燒、頭痛、腮
+潛伏期：約<b style=""color: #ea580c; background: #ffedd5;""> </b>12～25<b style=""color: #ea580c; background: #ffedd5;""> </b>日
+(1)<b style=""color: #ea580c; background: #ffedd5;""> </b>前趨症狀：<b style=""color: #ea580c; background: #ffedd5;"">疲</b> 病例定義 傳染病防治法
+<del style=""color: #9ca3af;"">疲</del>倦、食慾不<del style=""color: #9ca3af;""> </del><b style=""color: #ea580c; background: #ffedd5;"">
+</b>第<b style=""color: #ea580c; background: #ffedd5;""> </b>39<b style=""color: #ea580c; background: #ffedd5;""> </b>條規定
+<b style=""color: #ea580c; background: #ffedd5;"">振、腮腺疼痛、 症 </b>一種急性發作，單或
+<del style=""color: #9ca3af;"">振、腮腺疼痛、 症 1</del><b style=""color: #ea580c; background: #ffedd5;"">1 </b>週內向主管機關報
+<b style=""color: #ea580c; background: #ffedd5;"">發燒、喉嚨痛、 </b>雙側腮腺(或其他唾
+<del style=""color: #9ca3af;"">發燒、喉嚨痛、 </del>告（第三類傳染病）
+顎下腺症狀<del style=""color: #9ca3af;"">
+</del><b style=""color: #ea580c; background: #ffedd5;""> </b>液腺)疼痛，自限性
+(2)<b style=""color: #ea580c; background: #ffedd5;""> </b>臨床表徵： 腫脹持續 2 天以 傳染病防治法
+<b style=""color: #ea580c; background: #ffedd5;"">狀
+發燒、頭痛、腮 </b>上，且無其他明顯原 第<b style=""color: #ea580c; background: #ffedd5;""> </b>43、44、45<b style=""color: #ea580c; background: #ffedd5;""> </b>條規定
+<del style=""color: #9ca3af;"">發燒、頭痛、腮
 狀
-因，或經實驗室診
-腺腫大、唾液腺
-採取適當防治措施，
-斷，高度懷疑由
+</del><b style=""color: #ea580c; background: #ffedd5;"">腺腫大、唾液腺 </b>因，<b style=""color: #ea580c; background: #ffedd5;""> </b>或經實驗室診
+<del style=""color: #9ca3af;"">腺</del>腫大<del style=""color: #9ca3af;"">、唾液腺
+</del><b style=""color: #ea580c; background: #ffedd5;"">且壓痛 斷 ， 高 度 懷 疑 由 </b>採取適當防治措施，
+<del style=""color: #9ca3af;"">斷，高度懷疑由
 腫大且壓痛
-必要時得隔離治療
-mumps virus引起。
+</del>必要時得隔離治療
+mumps virus<b style=""color: #ea580c; background: #ffedd5;""> </b>引起。
 (1)無菌性腦膜炎 (2)腦炎
 併發症 (3)睪丸炎 (4)卵巢炎
-(5)神經性耳聾
-預防 流行性腮腺炎疫苗或MMR疫苗
-(1)「符合臨床病例定義且與其他確定或疑似病例有流行病學上之關聯
-者」，才需進行檢體採檢送驗。
-檢查
-(2) 採檢項目為血清至少2 mL、頰腔擦拭1支，冷藏送疾病管制署檢驗
-中心進行檢驗。
+(5)<b style=""color: #ea580c; background: #ffedd5;"">乳腺炎 (6) </b>神經性耳聾
+<b style=""color: #ea580c; background: #ffedd5;"">(7) 胰臟炎
+</b>預防 流行性腮腺炎疫苗或<b style=""color: #ea580c; background: #ffedd5;""> </b>MMR<b style=""color: #ea580c; background: #ffedd5;""> </b>疫苗
+(1)<del style=""color: #9ca3af;"">「符合臨床</del><b style=""color: #ea580c; background: #ffedd5;""> 所有通報</b>病例<del style=""color: #9ca3af;"">定義且與其他確定或疑似病例有流行病學上之關聯
+者」，才</del><b style=""color: #ea580c; background: #ffedd5;"">皆</b>需進行檢體採檢送驗。
+檢查<del style=""color: #9ca3af;"">
+</del><b style=""color: #ea580c; background: #ffedd5;""> </b>(2) 採檢項目為<del style=""color: #9ca3af;"">血清至少2 mL、</del>頰腔擦拭<del style=""color: #9ca3af;"">1</del><b style=""color: #ea580c; background: #ffedd5;"">液 1 </b>支，冷藏送疾病管制署檢驗<del style=""color: #9ca3af;"">
+</del>中心進行檢<b style=""color: #ea580c; background: #ffedd5;"">
+</b>驗。<del style=""color: #9ca3af;"">
 流行性腮腺炎(Mumps)－4
-2018年1月修訂"
+2018年1月修訂</del>"
