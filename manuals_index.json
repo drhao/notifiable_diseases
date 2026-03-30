@@ -139,7 +139,7 @@
   },
   {
     "name": "流行性腦脊髓膜炎",
-    "pdf_url": "https://www.cdc.gov.tw/Uploads/8dfef517-a93d-4a26-bdf0-cbfeb7b595b2.pdf",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/80d4dcb6-639e-4152-b863-5e066d474009.pdf",
     "json_path": "manual_data/流行性腦脊髓膜炎.json",
     "csv_path": "manual_data/流行性腦脊髓膜炎.csv"
   },
@@ -157,7 +157,7 @@
   },
   {
     "name": "日本腦炎",
-    "pdf_url": "https://www.cdc.gov.tw/Uploads/bd236e3d-cbdf-4e56-a637-085d0df73701.pdf",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/538206bb-d636-4136-9c1b-67503fc3ef22.pdf",
     "json_path": "manual_data/日本腦炎.json",
     "csv_path": "manual_data/日本腦炎.csv"
   },
@@ -199,7 +199,7 @@
   },
   {
     "name": "流行性腮腺炎",
-    "pdf_url": "https://www.cdc.gov.tw/Uploads/files/201712/cb6ca637-4fa0-41e6-8173-c49a05c36b8f.pdf",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/5797b428-bdb4-46a9-b742-fcfe8d138b4b.pdf",
     "json_path": "manual_data/流行性腮腺炎.json",
     "csv_path": "manual_data/流行性腮腺炎.csv"
   },
@@ -259,7 +259,7 @@
   },
   {
     "name": "漢生病",
-    "pdf_url": "https://www.cdc.gov.tw/Uploads/76ca467c-2951-456f-9980-9b2c86d12ea6.pdf",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/f2f4253a-8794-4ba5-ba07-b2aff03204fe.pdf",
     "json_path": "manual_data/漢生病.json",
     "csv_path": "manual_data/漢生病.csv"
   },
@@ -331,7 +331,7 @@
   },
   {
     "name": "流感併發重症",
-    "pdf_url": "https://www.cdc.gov.tw/Uploads/7dba8608-40c0-4a45-b9b3-abf00127f598.pdf",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/8945f860-0aa5-4352-a08d-e25dc0f27dfe.pdf",
     "json_path": "manual_data/流感併發重症.json",
     "csv_path": "manual_data/流感併發重症.csv"
   },

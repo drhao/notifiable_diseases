@@ -1,5 +1,5 @@
 # Scraper Status Report
-**Execution Time:** 2026-03-30 11:39
+**Execution Time:** 2026-03-30 11:40
 
 ## Summary
 - **Total Diseases Found:** 73
@@ -41,7 +41,7 @@
 | 急性病毒性C型肝炎 | ✅ Success | 第三類 | - |
 | 腸病毒感染併發重症 | ✅ Success | 第三類 | - |
 | 急性病毒性D型肝炎 | ✅ Success | 第三類 | - |
-| 結核病 | ⚠️ Success | 第三類 | Missing: Missing 流行病學條件 |
+| 結核病 | ✅ Success | 第三類 | - |
 | 先天性德國麻疹症候群 | ✅ Success | 第三類 | - |
 | 急性病毒性E型肝炎 | ✅ Success | 第三類 | - |
 | 流行性腮腺炎 | ✅ Success | 第三類 | - |
@@ -56,7 +56,7 @@
 | 新生兒破傷風 | ✅ Success | 第三類 | - |
 | 漢生病 | ✅ Success | 第三類 | - |
 | 急性病毒性肝炎未定型 | ✅ Success | 第三類 | - |
-| 新冠併發重症 | ⚠️ Success | 第四類 | Missing: Missing 流行病學條件 |
+| 新冠併發重症 | ✅ Success | 第四類 | - |
 | 李斯特菌症 | ✅ Success | 第四類 | - |
 | 水痘併發症 | ✅ Success | 第四類 | - |
 | 恙蟲病 | ✅ Success | 第四類 | - |
@@ -81,4 +81,4 @@
 | 拉薩熱 | ✅ Success | 第五類 | - |
 | 馬堡病毒出血熱 | ✅ Success | 第五類 | - |
 | 伊波拉病毒感染 | ✅ Success | 第五類 | - |
-| 球黴菌症 | ⚠️ Success | 其他 | Missing: Missing 檢驗條件, Missing 通報定義, Missing 疾病分類 |
+| 球黴菌症 | ✅ Success | 其他 | - |
