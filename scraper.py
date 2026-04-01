@@ -36,7 +36,9 @@ def main():
         existing_data = {}
 
     links = fetch_disease_links()
-    print(f"Found {len(links)} unique disease links.")
+    # Filter out confidential AIDS case report – it should not be parsed into case definitions
+    links = [d for d in links if "後天免疫缺乏症候群（AIDS）個案報告單" not in d.get('name', '')]
+    print(f"Filtered out confidential entries, remaining {len(links)} links.")
     
     results = []
     status_records = []
