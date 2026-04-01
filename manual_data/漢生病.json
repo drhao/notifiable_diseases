@@ -1,8 +1,12 @@
 {
   "name": "漢生病",
   "url": "https://www.cdc.gov.tw/Uploads/f2f4253a-8794-4ba5-ba07-b2aff03204fe.pdf",
+<<<<<<< HEAD
   "pdf_hash": "6e0a4ad71a39a8bf59a2cfc47fb997c7943cf15b191989aa480c802e9381a5e9",
   "last_pdf_update": "2026-04-01",
+=======
+  "last_pdf_update": "2026-03-31",
+>>>>>>> ec9f7ffd0d7e134c3907696eaa3bdf6f8cbeafac
   "疾病概述": "",
   "致病原": "",
   "流行病學": "",

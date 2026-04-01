@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 ﻿name,url,pdf_hash,last_pdf_update,疾病概述,致病原,流行病學,傳染窩,傳染方式,潛伏期,可傳染期,感受性及抵抗力,病例定義,檢體採檢送驗事項,防疫措施
 結核病,https://www.cdc.gov.tw/Uploads/cb948fa4-bcbc-42ac-b0e7-0d43eb72ae4a.pdf,69ffbc5a645c0d7830263c98099a61c545bd085e0bbaddd877fe4f16afac9b30,2026-04-01,,,,,,,,,,,
+=======
+﻿name,url,last_pdf_update,疾病概述,致病原,流行病學,傳染窩,傳染方式,潛伏期,可傳染期,感受性及抵抗力,病例定義,檢體採檢送驗事項,防疫措施
+結核病,https://www.cdc.gov.tw/Uploads/cb948fa4-bcbc-42ac-b0e7-0d43eb72ae4a.pdf,2026-03-31,,,,,,,,,,,
+>>>>>>> ec9f7ffd0d7e134c3907696eaa3bdf6f8cbeafac

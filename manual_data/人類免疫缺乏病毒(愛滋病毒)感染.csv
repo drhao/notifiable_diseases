@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 ﻿name,url,pdf_hash,last_pdf_update,疾病概述,致病原,流行病學,傳染窩,傳染方式,潛伏期,可傳染期,感受性及抵抗力,病例定義,檢體採檢送驗事項,防疫措施
 人類免疫缺乏病毒(愛滋病毒)感染,https://www.cdc.gov.tw/Uploads/2d3c3168-774e-47d5-a6d9-17fa3a65d0cc.pdf,a1b3fcd974ba1c66f6599a39d2b3116c9e2a6b74a57fa834fc105b1472578a7a,2026-04-01,,,,,,,,,,,
+=======
+﻿name,url,last_pdf_update,疾病概述,致病原,流行病學,傳染窩,傳染方式,潛伏期,可傳染期,感受性及抵抗力,病例定義,檢體採檢送驗事項,防疫措施
+人類免疫缺乏病毒(愛滋病毒)感染,https://www.cdc.gov.tw/Uploads/2d3c3168-774e-47d5-a6d9-17fa3a65d0cc.pdf,2026-03-31,,,,,,,,,,,
+>>>>>>> ec9f7ffd0d7e134c3907696eaa3bdf6f8cbeafac
