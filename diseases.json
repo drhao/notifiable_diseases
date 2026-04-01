@@ -15,7 +15,8 @@
     "suspected_case": "NA",
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件及流行病學條\n件。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "5226912de887645667070a8671be65e4966f35d27149fc09cbadb815795ad722"
   },
   {
     "name": "鼠疫",
@@ -33,7 +34,8 @@
     "suspected_case": "NA",
     "probable_case": "符合臨床條件雖未經實驗室證實，但與\n實驗室證實之確定病例 具有流行病學之關聯。",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "dd1586d90e214baea0524ad7d7e6ebfa3fea00b93165b612d3f760df980907ad"
   },
   {
     "name": "嚴重急性呼吸道症候群",
@@ -51,7 +53,8 @@
     "suspected_case": "具有下列任一個條件：\n1. 符合臨床條件及流行病學條件。\n2. 未符合流行病學條件，但符合臨床條件，且為醫師高度懷\n疑。",
     "probable_case": "符合臨床條件，且與確定病例具有流行病學之關聯。",
     "confirmed_case": "1. 兩次流行期之間：同時符合臨床條件、流行病學條件及檢\n驗條件。\n2. 爆發流行時：符合檢驗條件與流行病學條件第一項至第三\n項之任一條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "25289a7442c20649d117fa33df9f5546c2f9ba0fb128c03de645aa311a2b378a"
   },
   {
     "name": "天花",
@@ -69,7 +72,8 @@
     "suspected_case": "符合臨床條件",
     "probable_case": "病患並未出現符合臨床通報定義之症狀，但臨床醫師高\n度懷疑 是天花，且與確定病例具有流行病學之關聯。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件。\n2. 符合臨床條件，且與確定病例具有流行病學之關聯。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "35248ba4c64a19fcc7cdcf74f9e61cdbd47ef64749263a4178d3e6cfdbd13429"
   },
   {
     "name": "M痘",
@@ -87,7 +91,8 @@
     "suspected_case": "",
     "probable_case": "符合臨床條件及流病條件。",
     "confirmed_case": "符合檢驗條件。\n1",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "3f9f1473cb23a0ebe0210ff9c1fff2d87e6bc1fe9cd3757933e492714e32b413"
   },
   {
     "name": "登革熱",
@@ -105,7 +110,8 @@
     "suspected_case": "符合臨床條件及流行病學條件。",
     "probable_case": "符合臨床條件及檢驗結果陽性定義之第四項。",
     "confirmed_case": "符合以下二項條件任一者。\n1. 符合檢驗結果陽性定義之第一、二、五項之任一項者。\n2. 符合檢驗結果陽性定義之第三項（限流行區，或由疾病管\n制署或其認可實驗室執行者）。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "2bce1b168a4c37249711b26b86fbe7ccb7d41e4fbbbff0b6deca00b01612bc02"
   },
   {
     "name": "屈公病",
@@ -123,7 +129,8 @@
     "suspected_case": "NA",
     "probable_case": "符合臨床條件及檢驗結果陽性定義之第三項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、四項之任一項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "de4f024284388ccca04c88d8ec8ff0047bf330b8cf2fc3b8392615f7e98128f4"
   },
   {
     "name": "瘧疾",
@@ -141,7 +148,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "1c4280788a4e9eb2cdc5dd081ce9a50712f281455f25a4de868be2257507160b"
   },
   {
     "name": "茲卡病毒感染症",
@@ -159,7 +167,8 @@
     "suspected_case": "NA",
     "probable_case": "符合流行病學條件及檢驗結果陽性定義之第三項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、四項之任一項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "3761b50e58471ca34202ae7bd01ef1115c39522a1394c50ec9ffbd20f303a2f6"
   },
   {
     "name": "西尼羅熱",
@@ -177,7 +186,8 @@
     "suspected_case": "NA",
     "probable_case": "符合臨床條件及檢驗結果陽性定義之第四項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、三、五項之任一項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "dc660a963ce884ba35de4d83e97b9129ee7ef0382ee90f89923f825475b3a797"
   },
   {
     "name": "腸道出血性大腸桿菌感染症",
@@ -195,7 +205,8 @@
     "suspected_case": "NA",
     "probable_case": "符合臨床條件，雖未經實驗室檢驗證實，但與確定病例具有流\n行病學之關聯。",
     "confirmed_case": "符合臨床條件和檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "ce7a375ddaac077e54b304f8e1a2ddad933b20877d492cb9b4dadfdd02db26e2"
   },
   {
     "name": "傷寒",
@@ -213,7 +224,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "ff2c547c500eaf1f184c82b4bc486aaa1f2952b35e830f9cc20dee616c79912c"
   },
   {
     "name": "副傷寒",
@@ -231,7 +243,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "ca0f0b890205e94759a41c8e60bc9d6af0205afee2c08fd057b300ddd731d55f"
   },
   {
     "name": "桿菌性痢疾",
@@ -249,7 +262,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "1f44d53be3c81aca7555f448acd00f6858a04562248c208fb14bacf564058e04"
   },
   {
     "name": "阿米巴性痢疾",
@@ -267,7 +281,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合檢驗條件第一項。\n2. 符合臨床條件第二項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "919fb042cc099dccc0e105690c3e1008b5c9739aacf81c2cb237121a30f4145d"
   },
   {
     "name": "霍亂",
@@ -285,7 +300,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "b064cf3d9cc87cb890a7a6a5b9101b2e8f5786db15cc2296290ed767a41ce04b"
   },
   {
     "name": "急性病毒性A型肝炎",
@@ -303,7 +319,8 @@
     "suspected_case": "NA",
     "probable_case": "符合臨床條件及流行病學條件者。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件（一）。\n2. 符合檢驗條件（二）。\n2024年11月12日修訂，2025年1月1日實施",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "7f03c5b9a8a1a76d49c6a5daf85e119c39502502674bd96d72f69436f95d6d14"
   },
   {
     "name": "小兒麻痺症/急性無力肢體麻痺",
@@ -321,7 +338,8 @@
     "suspected_case": "",
     "probable_case": "",
     "confirmed_case": "",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "300955f44a0657cc6893ade406f00e2d7860312161e40cbc1f5307c0543fd4e9"
   },
   {
     "name": "炭疽病",
@@ -339,7 +357,8 @@
     "suspected_case": "NA",
     "probable_case": "符合臨床條件，且與確定病例具有流行病學之關聯。",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "42c61ba8840c9f33e8fd166108205f412ffce0fd8f80292a58890685588a01eb"
   },
   {
     "name": "多重抗藥性結核病",
@@ -357,7 +376,8 @@
     "suspected_case": "NA",
     "probable_case": "符合檢驗條件。",
     "confirmed_case": "同時具備下列兩項條件：\n1. 符合極可能病例。\n2. 藥物感受性試驗檢驗單位，傳統檢測須為疾病管制署\n或多重抗藥性結核病認可實驗室，分子檢測須為疾病\n管制署或指定實驗室。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "82c918c99026795080390437e5216fb2aa702f2e7209557164e60cd563a04067"
   },
   {
     "name": "麻疹",
@@ -375,7 +395,8 @@
     "suspected_case": "符合通報定義，但血清學、病毒學或其他相關檢驗無\n法證實或並未檢驗，並與實驗室確診個案無流行病學上之關聯。",
     "probable_case": "",
     "confirmed_case": "符合下列條件之一者，並經防疫醫師審查判定確定者：\n1. 經實驗室檢驗確認者。\n2. 符合通報定義，且與實驗室確診個案有流行病學相關者。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "c00ee0794888a6ea46ab4863925c3ebd3bef296d1cb36f4d4ba832674bf44d6a"
   },
   {
     "name": "德國麻疹",
@@ -393,7 +414,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件及流行病學條件任一\n項。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件。\n2. 符合臨床條件，未接種德國麻疹相關疫苗或接種史不明，\n且符合流行病學條件",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "417798088c4fd2f3bfa4566bd250c46ccbb23274e805e3df318914d312343ad5"
   },
   {
     "name": "白喉",
@@ -411,7 +433,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件和檢驗條件。\n2. 符合臨床條件，雖未經實驗室檢驗證實，但與經實驗室\n證實之確定病例具有流行病學之關聯。\n1",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "7655fe45e7ea6270af3f13a92b41bb1631282b22a5d06d29f75750f0f111a432"
   },
   {
     "name": "流行性腦脊髓膜炎",
@@ -429,7 +452,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "符合臨床條件（噁心、嘔吐除外）及流行病學條件。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "c3032b734a3a1648f2f786f1525a6f9e477b369cff964b03d06250b23843ee09"
   },
   {
     "name": "漢他病毒症候群",
@@ -447,7 +471,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件（二）及檢驗條件（二）或（三）或（四）之任一項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "b6d762958a2873eafcab5828fbb116dcd6241d17fdb227e4a1e832bc816bf6b6"
   },
   {
     "name": "後天免疫缺乏症候群",
@@ -465,7 +490,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "排除 HIV 急性初期感染，且符合臨床條件或檢驗條件。\n【密件】 後天免疫缺乏症候群（AIDS）個案報告單\n※【確認為 HIV 感染者，欲通報 AIDS 前，請先排除個案為「急性初期感染」再行通報，若不清楚最近\n180 天內的檢驗結果，符合 AIDS 通報定義仍請通報】\nHIV 急性初期感染（符合以下任一條件）：\n（1） 依據過去檢驗紀錄：本次 HIV-1/2 抗體確認檢驗方法（抗體免疫層析檢驗法或西方墨點法）或 HIV\n分子生物學核酸檢測（NAT）陽性，且確診通報前 180 天內，有任一 HIV 檢驗結果是陰性或未確定\n者，包含：HIV 抗原/抗體複合型篩檢、抗體篩檢（EIA 或 PA）、HIV-1/2 抗體確認檢驗或 HIV 分子\n生物學核酸檢測（NAT）。\n（2） 個案本次確診檢驗流程中，於 HIV 分子生物學核酸檢測 NAT 檢驗陽性前後 180 日內有任一抗體檢\n驗結果為陰性或未確定者。\n（3） 本次檢驗流程中，HIV 抗原/抗體複合型篩檢結果為「抗原陽性」者。\nHIV（+）NO.\n□□□-□□-□□\n電腦編號：\n醫師診斷日： 年 月 日 AIDS NO.\n醫師報告日： 年 月 日 □第一次報告 □資料更新\n（衛福部編號，請勿填寫）\n個案目前狀況：□1.住院治療 □2.門診治療 □3.死亡（ 年 月 日）\n□4.離境（ 年 月 日） □5.其他 □6.不詳\n一、 基本資料\n出生日期 性別 電話\n個案姓名 身分證字號（護照號碼）\n年 月 日 男 女 （區域碼）話號碼\n公\n宅\n□中華民國 □台灣地區 □大陸地區 已婚 未婚 離婚 分居 鰥寡\n國籍 婚姻狀況\n□外籍 （填寫國家名稱）\n是 是\n職業 目前是否懷孕？ 是否曾經受過 HIV 抗體檢查？\n否 否\n縣 鄉市 村\n市 鎮區 里 鄰\n戶籍所在地\n路\n街 段 巷 弄 號之 （ 樓）\n縣 鄉市 村\n市 鎮區 里 鄰\n現住址\n路\n街 段 巷 弄 號之 （ 樓）\n二、 AIDS 確診之診斷依據\n確認為 HIV 感染者，且\n□1.CD4 值或比例符合檢驗條件 （CD4= cells/mm3 或 %）或 □2.出現以下任一種伺機性感染\n三、 臨床症狀診斷依據：\n日 日\n診斷依據（疾病） 勾 期 診斷依據（疾病） 勾 期\n選 選\n年 月 年 月\nCandidiasis of bronchi， trachea， or lungs Lymphoma， immunoblastic （or equivalent term）\n念珠菌症（支氣管、氣管、或肺） 淋巴瘤（免疫芽細胞）\nCandidiasis， esophageal Lymphoma， primary， of brain\n念珠菌症（食道） 淋巴瘤（腦部之初發性）\nCoccidioidomycosis， disseminated or extrapulmonary Mycobacterium avium complex or M. kansasii，\n珠狀孢子蟲病（散佈性或肺外部位） disseminated or extrapulmonary\n散佈性或肺外部位禽型分枝桿菌群或堪薩斯分枝桿\n菌感染\n日 日\n診斷依據（疾病） 勾 期 診斷依據（疾病） 勾 期\n選 選\n年 月 年 月\nCryptococcosis， extrapulmonary M. tuberculosis infection， pulmonary\n隱球菌症（肺外） 肺結核***\nCryptosporidiosis， chronic intestinal （greater than 1\nM. tuberculosis infection， extrapulmonary\nmonth's duration）\n肺外結核\n隱孢子蟲症（慢性腸炎）（一個月以上）\nMycobacterium， other species or unidentified\nCytomegalovirus disease （other than liver， spleen， or\nspecies， disseminated or extrapulmonary\nnodes）\n其他種類或未確定種類的分枝桿菌引起的散佈性或\n巨細胞病毒症（肝臟、脾臟或淋巴結以外）\n肺外部位感染\nPneumonia， recurrent （more than one episode in\nCytomegalovirus retinitis （with loss of vision）\na 1-year period）\n巨細胞病毒性視網膜炎**\n一年之內復發的肺炎***\nEncephalopathy， HIV-related Pneumocystis carinii （jiroveci） pneumonia\n愛滋病毒性腦病變 肺囊蟲肺炎\nHerpes simplex： chronic ulcer（s） greater than 1\nmonth's duration）； or bronchitis， pneumonitis， or Progressive multifocal leukoencephalopathy\nesophagitis 單純性疱疹病毒感染：慢性潰瘍（一個月\n進行性多發性白質腦病變\n以上）或支氣管炎、肺炎及食道炎**\nHistoplasmosis， disseminated or extrapulmonary Salmonella septicemia， recurrent\n組織胞漿菌症（散佈性或肺外部位） 沙門氏菌血症（再發性）\nIsosporiasis， chronic intestinal （greater than 1\nmonth's duration）等孢子蟲症（慢性腸炎）（一個月以 Toxoplasmosis of brain 腦部弓蟲症**\n上）\nKaposi’s sarcoma Wasting syndrome due to HIV\n卡波西氏肉瘤 HIV 引起的消耗性症候群\nLymphoma， Burkitt's （or equivalent term） Cervical cancer， invasive\n勃克氏淋巴瘤 侵犯性的子宮頸癌***\nPenicilliosis marneffei， disseminated or Bacterial infections， multiple or recurrent\nextrapulmonary 青黴菌感染（散佈性或肺外部位） 多重或復發的細菌感染*\n*Only among children aged <6 years. 僅適用於年齡 6 歲以下個案。**Onset at age >1 month. 僅適用於年齡滿 1 個月後診斷之個案。\n***Only among adults， adolescents， and children aged ≥6 years. 僅適用於年齡滿 6 歲（含）以上個案。\n備註（補充資料）：\n報告所 院 所\n名 稱 住 址\n診斷師 聯 絡 （ ）\n簽 章 電 話\n此欄由衛生局填寫（ 縣市衛生局）\n收到日期 承辦人簽章 科（課）長簽章\n年 月 日\n衛生福利部疾病管制署 （02）2395-9825 FAX：（02）2391-3482",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "31e9b52a22e2089ef539c99043a3192251190115504d7c29924ef8e01ce38f76"
   },
   {
     "name": "急性病毒性B型肝炎",
@@ -483,7 +509,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "838adbe0e81b15ef8edbc34e7d06261c48a67cc8335a1e7fb02c4574352709e4"
   },
   {
     "name": "日本腦炎",
@@ -501,7 +528,8 @@
     "suspected_case": "NA",
     "probable_case": "符合臨床條件及檢驗結果陽性定義之第三項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、四項之任一項。\n2017年05月",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "3cc81560b21408759787e18cf47b6810912cf2abc620b9819aac55f51cbf8b8d"
   },
   {
     "name": "急性病毒性C型肝炎",
@@ -519,7 +547,8 @@
     "suspected_case": "NA。",
     "probable_case": "NA。",
     "confirmed_case": "符合臨床條件及檢驗條件第（一）項，或符合檢驗條件\n第（二）項至第（五）項之任一項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "e9f971aa76e5b03a7257a8bfceccee0195eb95b1de23f7dbf76bf21cb0a687f2"
   },
   {
     "name": "腸病毒感染併發重症",
@@ -537,7 +566,8 @@
     "suspected_case": "",
     "probable_case": "符合臨床條件但無實驗室確認，或高度懷疑為腸病毒感染。",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "be97bbc2e55287285898d88e3c607d9add49bd08d27c58b1e03dd21aebc742e3"
   },
   {
     "name": "急性病毒性D型肝炎",
@@ -555,7 +585,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "1120319b65a62b2d1f737b6fabab915a877ec46d5aa9ab93ea22c88e4ee84b28"
   },
   {
     "name": "結核病",
@@ -573,7 +604,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合檢驗條件第一項，或\n2. 符合臨床條件第一項且胸部X 光進步或臨床症狀改善，或\n3. 符合檢驗條件第二項及第四項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "e56e9fef8080d7907f026053d3a53e21abc02d9d248ef9d93e7ade1ef0887802"
   },
   {
     "name": "先天性德國麻疹症候群",
@@ -591,7 +623,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件（第一項中任二種缺陷；或第一、二項中任\n一種）與檢驗條件。\n2. 符合臨床條件及流行病學條件。\n3. 任何死產嬰兒，排除其他可能致死原因並符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "ba9c5de6a50a2ef85996da43c16718a4bce296c014522a27a6f8057258219eb3"
   },
   {
     "name": "急性病毒性E型肝炎",
@@ -609,7 +642,8 @@
     "suspected_case": "NA",
     "probable_case": "符合臨床條件及流行病學條件。",
     "confirmed_case": "符合臨床條件及任一項檢驗條件。\n2019年7月",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "d589d7e5a925f3bb9bcf9a37b63a58341893a46243deb7548022d2023338cf5b"
   },
   {
     "name": "流行性腮腺炎",
@@ -627,8 +661,9 @@
     "suspected_case": "符合臨床或檢驗條件。",
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床及檢驗條件。\n2. 符合臨床條件，且與經實驗室證實之確定病例具有流行病\n學之關聯。",
+    "last_pdf_update": "2026-03-01",
     "檢驗條件_diff": "具有下列任一個條件：\n（一）臨床檢體<b style=\"color: #ea580c; background: #ffedd5;\">（頰腔擦拭液）</b>分離並鑑定出腮腺炎病毒（Mumps\nvirus）。\n（二）臨床檢體分子生物學核酸檢測陽性。",
-    "last_pdf_update": "2026-03-01"
+    "pdf_hash": "fb39e0c9a89385f7b762855d42963a9ce7ba882a7cf1db88f56049cde6b10250"
   },
   {
     "name": "百日咳",
@@ -646,7 +681,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "符合流行病學條件，且近期有咳嗽史。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件。\n2. 符合臨床條件及流行病學條件。\n3. 具有急性咳嗽（不須符合臨床條件）及符合檢驗條件第一\n項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "e053e2015900c72825e707dedec7ce0f91d302181acd74d73fdc042111c5c337"
   },
   {
     "name": "侵襲性b型嗜血桿菌感染症",
@@ -664,7 +700,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "e28445743bcc75123208c6ee4fa96e3cdacb763dc7d24dab81c4bc831c11b043"
   },
   {
     "name": "退伍軍人病",
@@ -682,7 +719,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "具有下列任一個條件：\n1. 符合臨床條件及血清學檢測之恢復期抗體效價出現上升，\n但未達 4 倍上升。\n2. 符合臨床條件及流行病學條件。",
     "confirmed_case": "符合臨床條件和檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "1f529045d5baba18c2ce93513cbae0eae69d076bc406aa32b640e78355dce5aa"
   },
   {
     "name": "人類免疫缺乏病毒(愛滋病毒)感染",
@@ -700,7 +738,8 @@
     "suspected_case": "NA",
     "probable_case": "符合檢驗條件第（二）項或第（三）項或流行病學條件第\n（一）項。",
     "confirmed_case": "符合檢驗條件第（一）項。如同時符合流行病學條件第\n（二）項，則為急性初期感染。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "02531d37229f949c01759f469562efe615b10d2d38b695bb15e231f93092ac09"
   },
   {
     "name": "梅毒",
@@ -718,7 +757,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "1. 一期梅毒：符合臨床條件第（一）項及檢驗條件\n2. 二期梅毒：符合臨床條件第（二）項及檢驗條件\n3. 三期梅毒：符合臨床條件第（三）項及檢驗條件\n4. 潛伏性梅毒：無臨床症狀，但符合檢驗條件",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "6bc668c96d63a8d5423d0edf99685f98819142670dbeea871bdaa221f16c60de"
   },
   {
     "name": "先天性梅毒",
@@ -736,7 +776,8 @@
     "suspected_case": "NA",
     "probable_case": "具有下列任一個條件：\n1. 符合流行病學條件第（一）項。\n2. 符合流行病學條件第（二）項，且符合檢驗條件第（一）、（二）、\n（四）、（五）之任一項。\n3. 符合臨床條件，且符合檢驗條件第（一）、（二）、（四）、（五）之任\n一項。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合檢驗條件第（二）項及第（四）項。\n2. 符合檢驗條件第（二）項，且嬰兒效價大於母親生產時效價之四\n倍以上。\n3. 符合檢驗條件第（三）項。\n4. 符合檢驗條件第（五）項，且腦脊髓液符合下列任一項細胞計數\n和生化檢查異常情形：\n（1） 年齡未滿 1 個月：>15 WBC/microL， protein >120 mg/dL\n（2） 年齡 1 個月以上：>5 WBC/microL， protein >40 mg/dL\n5. 年齡 15 個月以上，符合檢驗條件第（一）項，且排除後天梅毒\n暴露史。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "d5a81602273b61f534f7ae82188a4b6b7a60df30c1cfef2018d7f60ca5e0b146"
   },
   {
     "name": "淋病",
@@ -754,7 +795,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "43717574993de6196fb9278a4f446d16ef994e1b37bfbe490d7c039ac3def773"
   },
   {
     "name": "破傷風",
@@ -772,7 +814,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "NA",
     "confirmed_case": "NA",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "11d5dc7c3f6a293b718d54b9dc77845aff83331aef98280c8b18062231a90689"
   },
   {
     "name": "新生兒破傷風",
@@ -790,7 +833,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件，且相關就醫病歷資料經專家審查判定。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "cad7a94600938cdb0ae4144d9df26bff3f1d95ef3f84d8498de16d5c0216ff5c"
   },
   {
     "name": "漢生病",
@@ -808,7 +852,8 @@
     "suspected_case": "符合臨床條件或檢驗條件。",
     "probable_case": "NA",
     "confirmed_case": "同時符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "7311f3b077ac9b96104fb1f835981d131f5b344eb8451874272d07eddf736d54"
   },
   {
     "name": "急性病毒性肝炎未定型",
@@ -826,7 +871,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "62389d0542672ecc1ff4545b254e3e26e88b2b61beaca2107dcf1f4c15c88d54"
   },
   {
     "name": "新冠併發重症",
@@ -844,7 +890,8 @@
     "suspected_case": "",
     "probable_case": "",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "f38c9e4fb2fc06e946c9cc3cc929e335c5ca410d2e492cb8aafc81e8d84ada3b"
   },
   {
     "name": "李斯特菌症",
@@ -862,7 +909,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。\n李斯特菌症（Listeriosis）病例定義-1",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "dbb90f8470b2b428487178b0d5da0eb068f2bdf5e9f1c47d43301528ad53fa96"
   },
   {
     "name": "水痘併發症",
@@ -880,7 +928,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "1. 符合臨床條件（一）。\n2. 同時符合臨床條件（二）、流病條件及任一檢驗條件。\n水痘併發症檢體採檢與檢驗方法\n採檢項目 採檢單位 檢體種類 採檢規定 運送條件 檢驗方法 檢驗期間 收件單位 備註\n將乾燥痂皮由皮膚\n痂皮 取下置於無菌試管 常溫\n輸送\n以無菌針頭掀開水\n泡表層， 以病毒拭\n水泡病灶拭子 子之採檢棒擦拭水\n3-5工作日\n泡基底皮膚後插入 聚合脢連鎖反應（PCR）\n病毒保存輸送管\n疾病管制署\n全國各醫療院 以無菌檢體小管收\n水痘併發症 腦脊髓液 昆陽辦公室\n所 集1 ml腦脊髓液\n低溫\n以無菌試管收集20\n羊水\nmL羊水\n疑似個案必要\n時得於距第一\n以無菌試管收2 mL 抗體檢測\n血清 7-10工作日 次採檢後6個\n血清 （ELISA-IgM，ELISA-IgG）\n月再採第二次\n血清送驗。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "6e9461fda100bfc89ef2e40913bee6b51172f644fea91fc8cafa4bf2f6351765"
   },
   {
     "name": "恙蟲病",
@@ -898,7 +947,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合檢驗結果陽性定義之任一項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "465a70061c0e55ca918ee753e53506009ce515415fc626ab2b3a78a05ef056d9"
   },
   {
     "name": "地方性斑疹傷寒",
@@ -916,7 +966,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合檢驗結果陽性定義之任一項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "1f32c4e03d6b6eac5350037f2b11ede480ab3f39e2c595763ed2f13384299f4f"
   },
   {
     "name": "發熱伴血小板減少綜合症",
@@ -934,7 +985,8 @@
     "suspected_case": "符合臨床條件及流行病學條件。",
     "probable_case": "符合檢驗結果陽性定義之第四項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、三項之任一項。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "aa96862c44c0c827f2dfcfdbcf678357fe26c0faa5c7944e98f70b95d130cc6f"
   },
   {
     "name": "萊姆病",
@@ -952,7 +1004,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "2eb752dc415ce9201f7344dcc6433f22708af5e264b09d3d472c8da2cd13066a"
   },
   {
     "name": "肉毒桿菌中毒",
@@ -970,7 +1023,8 @@
     "suspected_case": "",
     "probable_case": "符合臨床條件（一）及流行病學條件之（六）、（七）或（八），並\n排除流行病學條件之（一）、（二）、（三）、（四）及（五）。",
     "confirmed_case": "一歲以上且符合臨床條件（一）及檢驗條件之（二）或（一）血液或糞\n便檢體陽性，並排除流行病學條件之（一）、（二）、（三）、（四）及（五）。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "c5cd3d498786aca4bc59a714544fb27c459badba7738104d9c5132ae79dae203"
   },
   {
     "name": "庫賈氏病",
@@ -988,7 +1042,8 @@
     "suspected_case": "符合臨床條件二、（一） 與\n臨床條件二、（二）5 項中至少 4 項症狀 及\n檢驗條件二、（一），且經衛生福利部疾病管制署庫賈氏病之病\n例審查會議專家審查確定。",
     "probable_case": "具有下列任一個條件，且經衛生福利部疾病管制署庫賈氏病之\n病例審查會議專家審查確定：\n1. 符合臨床條件二、（一） 與\n臨床條件二、（二）5 項中至少 4 項症狀 及\n檢驗條件二、（一）與（二）。\n2. 符合臨床條件二、（一） 及\n檢驗條件二、（三）。",
     "confirmed_case": "符合臨床條件二、（一）第 1 項症狀 與 檢驗條件二、（四），\n且經衛生福利部疾病管制署庫賈氏病之病例審查會議專家審\n查確定。\n104年7月16日核定",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "57d150995da85651364169e22ecfff82ee5d2de7a5fb36c1aacc4722b8bcabf9"
   },
   {
     "name": "弓形蟲感染症",
@@ -1006,7 +1061,8 @@
     "suspected_case": "NA",
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學\n條件。",
     "confirmed_case": "符合臨床條件及任一項檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "13c74b53d3d46aca55fae19d35af5fb32ff27c40874c99c6767bbc5c74590611"
   },
   {
     "name": "布氏桿菌病",
@@ -1024,7 +1080,8 @@
     "suspected_case": "NA",
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學條件。",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "aca2a1c2dc19d7a39c03245cd528e216a0af2e2ecfcf6c31c0e53a2d432a9391"
   },
   {
     "name": "流感併發重症",
@@ -1042,7 +1099,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "符合臨床條件及流行病學條件。",
     "confirmed_case": "符合臨床條件及檢驗條件。\n1",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "a4ebec53f01cedab551b446a5e7e78288e2b43b195c829b98ffac52355b98b9f"
   },
   {
     "name": "侵襲性肺炎鏈球菌感染症",
@@ -1060,7 +1118,8 @@
     "suspected_case": "NA。",
     "probable_case": "NA。",
     "confirmed_case": "符合臨床條件及檢驗條件者。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "5005d9e5b2430731b2d1250acb7918ea35eef4d48ce9120a510657d449e561c5"
   },
   {
     "name": "Q熱",
@@ -1078,7 +1137,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合間接免疫螢光抗體法（IFA）檢驗結果陽性定\n義。\n2019年3月",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "44e3c51f98d7027f3ac4f22817fbc7b6e6c3b8773c74df00f73be845ed482363"
   },
   {
     "name": "類鼻疽",
@@ -1096,7 +1156,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "a08d7bf10ac9c7644f5c1851abb26a5f7d2cba6f97bff8210596f86a65cea76c"
   },
   {
     "name": "鉤端螺旋體病",
@@ -1114,7 +1175,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "da300267cfdec6264fb99ef3f878a932e5de08ac82ef1304172c4f6f0c98e2e4"
   },
   {
     "name": "兔熱病",
@@ -1132,7 +1194,8 @@
     "suspected_case": "NA",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "62c71988e66332d06e92ee1a426384e4cb7a53f7ebf33d6acfa4407ce5cc5f64"
   },
   {
     "name": "疱疹B病毒感染症",
@@ -1150,7 +1213,8 @@
     "suspected_case": "NA",
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件及流行病學條件。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "4faa0840b1c82ce7415d5617b78a760e0c555f3674c6f4936346e320700c58fe"
   },
   {
     "name": "新型A型流感",
@@ -1168,7 +1232,8 @@
     "suspected_case": "",
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件，且於發病前 10 日\n內，曾經與出現症狀的確定病例有密切接觸者。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "a54b508c0d168ddd949032f42c48fb8d978fb7bf3761939765bf43ca5638206f"
   },
   {
     "name": "黃熱病",
@@ -1186,7 +1251,8 @@
     "suspected_case": "NA",
     "probable_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗結果陽性定義之第三項。\n2. 符合臨床條件及流行病學條件。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合檢驗結果陽性定義之第一、二、四項之任一項。\n2. 符合臨床條件，且與經實驗室證實之病例或突發流行疫情具有\n流行病學上相關聯。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "a17558efe477fe39d144969525e139ca83fadeb6e024385e7ace6dfdec404776"
   },
   {
     "name": "裂谷熱",
@@ -1204,7 +1270,8 @@
     "suspected_case": "",
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學條件。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "9ad423b043c7cf1cf47b46eef1a52e954846cd4532fe1f6202e7d14cd6e62b24"
   },
   {
     "name": "中東呼吸症候群冠狀病毒感染症",
@@ -1222,7 +1289,8 @@
     "suspected_case": "",
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件，且於發病前\n14 日內，曾經與出現症狀之確定病例有密切接觸者。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "4746f90c1e255bf74111cb3fcbacf1a896234daa6b4a253c13512cc965a8eaec"
   },
   {
     "name": "拉薩熱",
@@ -1240,7 +1308,8 @@
     "suspected_case": "",
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學條件。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "d32900267f088246e41d0542d5cc2eda9910eb14c5eaed829b6c78bc4adec5bd"
   },
   {
     "name": "馬堡病毒出血熱",
@@ -1258,7 +1327,8 @@
     "suspected_case": "",
     "probable_case": "雖未經實驗室證實，但符合臨床條件，且於發病前 3 週\n內接觸確定病例之血液或體液者。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "dd533fa775324fef60c8c725d071caa10cdecd0f5a158df6501a5bbf3d51b904"
   },
   {
     "name": "伊波拉病毒感染",
@@ -1276,7 +1346,8 @@
     "suspected_case": "",
     "probable_case": "雖未經實驗室證實，但符合臨床條件，且於發病前 3 週\n內接觸確定病例之血液或體液者。",
     "confirmed_case": "符合檢驗條件。",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "65cff344830a9ebb91212531bed54342a95673b4da6b4a080e855f272e51c075"
   },
   {
     "name": "球黴菌症",
@@ -1291,6 +1362,7 @@
     "通報定義": "",
     "疾病分類": "",
     "檢體採檢送驗事項": "",
-    "last_pdf_update": "2026-03-30"
+    "last_pdf_update": "2023-01-01",
+    "pdf_hash": "578fdc8ec675c7036ef3fb0f3020267d6cbef357b0ead7e62181dc1d5882c889"
   }
 ]
