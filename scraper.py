@@ -60,54 +60,60 @@ def main():
             
         disease['actual_pdf_url'] = actual_pdf_url
         
-        # Check cache
+        # Check cache via Hash
         old_disease = existing_data.get(disease['name'])
-        if old_disease and old_disease.get('actual_pdf_url') == actual_pdf_url and old_disease.get('content'):
-            print(f"  Unchanged! Skipping download.")
+        expected_hash = old_disease.get('pdf_hash') if old_disease else None
+        
+        content, pdf_path, current_hash = download_and_extract_pdf(actual_pdf_url, disease['name'], expected_hash)
+        
+        if not content and current_hash and current_hash == expected_hash:
+            # Hash matched perfectly, no need to parse or update
+            print(f"  Unchanged! (Hash Matched). Skipping extraction.")
             old_disease['source_category'] = disease.get('source_category', old_disease.get('source_category'))
-            # Preserve last update date if exists
+            # Update the URL just in case CDC changed the URL but kept the same precise file byte-for-byte
+            old_disease['actual_pdf_url'] = actual_pdf_url
             if 'last_pdf_update' not in old_disease:
-                old_disease['last_pdf_update'] = now_date_str # Initialize for older records
+                old_disease['last_pdf_update'] = now_date_str
             results.append(old_disease)
             record['status'] = 'Success'
             status_records.append(record)
             continue
             
-        # If we reach here, it's either new or updated
-        if old_disease:
-            disease['last_pdf_update'] = now_date_str
-            updated_diseases.append(disease['name'])
-            record['updated_now'] = True
-            print(f"  Update detected: {disease['name']}")
-        else:
-            disease['last_pdf_update'] = now_date_str
-        
-        content, pdf_path = download_and_extract_pdf(actual_pdf_url, disease['name'])
-        
-        if content:
-            disease['content'] = content
-            disease['pdf_path'] = pdf_path
-            structured_fields = parse_disease_content(content)
-            disease.update(structured_fields)
-            
-            # Compute diffs if updated
-            if record.get('updated_now') and old_disease:
-                for k in ["臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項", "suspected_case", "probable_case", "confirmed_case"]:
-                    val_old = old_disease.get(k, "")
-                    val_new = disease.get(k, "")
-                    if val_old != val_new:
-                        disease[k + "_diff"] = diff_texts(val_old, val_new)
-            
-            results.append(disease)
-            
-            record['status'] = 'Success'
-            for k in ["臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類"]:
-                val = disease.get(k)
-                if not val or not val.strip():
-                     record['issues'].append(f"Missing {k}")
-        else:
+        if content is None and current_hash is None:
             print(f"  Failed to extract content for {disease['name']}")
             record['issues'].append("Download/Extract Failed")
+            status_records.append(record)
+            continue
+            
+        # If we reach here, the Hash is different, it's either new or honestly updated
+        print(f"  Update detected: {disease['name']} (Hash {current_hash[:6]})")
+        
+        disease['pdf_hash'] = current_hash
+        disease['last_pdf_update'] = now_date_str
+        if old_disease:
+            updated_diseases.append(disease['name'])
+            record['updated_now'] = True
+        
+        disease['content'] = content
+        disease['pdf_path'] = pdf_path
+        structured_fields = parse_disease_content(content)
+        disease.update(structured_fields)
+        
+        # Compute diffs if updated
+        if record.get('updated_now') and old_disease:
+            for k in ["臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項", "suspected_case", "probable_case", "confirmed_case"]:
+                val_old = old_disease.get(k, "")
+                val_new = disease.get(k, "")
+                if val_old != val_new:
+                    disease[k + "_diff"] = diff_texts(val_old, val_new)
+        
+        results.append(disease)
+        
+        record['status'] = 'Success'
+        for k in ["臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類"]:
+            val = disease.get(k)
+            if not val or not val.strip():
+                 record['issues'].append(f"Missing {k}")
         
         status_records.append(record)
         

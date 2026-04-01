@@ -6,7 +6,10 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import re
+import requests
 import pdfplumber
+import hashlib
+from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 BASE_URL = "https://www.cdc.gov.tw"
@@ -109,11 +112,12 @@ def get_actual_pdf_url(viewer_url):
         print(f"  Error finding PDF URL on {viewer_url}: {e}")
         return None
 
-def download_and_extract_pdf(full_pdf_url, disease_name):
+def download_and_extract_pdf(full_pdf_url, disease_name, expected_hash=None):
     """
     Download PDF from the actual PDF url, save locally, and extract text content.
-    Uses pdfplumber for text extraction.
-    Returns tuple: (text_content, local_pdf_path) or (None, None) on failure.
+    Returns tuple: (text_content, local_pdf_path, pdf_hash)
+    If expected_hash is provided and matches, returns (None, local_pdf_path, pdf_hash)
+    Returns (None, None, None) on failure.
     """
     try:
         os.makedirs(PDF_DIR, exist_ok=True)
@@ -121,11 +125,17 @@ def download_and_extract_pdf(full_pdf_url, disease_name):
         pdf_res = requests.get(full_pdf_url, timeout=15)
         pdf_res.raise_for_status()
         
+        pdf_bytes = pdf_res.content
+        current_hash = hashlib.sha256(pdf_bytes).hexdigest()
+        
         safe_name = re.sub(r'[<>:"/\\|?*]', '_', disease_name)
         pdf_path = os.path.join(PDF_DIR, f"{safe_name}.pdf")
         
         with open(pdf_path, 'wb') as f:
-            f.write(pdf_res.content)
+            f.write(pdf_bytes)
+            
+        if expected_hash and current_hash == expected_hash:
+            return None, pdf_path, current_hash
         
         text = ""
         with pdfplumber.open(pdf_path) as pdf:
@@ -134,9 +144,9 @@ def download_and_extract_pdf(full_pdf_url, disease_name):
                 if page_text:
                     text += page_text + "\n"
         
-        return text.strip(), pdf_path
+        return text.strip(), pdf_path, current_hash
         
     except Exception as e:
         print(f"  Error processing {full_pdf_url}: {e}")
-        return None, None
+        return None, None, None
 

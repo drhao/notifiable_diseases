@@ -6,6 +6,7 @@ import requests
 import urllib.parse
 from bs4 import BeautifulSoup
 import pdfplumber
+import hashlib
 from datetime import datetime
 from scraper import diff_texts
 
@@ -122,14 +123,7 @@ def main():
             continue
             
         old_record = existing_data.get(name)
-        if old_record and old_record.get('url') == pdf_url and old_record.get('疾病概述'):
-            print(f"  Unchanged! Skipping download.")
-            if 'last_pdf_update' not in old_record:
-                old_record['last_pdf_update'] = now_date_str
-            results.append(old_record)
-            continue
-            
-        print(f"  Update detected: {name}")
+        expected_hash = old_record.get('pdf_hash') if old_record else None
             
         pdf_path = os.path.join(pdf_dir, f"{name.replace('/', '_')}.pdf")
         
@@ -137,11 +131,24 @@ def main():
         try:
             r = requests.get(pdf_url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
             r.raise_for_status()
+            pdf_bytes = r.content
+            current_hash = hashlib.sha256(pdf_bytes).hexdigest()
             with open(pdf_path, 'wb') as f:
-                f.write(r.content)
+                f.write(pdf_bytes)
         except Exception as e:
             print(f"  Download error: {e}")
             continue
+            
+        if expected_hash and current_hash == expected_hash:
+            print(f"  Unchanged! (Hash Matched). Skipping extraction.")
+            # Update the URL just in case
+            old_record['url'] = pdf_url
+            if 'last_pdf_update' not in old_record:
+                old_record['last_pdf_update'] = now_date_str
+            results.append(old_record)
+            continue
+            
+        print(f"  Update detected: {name} (Hash: {current_hash[:6]})")
         
         # Extract text
         text = ""
@@ -161,6 +168,7 @@ def main():
         record = {
             'name': name,
             'url': pdf_url, # Reference direct PDF
+            'pdf_hash': current_hash,
             'last_pdf_update': now_date_str,
             **parsed_sections
         }
