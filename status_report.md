@@ -1,13 +1,13 @@
 # Scraper Status Report
-**Execution Time:** 2026-04-01 17:07
+**Execution Time:** 2026-04-02 09:30
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
-- **Total Diseases Found:** 73
+- **Total Diseases Found:** 74
 - **Successfully Fetched & Parsed:** 72
-- **Failed:** 1
+- **Failed:** 2
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -70,7 +70,7 @@
 | 庫賈氏病 | ✅ Success | 第四類 | - |
 | 弓形蟲感染症 | ✅ Success | 第四類 | - |
 | 布氏桿菌病 | ✅ Success | 第四類 | - |
-| 流感併發重症 | ✅ Success | 第四類 | - |
+| 流感併發重症 | ❌ Fail | 第四類 | **No PDF Link** |
 | 侵襲性肺炎鏈球菌感染症 | ✅ Success | 第四類 | - |
 | Q熱 | ✅ Success | 第四類 | - |
 | 類鼻疽 | ✅ Success | 第四類 | - |
@@ -84,4 +84,5 @@
 | 拉薩熱 | ✅ Success | 第五類 | - |
 | 馬堡病毒出血熱 | ✅ Success | 第五類 | - |
 | 伊波拉病毒感染 | ✅ Success | 第五類 | - |
+| 立百病毒感染症 | ✅ Success | 第五類 | - |
 | 球黴菌症 | ✅ Success | 其他 | - |
