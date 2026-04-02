@@ -1,0 +1,288 @@
+﻿name,url,pdf_hash,last_pdf_update,疾病概述,致病原,流行病學,傳染窩,傳染方式,潛伏期,可傳染期,感受性及抵抗力,病例定義,檢體採檢送驗事項,防疫措施
+立百病毒感染症,https://www.cdc.gov.tw/Uploads/b574e27a-4bf7-4b13-8ff4-2f3428267c72.pdf,7f2b3d5ae3df9dddb33dc891aec8154e355b2dfb1f53ab301b490aa387efe995,2026-04-02,"立百病毒感染為一種人畜共通傳染病，可由動物傳染給人類，亦可能透
+過受污染的食物或人際接觸而受感染。首於 1998 年在馬來西亞發現人
+類感染案例，隔年新加坡亦曾出現疫情。多數個案與直接接觸病豬或其
+受污染組織有關，推測傳播途徑包括在未受防護的情況下接觸病豬分泌
+物，或直接處理受感染動物組織。其後於孟加拉及印度發生的多起疫情
+中，感染來源則與食用遭果蝠（狐蝠屬）尿液或唾液污染的食物，如生
+椰棗樹汁或受污染水果有關。此外，立百病毒也可在人與人之間傳播。
+主要透過醫療照護機構、病患家屬及照顧者間之密切接觸 1。
+根據世界衛生組織（World Health Organization, WHO）資料顯示，其致
+死率介於 40%至 75%，差異主要與早期偵測及臨床照護能力相關。立百
+病毒感染症臨床症狀差異大，可從無症狀感染到急性呼吸道疾病或致命
+性腦炎。初期（約發病後 3 至 14 日內）常出現發燒、頭痛、肌肉痠痛
+、嘔吐與喉嚨痛等非特異性症狀，隨後可能進展為頭暈、嗜睡、意識改
+變及其他顯示急性腦炎的神經學徵象。部分個案可出現肺炎與嚴重呼吸
+系統併發症，如急性呼吸窘迫症候群（acute respiratory distress syndrome,
+ARDS）。在重症個案中，常見腦炎與癲癇發作，病情可於 24 至 48 小時
+內迅速惡化並導致昏迷 1.2。
+出現急性腦炎（acute encephalitis）症狀之患者倖存後，約 80%可完全康
+復，然而，約 20%會出現持續性神經學後遺症，包括持續抽搐（persistent
+convulsions）、行為改變（behavioral change）等臨床表現。此外，少數
+個案可能出現復發性或延遲性腦炎（relapse or delayed encephalitis），其
+死亡率約為 18%3。
+1","立百病毒（Nipah virus, NiV）屬於副黏液病毒科（Paramyxoviridae）亨
+尼帕病毒屬（Henipavirus），為一種人畜共通病原體 4，其具有多形性（
+pleomorphic）結構，直徑約為 120-150 nm，明顯大於多數其他副黏液病
+毒，基因體為單股負鏈 RNA（single-stranded negative-sense RNA），能
+編碼 6 種結構蛋白及 3 種非結構蛋白。其中，附著醣蛋白在病毒與宿主
+細胞表面之 Ephrin-B2（EFNB2）及 Ephrin-B3（EFNB3）接收器結合的
+過程中扮演關鍵角色 4。
+目前立百病毒可分為兩大病毒株，分別為馬來西亞株（NiV-Malaysia,
+NiV-M）與孟加拉株（NiV-Bangladesh, NiV-B）5，其特性簡述如下:
+(一) 馬來西亞株：首次於 1998 年馬來西亞疫情及 1999 年新加坡疫情鑑
+定發現，另出現於 2014 年菲律賓疫情。其主要中間宿主為豬隻，
+傳播途徑以動物傳人為主，人傳人較少見（傳播率約 8%）。臨床表
+現多以發燒與腦炎為主，呼吸道症狀較不常見，其基因型與亨德拉
+病毒（Hendra virus）較為接近，致死率約 40%。
+(二) 孟加拉株：首次於 2001 年孟加拉疫情鑑定發現，無中間宿主，多
+數病例與食用遭果蝠（狐蝠屬）排泄物污染之食物（如生椰棗樹汁
+）有關。相較於馬來西亞株，孟加拉株平均潛伏期較短，具較高的
+人傳人風險（傳播率約 33 至 75%）。臨床表現除發燒與腦炎外，常
+伴隨咳嗽、急性呼吸窘迫等明顯呼吸道症狀，整體毒力較高，其致
+死率約 65 至 100%。","（一）國際疫情概況
+立百病毒於 1998 年首次被發現，起源於馬來西亞與新加坡的人畜共
+通傳染病，約造成 300 人感染、超過 100 人死亡。疫情調查顯示，
+果蝠（狐蝠屬）將病毒傳播至豬隻，進而感染與病豬密切接觸的飼
+養及屠宰人員 2。近年病例主要發生於孟加拉及印度。
+2
+孟加拉 2026 年截至 2 月 9 日累積報告 1 例確診病例（死亡），居住
+於拉傑沙希專區瑙岡縣，曾生飲椰棗樹汁；於 2025 年報告 4 例確診
+病例皆死亡，無流病關聯，其中 3 例曾生飲椰棗樹汁；該國自 2001
+年起持續有人類病例，近 10 年間除 2023 年外，皆低於 10 例。截至
+2026 年累計報告 348 例，其中 250 例死亡，致死率為 72%，47%病
+例有生椰棗樹汁飲用史，29%為人傳人感染。該國 64 個縣，已有超
+過 35 個縣曾記錄過感染病例。該國季節性疫情多發生於 12 月至隔
+年 4 月，與椰棗樹汁採集期吻合，惟 2025 年 8 月首次於南部波拉島
+檢測到病例，顯示除生椰棗樹汁外，可能有其他傳播途徑，疫情有
+從季節性向全年化、從局部向全國擴散趨勢 5。
+印度 2026 年截至 2 月 23 日累積報告 2 例確診病例，其中 1 例死亡
+，皆居住於西孟加拉州；該國自 2001 年起即有疫情，最初在西孟加
+拉州，自 2018 年起，主要發生在南部喀拉拉州，該州自 2023 年截
+至 2025 年累積報告 12 例確診病例，其中 6 例死亡，部分為院內感
+染傳播，主要是小規模疫情，非持續性大規模流行。
+菲律賓於 2014 年發生馬傳人之疫情，11 例感染，其中 9 例死亡；與
+屠宰馬匹有關，惟因未分離出病毒及檢測到完整病毒基因體，係依
+症狀、流病及血清學結果推測為立百病毒或基因相似病毒。
+（二）臺灣病例概況
+臺灣迄今無確定病例。
+臺灣流行概況詳見衛生福利部疾病管制署「傳染病統計資料查詢系
+統」。","立百病毒自然宿主為大蝙蝠科（Pteropodidae family），狐蝠屬（Pteropus
+genus）之蝙蝠，泛稱為果蝠。這些蝙蝠雖可長期攜帶病毒，但通常不會
+出現明顯疾病症狀，卻能經由唾液、尿液或糞便排出病毒，污染環境與
+食物。此外，在同屬大蝙蝠科的非洲 Eidolon 屬果蝠中，也檢測到針對
+3
+立百病毒與亨德拉病毒的抗體反應，顯示這些病毒可能分布於非洲果蝠
+的生態系中 1。
+立百病毒可造成多種動物感染（中間宿主），如豬、馬、羊、狗、貓等
+動物，並傳染給人類。","立百病毒傳染方式主要分為動物傳人、食物傳播以及人傳人三類 1.2。
+(一) 立百病毒可藉由果蝠（狐蝠屬）及豬隻傳染給人類，人類大多數是
+直接接觸生病豬隻或經由呼吸道飛沫、接觸生病動物之口鼻分泌物
+或其組織所感染。
+(二) 食用到受感染果蝠（狐蝠屬）尿液或唾液污染的水果或生椰棗樹汁
+等，也可能導致感染。
+(三) 有限的人與人之間的傳播。家人、照護者、社區接觸者及醫療人員
+若近距離接觸患者的體液、分泌物或排泄物，均可能受到感染。",通常為 3 至 14 日，但有個案報告顯示最長可至 45 日 1.7。,只要個案體液或分泌物有病毒，個案仍具傳染力。,"全年齡皆具感受性，目前亦無疫苗或自然免疫力可提供保護，因此所有
+接觸高風險環境或患者的人群皆需被視為可能感染族群 8。
+九、治療與疫苗（Treatment and vaccine）
+(一) 治療：目前尚無經核准的治療方法，以症狀治療及支持性療法為主
+4
+2.9；雖然尚無核准療法，但已有多項潛在治療選項，主要分成單株
+抗體及抗病毒藥物：
+1. 單株抗體：包括 m102.4、1F5 及 h5B.3 等。m102.4 可與病毒 G
+蛋白結合並中和病毒，已證實在非人靈長類動物模型中可有效預
+防死亡 10，人體試驗亦完成第一期安全性評估 11並曾以「恩慈治
+療」（compassionate use）方式應用於個案 2.9；1F5 及 h5B.3 可與
+病毒 F 蛋白結合並中和病毒，其中 1F5 已在非人靈長類動物模型
+中顯示具保護效果，但尚無人體研究 10；h5B.3 則於雪貂模型中
+證實可預防死亡，目前尚缺乏非人靈長類動物及人體試驗資料 9
+。
+2. 抗病毒藥物：包括 Remdesivir、Favipiravir 及 Ribavirin 等，其皆
+為 RNA 聚合酶抑制劑 11，對多種 RNA 病毒有抑制效果。
+Remdesivir 已證實於暴露後給予非人靈長類動物可預防立百病
+毒感染，未來可能與 m102.4 等免疫治療聯合使用 2.9；目前我國
+雖有透過專案方式進口，但主要適應症仍為 COVID-19 重症病患
+。Favipiravir 已於倉鼠模型中顯示可有效預防死亡，但目前尚缺
+乏非人靈長類動物及人體臨床研究料 10。Ribavirin 於非人靈長類
+動物及倉鼠模型中雖可延緩死亡時間，惟無法完全防止死亡，其
+臨床療效仍不明確 10；該藥曾於 1999 年馬來西亞疫情中有限度
+使用於部分患者 2.9；目前國內部分醫療院所因治療 C 型肝炎或
+其他適應症，仍維持一定庫存量。
+(二) 疫苗：目前尚無經核准可供人類使用的立百病毒疫苗。現階段多項
+候選疫苗持續發展中，包括 PHV02、mRNA-1215、HeV-sG-V 及
+ChAdOx1 Nipah B 等。
+1. PHV02：為活性減毒疫苗，其利用重組型水泡性口炎病毒（
+recombinant Vesicular Stomatitis Virus, rVSV）作為載體，表現立
+百病毒孟加拉株的醣蛋白，以誘發免疫反應 12。
+2. mRNA-1215：為 mRNA 疫苗，其以脂質奈米粒子包覆 mRNA，
+將遺傳訊息送入人體細胞中，使細胞暫時自行製造立百病毒的關
+5
+鍵抗原蛋白（如前融合穩定化 F 與 G 蛋白結合體），以誘發免疫
+反應 13。
+3. HeV-sG-V：為蛋白次單元疫苗，透過表現亨德拉病毒 G 醣蛋白
+，以誘發免疫反應 14。
+4. ChAdOx1 Nipah B：為腺病毒載體疫苗，其利用腺病毒作為載體
+表現立百病毒孟加拉株的 G 受體結合蛋白，以誘發免疫反應 15
+。
+以上 4 種疫苗皆已完成第一期臨床試驗 12.13.14.15，而 ChAdOx1 Nipah
+B 則已準備啟動第二期人體臨床試驗 16。
+貳、病例定義暨檢體採檢送驗事項",詳見附件一「立百病毒感染症病例定義」。,"請參閱衛生福利部疾病管制署「傳染病檢體採檢手冊」（「衛生福利部
+疾病管制署全球資訊網首頁之檢驗」項下）。
+參、個案及接觸者之處理
+一、 個案通報與處置:
+(一) 病例通報：立百病毒感染症為傳染病防治法規定第五類傳染病，發
+現符合通報定義者，應於 24 小時內至「傳染病通報系統（NIDRS
+）」（https://nidrs.cdc.gov.tw/login）完成通報，必要時，得以電話、
+電子郵件或傳真方式先行通報所在地地方政府衛生局（所）。
+(二) 疫情調查：通報後 24 小時內於「傳染病問卷調查管理系統」（
+https://qinv.cdc.gov.tw/S_QINVWEB/）完成「新興傳染病類疫調單
+」，確認病人在發病前 21 天及發病期間之行蹤及住所，追查感染源
+6
+及建立接觸者名單。
+(三) 個案處置：經醫師評估為立百病毒感染症通報病例或經檢驗證實為
+確定病例時，以就地進行隔離收治為原則，必要時依指示後送核心
+照護醫院或特殊病原科技照護示範中心並優先收治於負壓隔離病
+房進行治療，並採取嚴格的接觸、飛沫及空氣傳播防護措施。
+二、接觸者定義、追蹤及處置：
+(一) 接觸者定義：在下列任一情境中，在無適當防護下曾與立百病毒感
+染症確定或極可能病例有接觸之人員：
+1. 與個案發病期間同住於同一家戶或病室。
+2. 於個案發病期間，曾與個案或其體液（血液、尿液、唾液及嘔吐物
+等）直接接觸，包括照護、搬運或轉送過程。
+3. 曾接觸過個案發病期間之汙染物（衣物、寢具及床單等）。
+4. 曾直接接觸個案之遺體。
+5. 曾與個案於出現症狀期間內有長時間（大於 15 分鐘）距離 2 公尺
+以內之接觸。
+6. 航空器接觸者：原則上至少應包含航程中曾直接接觸個案的同行旅
+客及機組人員、個案同排及前後各兩排(共五排)旅客、負責清潔個
+案座位所在區域之機艙清潔人員等。
+接觸者匡列原則詳見附件二「立百病毒感染症疫情調查及接觸者追蹤
+指引」。
+(二) 接觸者追蹤及管制：
+1. 啟動時機：通報個案判定為確定病例或極可能病例，啟動個案接觸
+者之追蹤。
+2. 接觸者追蹤及管制期限：地方衛生機關應對接觸者開立「健康監測
+7
+通知書」（附件三），提供相關衛教資訊，以及要求其實施健康監
+測至與病例最後一次接觸後 21 天。〔目前孟加拉、印度及紅十字
+會與紅新月會國際聯合會（IFRC）多採 21 日，韓國 14 日，考量我
+國現狀及風險管控，以避免造成疫情擴散，暫採 21 日。〕","一、預防方法 2.7.17
+（一）如前往流行疫情區域，應維持良好個人衛生習慣，避免接觸蝙蝠與
+豬隻，尤其是生病或死亡的動物，同時，應避免進入蝙蝠棲息區域
+或接觸可能被其排泄物污染的環境與物品。應避免飲用生椰棗樹汁
+及食用掉落地面的水果，水果食用前應澈底清洗與去皮。旅遊期間
+或返國後，如出現發燒、咳嗽、呼吸困難或意識改變等症狀，入境
+時應主動通報港埠檢疫人員且配合健康評估及檢疫措施，以及立即
+佩戴口罩並就醫，主動告知醫師旅遊史與可能的暴露史，以利早期
+診斷與防疫通報。
+（二）接觸動物時應採取適當防護措施，如戴手套、口罩及工作服等，尤
+其是處理生病的動物或其身體組織時；接觸後使用肥皂洗手或其他
+暴露部位。
+二、醫療機構感染管制措施：
+(一) 為降低醫療機構內傳播風險，疑似或感染立百病毒病人，應優先收
+治於負壓隔離病室，若不敷使用，應安置於有衛浴設備的單人病室
+；照護疑似或感染立百病毒的病人時，建議依醫療照護處置項目，
+採取標準防護措施、接觸傳染、飛沫傳染及空氣傳染防護措施。
+(二) 醫療機構因應立百病毒感染症疫情有賴於適當的感染管制措施，請
+詳見附件四「醫療機構因應立百病毒感染症感染管制建議」，包括
+病人分流機制通報、疑似或感染立百病毒病人收治及照護、工作人
+員健康監測、訪客管理、個人防護裝備、手部衛生、儀器及醫材設
+8
+備、環境清潔及消毒、織品/布單與被服、醫療廢棄物、檢體及轉送
+病人到其他部門/機構等，並依臨床實務及現況所需，參考內化於臨
+床作業流程中，落實執行。
+三、遺體處理：
+(一) 依傳染病防治法第五十條規定，經確認感染後，屍體應於 24 小時
+內入殮並火化。
+(二) 立百病毒感染的病人遺體應標示傳染性，進行遺體搬運、處理之工
+作人員，應受過適當之教育訓練，且應儘量減少搬運、處理遺體之
+工作人員。
+(三) 病人遺體應裝入雙層防滲漏屍袋運送。工作人員搬運遺體裝入屍袋
+的過程中，應全程依建議穿戴個人防護裝備，並於病人遺體裝入屍
+袋及棺木後，依標準流程脫除個人防護裝備及執行手部衛生。
+(四) 每層屍袋表面應以 1：10 的稀釋漂白水（5,000 ppm）抹拭，保持
+清潔。
+(五) 在醫院太平間，避免清洗遺體、入殮準備或防腐處理。太平間的工
+作人員和禮儀師必須被告知有生物危害風險。
+(六) 死亡病例解剖注意事項：請參閱疾病管制署「疑似傳染病死亡病理
+解剖作業參考手冊」。
+9
+參考文獻
+1. Factsheet: Nipah virus, WHO website:
+https://www.who.int/news-room/fact-sheets/detail/nipah-virus Accessed Feb
+25, 2026
+2. Nipah virus: Facts for Clinicians, US CDC website:
+https://www.cdc.gov/nipah-virus/hcp/clinical-overview/index.html Accessed
+Feb 25, 2026
+3. Introduction to Nipah virus disease, WHO website:
+https://openwho.org/media/WHO_Introduction_Nipah_EN/0_9ww93i0e/5385
+67 Accessed Feb 25, 2026
+4. Ganguly, A., Mahapatra, S., Ray, S. et al. The rising threat of Nipah virus: a
+highly contagious and deadly zoonotic pathogen. Virol J 22, 139 (2025),
+website: https://link.springer.com/article/10.1186/s12985-025-02728-4
+Accessed Feb 25, 2026
+5. Madhukalya, R., Yadav, U., Parray, H.A. et al. Nipah virus: pathogenesis,
+genome, diagnosis, and treatment. Appl Microbiol Biotechnol 109, 158
+(2025) , website:
+https://link.springer.com/article/10.1007/s00253-025-13474-6#Tab1 Accessed
+Feb 25, 2026
+6. Bangladesh reports off-season Nipah virus transmission and geographic
+expansion, with 100% fatality in recent cases, website:
+https://beaconbio.org/en/report/?reportid=602713d4-7d49-40e3-afe5-de9f7a6
+9d6c6&eventid=09f87614-a263-41e7-9c23-3cf9c77fd52d Accessed Mar 11,
+2026
+7. Nipah virus infection, Communicable Disease Agency, Singapore, Website:
+https://www.cda.gov.sg/professionals/diseases/nipah-virus-infection Accessed
+Feb 25, 2026
+8. Guidance on Nipah Virus, National Centre for Infectious Diseases, Singapore,
+website:
+https://www.ncid.sg/Health-Professionals/Joint-MOH-NCID-Guidances/Page
+s/Guidance%20on%20Nipah%20Virus%20-%20National%20Centre%20for%
+20Infectious%20Diseases.aspx Accessed Feb 25, 2026
+10
+9. Disease information on Nipah virus disease, European Centre for Disease
+Prevention and Control(ECDC) website:
+https://www.ecdc.europa.eu/en/infectious-disease-topics/nipah-virus-disease/d
+isease-information-nipah-virus-disease Accessed Feb 25, 2026
+10. Chan XHS, Haeusler IL, Choy BJK, Hassan MZ, Takata J, Hurst TP, Jones
+LM, Loganathan S, Harriss E, Dunning J, Tarning J, Carroll MW, Horby PW,
+Olliaro PL. Therapeutics for Nipah virus disease: a systematic review to
+support prioritisation of drug candidates for clinical trials. Lancet Microbe.
+2025 May;6(5):101002. website:
+https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(24)00270-
+2/fulltext Accessed Feb 25, 2026
+11. Zeitlin L, et al. Therapeutic administration of a cross-reactive mAb targeting
+the fusion glycoprotein of Nipah virus protects nonhuman primates. Sci
+Transl Med. 2024 Apr 3;16(741):eadl2055. doi:
+10.1126/scitranslmed.adl2055. Epub 2024 Apr 3. PMID: 38569014, website:
+https://pubmed.ncbi.nlm.nih.gov/38569014/ Accessed Feb 25, 2026
+12. A Phase 1 Randomized, Single Center, Double-Blind, Placebo-Controlled,
+Dose-Response Study to Evaluate the Safety and Immunogenicity of
+rVSV-Nipah Virus Vaccine Candidate PHV02 in Healthy Adult Subjects
+(Trial name). website: https://clinicaltrials.gov/study/NCT05178901
+Accessed Feb 25, 2026
+13. A Phase I, Dose Escalation, Open-Label Clinical Trial to Evaluate Safety,
+Tolerability and Immunogenicity of a Nipah Virus (NiV) mRNA Vaccine,
+mRNA-1215, in Healthy Adults (Trial name). website:
+https://clinicaltrials.gov/study/NCT05398796 Accessed Feb 25, 2026
+14. Frenck RW Jr, Naficy A, Feser J, Dickey MP, Leyva-Grado VH, Egan MA,
+Chen T, Eldridge JH, Sciotto-Brown S, Hermida L, Promeneur D, Luckay A,
+Medina H, Lazaro GA, Patel NR, Naqvi T, Broder CC, Dimitrov AS, Gast C,
+Mercer LD, Raine M, Andi-Lolo I, Innis BL, Aponte JJ, Hamm S, Rathi N.
+Safety and immunogenicity of a Nipah virus vaccine (HeV-sG-V) in adults:
+a single-centre, randomised, observer-blind, placebo-controlled, phase 1
+study. Lancet. 2025 Nov 14:S0140-6736(25)01390-X. website:
+https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)01390-
+X/fulltext Accessed Feb 25, 2026
+15. A Phase I safety and immunogenicity study of a Nipah virus vaccine,
+11
+ChAdOx1 NipahB, in healthy volunteers aged 18 to 55 years in the UK
+(Trial name). website: https://www.isrctn.com/ISRCTN87634044 Accessed
+Feb 25, 2026
+16. Establishing the world’s largest Nipah virus vaccine reserve, CEPI, website:
+https://cepi.net/establishing-worlds-largest-nipah-virus-vaccine-reserve
+Accessed Feb 25, 2026
+17. Technical Brief Enhancing readiness for a Nipah virus, WHO website:
+https://www.who.int/publications/i/item/9789290211273 Accessed Feb 25,
+2026
+12"

@@ -412,5 +412,11 @@
     "pdf_url": "https://www.cdc.gov.tw/Uploads/c0c7674c-9c86-40d0-826e-8e53a1a059e4.pdf",
     "json_path": "manual_data/伊波拉病毒感染.json",
     "csv_path": "manual_data/伊波拉病毒感染.csv"
+  },
+  {
+    "name": "立百病毒感染症",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/b574e27a-4bf7-4b13-8ff4-2f3428267c72.pdf",
+    "json_path": "manual_data/立百病毒感染症.json",
+    "csv_path": "manual_data/立百病毒感染症.csv"
   }
 ]
