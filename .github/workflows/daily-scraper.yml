@@ -1,0 +1,52 @@
+name: Daily Scraper Update
+
+on:
+  schedule:
+    # 6:00 PM Taiwan time (UTC+8) = 10:00 AM UTC
+    - cron: '0 10 * * *'
+  workflow_dispatch: # Allow manual triggers for testing
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push commits back to the repo
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run Case Definition Scraper
+      run: python scraper.py
+        
+    - name: Build Case Dashboard
+      run: python build_dashboard.py
+
+    - name: Run Disease Manuals Scraper
+      run: python manual_scraper.py
+        
+    - name: Build Manuals Dashboard
+      run: python build_manuals_dashboard.py
+        
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add -A
+        if ! git diff-index --quiet HEAD; then
+          git commit -m "🤖 Auto-update data and dashboard UI [skip ci]"
+          git push
+        else
+          echo "No changes found to commit."
+        fi
