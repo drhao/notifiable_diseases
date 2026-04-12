@@ -1,13 +1,13 @@
 # Scraper Status Report
-**Execution Time:** 2026-04-11 10:29
+**Execution Time:** 2026-04-12 10:34
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 73
-- **Failed:** 1
+- **Successfully Fetched & Parsed:** 71
+- **Failed:** 3
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -50,7 +50,7 @@
 | 流行性腮腺炎 | ✅ Success | 第三類 | - |
 | 百日咳 | ✅ Success | 第三類 | - |
 | 侵襲性b型嗜血桿菌感染症 | ✅ Success | 第三類 | - |
-| 退伍軍人病 | ✅ Success | 第三類 | - |
+| 退伍軍人病 | ❌ Fail | 第三類 | **No PDF Link** |
 | 人類免疫缺乏病毒(愛滋病毒)感染 | ✅ Success | 第三類 | - |
 | 梅毒 | ✅ Success | 第三類 | - |
 | 先天性梅毒 | ✅ Success | 第三類 | - |
@@ -76,7 +76,7 @@
 | 類鼻疽 | ✅ Success | 第四類 | - |
 | 鉤端螺旋體病 | ✅ Success | 第四類 | - |
 | 兔熱病 | ✅ Success | 第四類 | - |
-| 疱疹B病毒感染症 | ✅ Success | 第四類 | - |
+| 疱疹B病毒感染症 | ❌ Fail | 第四類 | **No PDF Link** |
 | 新型A型流感 | ✅ Success | 第五類 | - |
 | 黃熱病 | ✅ Success | 第五類 | - |
 | 裂谷熱 | ✅ Success | 第五類 | - |
