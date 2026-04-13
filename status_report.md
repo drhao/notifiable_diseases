@@ -1,13 +1,13 @@
 # Scraper Status Report
-**Execution Time:** 2026-04-12 10:34
+**Execution Time:** 2026-04-13 11:13
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 71
-- **Failed:** 3
+- **Successfully Fetched & Parsed:** 72
+- **Failed:** 2
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -41,7 +41,7 @@
 | 後天免疫缺乏症候群 | ✅ Success | 第三類 | - |
 | 急性病毒性B型肝炎 | ✅ Success | 第三類 | - |
 | 日本腦炎 | ✅ Success | 第三類 | - |
-| 急性病毒性C型肝炎 | ✅ Success | 第三類 | - |
+| 急性病毒性C型肝炎 | ❌ Fail | 第三類 | **No PDF Link** |
 | 腸病毒感染併發重症 | ✅ Success | 第三類 | - |
 | 急性病毒性D型肝炎 | ✅ Success | 第三類 | - |
 | 結核病 | ✅ Success | 第三類 | - |
@@ -50,7 +50,7 @@
 | 流行性腮腺炎 | ✅ Success | 第三類 | - |
 | 百日咳 | ✅ Success | 第三類 | - |
 | 侵襲性b型嗜血桿菌感染症 | ✅ Success | 第三類 | - |
-| 退伍軍人病 | ❌ Fail | 第三類 | **No PDF Link** |
+| 退伍軍人病 | ✅ Success | 第三類 | - |
 | 人類免疫缺乏病毒(愛滋病毒)感染 | ✅ Success | 第三類 | - |
 | 梅毒 | ✅ Success | 第三類 | - |
 | 先天性梅毒 | ✅ Success | 第三類 | - |
@@ -76,7 +76,7 @@
 | 類鼻疽 | ✅ Success | 第四類 | - |
 | 鉤端螺旋體病 | ✅ Success | 第四類 | - |
 | 兔熱病 | ✅ Success | 第四類 | - |
-| 疱疹B病毒感染症 | ❌ Fail | 第四類 | **No PDF Link** |
+| 疱疹B病毒感染症 | ✅ Success | 第四類 | - |
 | 新型A型流感 | ✅ Success | 第五類 | - |
 | 黃熱病 | ✅ Success | 第五類 | - |
 | 裂谷熱 | ✅ Success | 第五類 | - |
