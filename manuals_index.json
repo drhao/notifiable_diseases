@@ -247,13 +247,13 @@
   },
   {
     "name": "破傷風",
-    "pdf_url": "https://www.cdc.gov.tw/Uploads/422258c2-ff62-4833-a87a-e792817e82de.pdf",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/fb6e1e1e-2ac2-4ee3-a8f8-13836b2fcdf7.pdf",
     "json_path": "manual_data/破傷風.json",
     "csv_path": "manual_data/破傷風.csv"
   },
   {
     "name": "新生兒破傷風",
-    "pdf_url": "https://www.cdc.gov.tw/Uploads/7a13a82d-3a20-428c-9ac6-de5cae42ba21.pdf",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/6fd67253-497f-46b3-903d-580ad41409e2.pdf",
     "json_path": "manual_data/新生兒破傷風.json",
     "csv_path": "manual_data/新生兒破傷風.csv"
   },
