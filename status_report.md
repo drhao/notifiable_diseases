@@ -1,13 +1,13 @@
 # Scraper Status Report
-**Execution Time:** 2026-05-14 11:48
+**Execution Time:** 2026-05-15 11:51
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 72
-- **Failed:** 2
+- **Successfully Fetched & Parsed:** 73
+- **Failed:** 1
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -17,7 +17,7 @@
 | 嚴重急性呼吸道症候群 | ✅ Success | 第一類 | - |
 | 天花 | ✅ Success | 第一類 | - |
 | M痘 | ✅ Success | 第二類 | - |
-| 登革熱 | ❌ Fail | 第二類 | **No PDF Link** |
+| 登革熱 | ✅ Success | 第二類 | - |
 | 屈公病 | ✅ Success | 第二類 | - |
 | 瘧疾 | ✅ Success | 第二類 | - |
 | 茲卡病毒感染症 | ✅ Success | 第二類 | - |
