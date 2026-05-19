@@ -1,9 +1,8 @@
 # Scraper Status Report
-**Execution Time:** 2026-05-18 13:03
+**Execution Time:** 2026-05-19 12:37
 
 ## 📢 Latest PDF Updates
-The following disease definitions were updated in this run:  
-- **先天性梅毒**
+*No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
@@ -54,7 +53,7 @@ The following disease definitions were updated in this run:
 | 退伍軍人病 | ✅ Success | 第三類 | - |
 | 人類免疫缺乏病毒(愛滋病毒)感染 | ✅ Success | 第三類 | - |
 | 梅毒 | ✅ Success | 第三類 | - |
-| 先天性梅毒 | ✅ 💡 Updated Success | 第三類 | - |
+| 先天性梅毒 | ✅ Success | 第三類 | - |
 | 淋病 | ✅ Success | 第三類 | - |
 | 破傷風 | ✅ Success | 第三類 | - |
 | 新生兒破傷風 | ✅ Success | 第三類 | - |
