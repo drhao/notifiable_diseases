@@ -73,7 +73,7 @@
   },
   {
     "name": "傷寒",
-    "pdf_url": "https://www.cdc.gov.tw/File/Get/uy5Y-ggKTCUELlOdxze-oQ",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/b14a853c-37b3-4740-8c1b-89952d1700c6.pdf",
     "json_path": "manual_data/傷寒.json",
     "csv_path": "manual_data/傷寒.csv"
   },
@@ -121,7 +121,7 @@
   },
   {
     "name": "麻疹",
-    "pdf_url": "https://www.cdc.gov.tw/File/Get/awThBLxVjvWdoVvmYFhwCw",
+    "pdf_url": "https://www.cdc.gov.tw/Uploads/891a2cfb-4a78-458a-983b-7edc1c24be39.pdf",
     "json_path": "manual_data/麻疹.json",
     "csv_path": "manual_data/麻疹.csv"
   },
