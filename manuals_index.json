@@ -180,12 +180,6 @@
     "csv_path": "manual_data/急性病毒性D型肝炎.csv"
   },
   {
-    "name": "結核病",
-    "pdf_url": "https://www.cdc.gov.tw/Uploads/cb948fa4-bcbc-42ac-b0e7-0d43eb72ae4a.pdf",
-    "json_path": "manual_data/結核病.json",
-    "csv_path": "manual_data/結核病.csv"
-  },
-  {
     "name": "先天性德國麻疹症候群",
     "pdf_url": "https://www.cdc.gov.tw/Uploads/81769fe3-7896-4079-9dc0-243f9954ab59.pdf",
     "json_path": "manual_data/先天性德國麻疹症候群.json",
