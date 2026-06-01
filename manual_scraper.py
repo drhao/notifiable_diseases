@@ -2,18 +2,16 @@ import os
 import re
 import json
 import time
-import requests
 import urllib.parse
 from bs4 import BeautifulSoup
-import pdfplumber
-import hashlib
 from datetime import datetime
+
 from scraper import diff_texts
+from cdc_common import fetch, download_pdf
 
 def get_manual_links(base_url="https://www.cdc.gov.tw/Category/DiseaseManual/bU9xd21vK0l5S3gwb3VUTldqdVNnQT09"):
     """Fetches the list of all disease manual links from the main page."""
-    headers = {"User-Agent": "Mozilla/5.0"}
-    r = requests.get(base_url, headers=headers)
+    r = fetch(base_url)
     r.encoding = 'utf-8'
     soup = BeautifulSoup(r.text, 'html.parser')
     
@@ -35,8 +33,7 @@ def get_manual_links(base_url="https://www.cdc.gov.tw/Category/DiseaseManual/bU9
 
 def get_actual_pdf_link(detail_url):
     """Fetches the detail page and extracts the actual .pdf upload link."""
-    headers = {"User-Agent": "Mozilla/5.0"}
-    r = requests.get(detail_url, headers=headers)
+    r = fetch(detail_url)
     soup = BeautifulSoup(r.text, 'html.parser')
     
     for a in soup.select('a[href]'):
@@ -124,22 +121,15 @@ def main():
             
         old_record = existing_data.get(name)
         expected_hash = old_record.get('pdf_hash') if old_record else None
-            
-        pdf_path = os.path.join(pdf_dir, f"{name.replace('/', '_')}.pdf")
-        
-        # Download
+
+        # Download (+ hash + text extraction) via the shared helper.
         try:
-            r = requests.get(pdf_url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
-            r.raise_for_status()
-            pdf_bytes = r.content
-            current_hash = hashlib.sha256(pdf_bytes).hexdigest()
-            with open(pdf_path, 'wb') as f:
-                f.write(pdf_bytes)
+            text, pdf_path, current_hash = download_pdf(pdf_url, pdf_dir, name, expected_hash)
         except Exception as e:
-            print(f"  Download error: {e}")
+            print(f"  Download/extract error: {e}")
             continue
-            
-        if expected_hash and current_hash == expected_hash:
+
+        if text is None and current_hash == expected_hash:
             print(f"  Unchanged! (Hash Matched). Skipping extraction.")
             # Update the URL just in case
             old_record['url'] = pdf_url
@@ -147,21 +137,9 @@ def main():
                 old_record['last_pdf_update'] = now_date_str
             results.append(old_record)
             continue
-            
+
         print(f"  Update detected: {name} (Hash: {current_hash[:6]})")
-        
-        # Extract text
-        text = ""
-        try:
-            with pdfplumber.open(pdf_path) as pdf:
-                for page in pdf.pages:
-                    extract = page.extract_text()
-                    if extract:
-                        text += extract + "\n"
-        except Exception as e:
-            print(f"  PDF read error: {e}")
-            continue
-            
+
         # Parse
         parsed_sections = parse_manual_text(text)
         

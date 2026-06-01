@@ -2,11 +2,7 @@
 
 這是一個自動化工具專案，用於從台灣衛生福利部疾病管制署 (Taiwan CDC) 網站抓取「法定傳染病病例定義」與「防治工作手冊」，自動比對最新更新，並生成靜態 HTML 儀表板。
 
-<<<<<<< HEAD
 **最後更新日期:** 2026-05-31 11:31
-=======
-**最後更新日期:** 2026-05-31 11:31
->>>>>>> afd7788413d60e59fd03d941dee1bea0718a88a3
 
 ## 專案功能
 
@@ -19,9 +15,14 @@
 
 * `scraper.py` / `build_dashboard.py`: 負責「病例定義」的爬蟲與靜態頁面生成 (`index.html`)。
 * `manual_scraper.py` / `build_manuals_dashboard.py`: 負責「防治工作手冊」的爬蟲與靜態頁面生成 (`manuals.html`)。
-* `pdf_fetcher.py` / `data_parser.py`: PDF 網路抓取與正則表示式解析的核心公用腳本。
+* `cdc_common.py`: 共用的下載核心 —— 統一的 `requests.Session`（含 User-Agent 與自動 retry/backoff）以及 PDF 下載 → sha256 雜湊比對 → `pdfplumber` 文字擷取流程。
+* `pdf_fetcher.py` / `data_parser.py`: 病例定義頁面的連結抓取與正則表示式解析腳本。
 * `diseases.json` / `disease_manuals.json`: 本專案儲存所有已結構化及含有差異註記 (diff) 的原始 JSON 資料。
 * `.github/workflows/daily-scraper.yml`: GitHub Actions 自動執行腳本。
+
+> **部署說明**：生成的 `index.html` / `manuals.html` 屬於建置產物，已不再納入 git 版控（避免每日約 1.7 MB 的歷史膨脹），改由 workflow 直接發布到 GitHub Pages。
+>
+> ⚠️ **一次性設定**：請至 repo 的 **Settings → Pages → Build and deployment → Source** 選擇 **「GitHub Actions」**。在切換之前，Pages 部署步驟會失敗（但爬蟲與資料更新仍會正常執行）。
 
 ## 如何使用
 

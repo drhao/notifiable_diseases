@@ -656,8 +656,8 @@ def main():
         with open(readme_path, "r", encoding="utf-8") as f:
             content = f.read()
         
-        # Replace date line
-        new_content = re.sub(r"\*\*最後更新日期:\*\*.*", f"**最後更新日期:** {last_updated}", content)
+        # Replace date line (count=1 so we only touch the first occurrence)
+        new_content = re.sub(r"\*\*最後更新日期:\*\*.*", f"**最後更新日期:** {last_updated}", content, count=1)
         
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(new_content)
