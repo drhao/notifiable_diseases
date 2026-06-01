@@ -181,49 +181,6 @@ def extract_english_name(content):
 
     return ""
 
-def main():
-    """
-    Independent execution: Read local PDFs and test the parser.
-    Updates diseases.json if it exists.
-    """
-    pdf_dir = "pdfs"
-    json_path = "diseases.json"
-    
-    if not os.path.exists(pdf_dir):
-        print(f"Directory {pdf_dir} not found.")
-        return
-
-    print(f"Testing parser on files in {pdf_dir}/...")
-    
-    processed_count = 0
-    updated_data = []
-    
-    # Load existing JSON to preserve other fields (url, source_category) if we want to save back
-    existing_map = {}
-    if os.path.exists(json_path):
-        with open(json_path, "r", encoding="utf-8") as f:
-            existing_data = json.load(f)
-            for d in existing_data:
-                existing_map[d['name']] = d
-    
-    files = [f for f in os.listdir(pdf_dir) if f.endswith(".pdf")]
-    
-    for filename in sorted(files):
-        disease_name = filename.replace(".pdf", "").replace("_", "/")
-        pdf_path = os.path.join(pdf_dir, filename)
-        
-        # Extract text via pdfplumber
-        text = ""
-        try:
-            with pdfplumber.open(pdf_path) as pdf:
-                for page in pdf.pages:
-                    extract = page.extract_text()
-                    if extract:
-                        text += extract + "\n"
-        except Exception as e:
-            print(f"Error reading {filename}: {e}")
-            continue
-            
 def parse_case_definitions(classification_text):
     """
     Parses '疾病分類' text to extract structured case definitions.

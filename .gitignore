@@ -1,3 +1,18 @@
 venv/
 __pycache__/
 .DS_Store
+
+# Locally-cached PDFs and per-disease data dumps (regenerated on every run,
+# not used by the published dashboards — kept out of git to avoid bloat).
+pdfs/
+manual_pdfs/
+manual_data/
+sample_manual.pdf
+sample_download
+
+# Generated dashboards. These are rebuilt from the JSON data on every run and
+# published straight to GitHub Pages via the workflow, so they no longer need
+# to live in git history (each rebuild was a ~1.7 MB diff).
+index.html
+manuals.html
+_site/

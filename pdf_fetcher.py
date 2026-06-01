@@ -2,17 +2,12 @@
 pdf_fetcher.py - Functions for fetching disease links and PDF content from Taiwan CDC website.
 Saves PDFs locally and extracts disease category from page structure.
 """
-import requests
-from bs4 import BeautifulSoup
-import os
 import re
-import requests
-import pdfplumber
-import hashlib
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-BASE_URL = "https://www.cdc.gov.tw"
+from cdc_common import BASE_URL, fetch, download_pdf
+
 TARGET_URL = "https://www.cdc.gov.tw/Category/DiseaseDefine/ZW54U0FpVVhpVGR3UkViWm8rQkNwUT09"
 PDF_DIR = "pdfs"
 
@@ -25,9 +20,8 @@ def fetch_disease_links():
     """
     print(f"Fetching {TARGET_URL}...")
     try:
-        response = requests.get(TARGET_URL, timeout=10)
-        response.raise_for_status()
-    except requests.RequestException as e:
+        response = fetch(TARGET_URL)
+    except Exception as e:
         print(f"Error fetching main page: {e}")
         return []
 
@@ -90,9 +84,7 @@ def get_actual_pdf_url(viewer_url):
     Get the actual PDF download URL from the viewer page.
     """
     try:
-        res = requests.get(viewer_url, timeout=10)
-        res.raise_for_status()
-        
+        res = fetch(viewer_url)
         soup = BeautifulSoup(res.content, 'html.parser')
         pdf_link_tag = soup.select_one('a.viewer-button')
         if not pdf_link_tag:
@@ -120,32 +112,7 @@ def download_and_extract_pdf(full_pdf_url, disease_name, expected_hash=None):
     Returns (None, None, None) on failure.
     """
     try:
-        os.makedirs(PDF_DIR, exist_ok=True)
-        
-        pdf_res = requests.get(full_pdf_url, timeout=15)
-        pdf_res.raise_for_status()
-        
-        pdf_bytes = pdf_res.content
-        current_hash = hashlib.sha256(pdf_bytes).hexdigest()
-        
-        safe_name = re.sub(r'[<>:"/\\|?*]', '_', disease_name)
-        pdf_path = os.path.join(PDF_DIR, f"{safe_name}.pdf")
-        
-        with open(pdf_path, 'wb') as f:
-            f.write(pdf_bytes)
-            
-        if expected_hash and current_hash == expected_hash:
-            return None, pdf_path, current_hash
-        
-        text = ""
-        with pdfplumber.open(pdf_path) as pdf:
-            for page in pdf.pages:
-                page_text = page.extract_text()
-                if page_text:
-                    text += page_text + "\n"
-        
-        return text.strip(), pdf_path, current_hash
-        
+        return download_pdf(full_pdf_url, PDF_DIR, disease_name, expected_hash)
     except Exception as e:
         print(f"  Error processing {full_pdf_url}: {e}")
         return None, None, None
