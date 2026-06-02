@@ -1,6 +1,7 @@
 venv/
 __pycache__/
 .DS_Store
+.pytest_cache/
 
 # Locally-cached PDFs and per-disease data dumps (regenerated on every run,
 # not used by the published dashboards — kept out of git to avoid bloat).

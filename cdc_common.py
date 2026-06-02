@@ -13,7 +13,6 @@ import hashlib
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-import pdfplumber
 
 BASE_URL = "https://www.cdc.gov.tw"
 
@@ -63,6 +62,8 @@ def safe_filename(name):
 
 def extract_pdf_text(pdf_path):
     """Extract all text from a local PDF via pdfplumber."""
+    import pdfplumber  # local import: keeps the heavy PDF stack out of import time
+
     text = ""
     with pdfplumber.open(pdf_path) as pdf:
         for page in pdf.pages:

@@ -6,7 +6,8 @@ import re
 import os
 import json
 import unicodedata
-import pdfplumber
+# pdfplumber is imported lazily inside main() so the pure-text parsing
+# functions can be imported (and unit-tested) without the heavy PDF stack.
 
 def deduplicate_chars(text, n=4):
     """
@@ -257,6 +258,8 @@ def main():
     Independent execution: Read local PDFs and test the parser.
     Updates diseases.json if it exists.
     """
+    import pdfplumber  # local import: only needed when reading PDFs directly
+
     pdf_dir = "pdfs"
     json_path = "diseases.json"
     

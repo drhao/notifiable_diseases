@@ -50,6 +50,17 @@
 
     這會自動抓取尚未更新的部分並匯出 HTML。執行完畢後只需用瀏覽器打開 `index.html` 或是 `manuals.html` 即可。
 
+## 測試
+
+解析邏輯（`data_parser.py`、`manual_scraper.parse_manual_text`）皆為純文字處理，已用 `pytest` 撰寫回歸測試，無需網路或 PDF 即可執行：
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+測試涵蓋 PDF 擷取常見的怪異情形（重複字元、半形標點、編號標題、病例分類關鍵字等），CI 也會在每次 push / PR 自動執行（見 `.github/workflows/tests.yml`）。
+
 ## 技術說明
 
 * **PDF 處理**: 使用 `pdfplumber` 進行文字提取。
