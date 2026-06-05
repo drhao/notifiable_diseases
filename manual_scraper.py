@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 from scraper import diff_texts
+from data_parser import clean_section_text
 from cdc_common import BASE_URL, fetch, download_pdf, write_csv, setup_logging
 
 logger = logging.getLogger(__name__)
@@ -139,7 +140,10 @@ def parse_manual_text(text):
     # Save last
     if current_section and current_section in sections:
         sections[current_section] = "\n".join(buffer).strip()
-        
+
+    for key in sections:
+        sections[key] = clean_section_text(sections[key])
+
     return sections
 
 def main():

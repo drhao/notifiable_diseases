@@ -54,6 +54,46 @@ def normalize_text(text):
     text = deduplicate_chars(text, 4)
     return text
 
+# Page-footer / boilerplate that PDF extraction sometimes leaves inside a
+# parsed section. All are matched against a single (stripped) line so they
+# cannot eat legitimate content that merely mentions, e.g., 疾病管制署 mid-sentence.
+_FOOTER_PAGE = re.compile(
+    r'^(?:\d+\s*/\s*\d+|第?\s*\d+\s*頁(?:\s*/\s*共?\s*\d+\s*頁)?|[-–—]\s*\d+\s*[-–—])$'
+)
+_FOOTER_DATE = re.compile(
+    r'^\d{2,3}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日\s*'
+    r'(?:修訂|核定|公告|訂定|制定|增訂|修正|發布)?$'
+)
+_FOOTER_AGENCY = re.compile(r'疾病管制署.*(?:FAX|傳真|電話|（0\d|\(0\d)')
+# Some case-definition PDFs append a blank case-report form; it starts with a
+# 【密件】 title line. Everything from there on is form noise, not a definition.
+_FORM_BOUNDARY = re.compile(r'^\s*【密件】')
+
+
+def clean_section_text(text):
+    """
+    Remove page-footer/boilerplate noise left inside a parsed section:
+    standalone page numbers, approval/revision date stamps, the agency contact
+    footer, and any embedded case-report-form block (cut at its 【密件】 boundary).
+
+    Pure and idempotent; only whole noise lines are dropped, so legitimate text
+    is never partially mangled.
+    """
+    if not text:
+        return text
+    out = []
+    for line in text.split('\n'):
+        if _FORM_BOUNDARY.match(line):
+            break  # form block begins here -> drop it and everything after
+        stripped = line.strip()
+        if (_FOOTER_PAGE.match(stripped)
+                or _FOOTER_DATE.match(stripped)
+                or _FOOTER_AGENCY.search(stripped)):
+            continue
+        out.append(line)
+    return '\n'.join(out).strip()
+
+
 def parse_disease_content(content):
     """
     Parses the raw content string into specific sections.
@@ -123,12 +163,18 @@ def parse_disease_content(content):
             
     if current_section and current_section in sections:
         sections[current_section] = "\n".join(buffer).strip()
-        
+
+    # Strip page-footer/boilerplate noise from every section before anything
+    # downstream (incl. the case-definition parse) sees it.
+    for key in sections:
+        sections[key] = clean_section_text(sections[key])
+
     # Parse Case Definitions automatically
     # Note: parse_case_definitions is defined later in the file, but available at runtime
     case_defs = parse_case_definitions(sections.get("疾病分類", ""))
+    case_defs = {k: clean_section_text(v) for k, v in case_defs.items()}
     sections.update(case_defs)
-        
+
     return sections
 
 

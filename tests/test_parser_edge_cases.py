@@ -12,6 +12,7 @@ from data_parser import (
     parse_disease_content,
     extract_english_name,
     parse_case_definitions,
+    clean_section_text,
 )
 from manual_scraper import parse_manual_text
 
@@ -130,3 +131,41 @@ def test_manual_bare_header_without_numeral_is_not_a_section():
     out = parse_manual_text("一、疾病概述\nfoo\n致病原\nstill concept")
     assert out["致病原"] == ""              # never started (no numeral prefix)
     assert "致病原" in out["疾病概述"]       # folded into the open section instead
+
+
+# --- clean_section_text: footer/boilerplate stripping ---------------------
+
+def test_clean_strips_revision_and_approval_date_lines():
+    assert clean_section_text("符合臨床條件。\n104年7月16日核定") == "符合臨床條件。"
+    assert clean_section_text("內容\n109年11月11日修訂") == "內容"
+
+
+def test_clean_strips_agency_contact_footer():
+    text = "排除急性感染。\n衛生福利部疾病管制署 （02）2395-9825 FAX：（02）2391-3482"
+    assert clean_section_text(text) == "排除急性感染。"
+
+
+def test_clean_keeps_legitimate_agency_mention():
+    # a mid-sentence 疾病管制署 reference (no contact info) must survive
+    text = "傳統檢測須為疾病管制署或認可實驗室。"
+    assert clean_section_text(text) == text
+
+
+def test_clean_strips_standalone_page_numbers():
+    assert clean_section_text("確定病例\n1/2\n內容") == "確定病例\n內容"
+
+
+def test_clean_truncates_embedded_report_form_at_secret_marker():
+    text = "（三）確定病例：\n排除 HIV 急性初期感染。\n【密件】 個案報告單\n報告所 院 所\n衛生局填寫"
+    assert clean_section_text(text) == "（三）確定病例：\n排除 HIV 急性初期感染。"
+
+
+def test_clean_is_idempotent():
+    text = "內容\n104年7月16日核定"
+    once = clean_section_text(text)
+    assert clean_section_text(once) == once
+
+
+def test_clean_empty_passthrough():
+    assert clean_section_text("") == ""
+    assert clean_section_text(None) is None
