@@ -1,6 +1,11 @@
 import json
 import os
+import logging
 from datetime import datetime
+
+from dashboard_common import SECURITY_JS
+
+logger = logging.getLogger(__name__)
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="zh-TW">
@@ -308,18 +313,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <script>
         const DATA = __DATA_PLACEHOLDER__;
 
-        // --- XSS hardening ------------------------------------------------
-        // PDF-extracted text is untrusted. esc() escapes raw values for
-        // innerHTML; renderDiff() permits ONLY the four diff tags emitted by
-        // diff_texts() and escapes everything else, so even diff HTML written
-        // by older runs cannot inject markup.
-        const esc = (s) => s == null ? '' : String(s).replace(/[&<>"']/g,
-            c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-        const DIFF_RE = /(<del style="color: #9ca3af;">|<\/del>|<b style="color: #ea580c; background: #ffedd5;">|<\/b>)/g;
-        const DIFF_TAGS = new Set(['<del style="color: #9ca3af;">', '</del>',
-            '<b style="color: #ea580c; background: #ffedd5;">', '</b>']);
-        const renderDiff = (s) => s == null ? '' :
-            String(s).split(DIFF_RE).map(p => DIFF_TAGS.has(p) ? p : esc(p)).join('');
+__SECURITY_JS__
         const tbody = document.getElementById('tableBody');
         const searchInput = document.getElementById('searchInput');
 
@@ -434,11 +428,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 """
 
 def main():
+    from cdc_common import setup_logging
+    setup_logging()
     try:
         with open("disease_manuals.json", "r", encoding="utf-8") as f:
             data = json.load(f)
     except FileNotFoundError:
-        print("disease_manuals.json not found")
+        logger.error("disease_manuals.json not found")
         return
 
     json_str = json.dumps(data, ensure_ascii=False).replace("</script>", "<\\/script>")
@@ -457,13 +453,14 @@ def main():
         ts = os.path.getmtime("disease_manuals.json")
         last_updated = datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M")
 
-    html_content = HTML_TEMPLATE.replace("__DATA_PLACEHOLDER__", json_str)
+    html_content = HTML_TEMPLATE.replace("__SECURITY_JS__", SECURITY_JS)
+    html_content = html_content.replace("__DATA_PLACEHOLDER__", json_str)
     html_content = html_content.replace("<!-- LAST_UPDATED -->", last_updated)
     
     with open("manuals.html", "w", encoding="utf-8") as f:
         f.write(html_content)
         
-    print(f"Successfully generated manuals.html with {len(data)} manuals.")
+    logger.info("Successfully generated manuals.html with %d manuals.", len(data))
 
 if __name__ == "__main__":
     main()

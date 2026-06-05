@@ -12,9 +12,12 @@ only does file IO.
 """
 import os
 import json
+import logging
 from datetime import datetime, timezone
 from email.utils import format_datetime
 from xml.sax.saxutils import escape
+
+logger = logging.getLogger(__name__)
 
 # The published site root; override with SITE_URL if the Pages URL differs.
 SITE_URL = os.environ.get("SITE_URL", "https://drhao.github.io/notifiable_diseases")
@@ -96,13 +99,15 @@ def _load(path):
 
 
 def main():
+    from cdc_common import setup_logging
+    setup_logging()
     case_data = _load("diseases.json")
     manual_data = _load("disease_manuals.json")
     xml = build_feed(case_data, manual_data)
     with open("feed.xml", "w", encoding="utf-8") as f:
         f.write(xml)
     n = xml.count("<item>")
-    print(f"Generated feed.xml with {n} items.")
+    logger.info("Generated feed.xml with %d items.", n)
 
 
 if __name__ == "__main__":

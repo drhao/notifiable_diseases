@@ -5,7 +5,10 @@ Can be run independently to test parsing on local PDFs.
 import re
 import os
 import json
+import logging
 import unicodedata
+
+logger = logging.getLogger(__name__)
 # pdfplumber is imported lazily inside main() so the pure-text parsing
 # functions can be imported (and unit-tested) without the heavy PDF stack.
 
@@ -259,15 +262,17 @@ def main():
     Updates diseases.json if it exists.
     """
     import pdfplumber  # local import: only needed when reading PDFs directly
+    from cdc_common import setup_logging
+    setup_logging()
 
     pdf_dir = "pdfs"
     json_path = "diseases.json"
-    
+
     if not os.path.exists(pdf_dir):
-        print(f"Directory {pdf_dir} not found.")
+        logger.error("Directory %s not found.", pdf_dir)
         return
 
-    print(f"Testing parser on files in {pdf_dir}/...")
+    logger.info("Testing parser on files in %s/...", pdf_dir)
     
     processed_count = 0
     updated_data = []
@@ -295,7 +300,7 @@ def main():
                     if extract:
                         text += extract + "\n"
         except Exception as e:
-            print(f"Error reading {filename}: {e}")
+            logger.warning("Error reading %s: %s", filename, e)
             continue
             
         # Parse
@@ -309,7 +314,7 @@ def main():
         
         # Check if parsing found anything
         filled_sections = sum(1 for v in parsed.values() if v)
-        print(f"Parsed {disease_name}: found {filled_sections}/9 sections, English: {english_name}")
+        logger.info("Parsed %s: found %d/9 sections, English: %s", disease_name, filled_sections, english_name)
         
         # Update existing record - try to find by name (handle _ vs / differences)
         record = None
@@ -332,7 +337,7 @@ def main():
             new_record.update(parsed)
             new_record['english_name'] = english_name
             updated_data.append(new_record)
-            print(f"  Warning: No existing record found for {disease_name}")
+            logger.warning("No existing record found for %s", disease_name)
             
         processed_count += 1
 
@@ -346,13 +351,13 @@ def main():
         # Let's write to diseases.json
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(updated_data, f, ensure_ascii=False, indent=2)
-        print(f"\nUpdated {json_path} with parsed data from {processed_count} PDFs.")
+        logger.info("Updated %s with parsed data from %d PDFs.", json_path, processed_count)
         
         # Also update CSV
         from cdc_common import write_csv
         cols = ["name", "url", "source_category", "pdf_path", "臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"]
         write_csv("diseases.csv", updated_data, columns=cols)
-        print("Updated diseases.csv")
+        logger.info("Updated diseases.csv")
 
 if __name__ == "__main__":
     main()

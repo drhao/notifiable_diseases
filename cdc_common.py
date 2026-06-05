@@ -9,6 +9,7 @@ pipeline used to cache PDFs and detect updates.
 import os
 import re
 import csv
+import logging
 import hashlib
 
 import requests
@@ -27,6 +28,20 @@ USER_AGENT = (
 DEFAULT_TIMEOUT = 20
 
 _session = None
+
+
+def setup_logging(level=None):
+    """
+    Configure root logging for the CLI entry points. Level comes from the
+    argument, else the LOG_LEVEL env var, else INFO. Safe to call more than
+    once (basicConfig is a no-op after the first handler is attached).
+    """
+    level = (level or os.environ.get("LOG_LEVEL", "INFO")).upper()
+    logging.basicConfig(
+        level=getattr(logging, level, logging.INFO),
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+        datefmt="%H:%M:%S",
+    )
 
 
 def get_session():

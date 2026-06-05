@@ -1,7 +1,12 @@
 import json
 import os
 import re
+import logging
 from datetime import datetime
+
+from dashboard_common import SECURITY_JS
+
+logger = logging.getLogger(__name__)
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="zh-TW">
@@ -363,18 +368,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <script>
         const DATA = __DATA_PLACEHOLDER__;
 
-        // --- XSS hardening ------------------------------------------------
-        // PDF-extracted text is untrusted. esc() escapes raw values for
-        // innerHTML; renderDiff() permits ONLY the four diff tags emitted by
-        // diff_texts() and escapes everything else, so even diff HTML written
-        // by older runs cannot inject markup.
-        const esc = (s) => s == null ? '' : String(s).replace(/[&<>"']/g,
-            c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-        const DIFF_RE = /(<del style="color: #9ca3af;">|<\/del>|<b style="color: #ea580c; background: #ffedd5;">|<\/b>)/g;
-        const DIFF_TAGS = new Set(['<del style="color: #9ca3af;">', '</del>',
-            '<b style="color: #ea580c; background: #ffedd5;">', '</b>']);
-        const renderDiff = (s) => s == null ? '' :
-            String(s).split(DIFF_RE).map(p => DIFF_TAGS.has(p) ? p : esc(p)).join('');
+__SECURITY_JS__
 
         const tbody = document.getElementById('tableBody');
         const catNav = document.getElementById('catNav');
@@ -620,11 +614,13 @@ def parse_category_sort_key(classification):
     return 99, ""
 
 def main():
+    from cdc_common import setup_logging
+    setup_logging()
     try:
         with open("diseases.json", "r", encoding="utf-8") as f:
             data = json.load(f)
     except FileNotFoundError:
-        print("diseases.json not found")
+        logger.error("diseases.json not found")
         return
 
     for d in data:
@@ -659,7 +655,8 @@ def main():
         ts = os.path.getmtime("diseases.json")
         last_updated = datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M")
 
-    html_content = HTML_TEMPLATE.replace("__DATA_PLACEHOLDER__", json_str)
+    html_content = HTML_TEMPLATE.replace("__SECURITY_JS__", SECURITY_JS)
+    html_content = html_content.replace("__DATA_PLACEHOLDER__", json_str)
     html_content = html_content.replace("<!-- LAST_UPDATED -->", last_updated)
     
     with open("index.html", "w", encoding="utf-8") as f:
@@ -676,9 +673,9 @@ def main():
         
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(new_content)
-        print("Updated README.md timestamp.")
-    
-    print(f"Generated index.html with {len(data)} diseases. Updated: {last_updated}")
+        logger.info("Updated README.md timestamp.")
+
+    logger.info("Generated index.html with %d diseases. Updated: %s", len(data), last_updated)
 
 if __name__ == "__main__":
     main()

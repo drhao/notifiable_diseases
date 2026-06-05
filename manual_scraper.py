@@ -2,12 +2,15 @@ import os
 import re
 import json
 import time
+import logging
 import urllib.parse
 from bs4 import BeautifulSoup
 from datetime import datetime
 
 from scraper import diff_texts
-from cdc_common import BASE_URL, fetch, download_pdf, write_csv
+from cdc_common import BASE_URL, fetch, download_pdf, write_csv, setup_logging
+
+logger = logging.getLogger(__name__)
 
 MANUAL_LIST_URL = "https://www.cdc.gov.tw/Category/DiseaseManual/bU9xd21vK0l5S3gwb3VUTldqdVNnQT09"
 
@@ -64,7 +67,7 @@ def get_manual_links(base_url=MANUAL_LIST_URL, max_pages=30):
             r = fetch(url)
             r.encoding = 'utf-8'
         except Exception as e:
-            print(f"  Error fetching listing page {url}: {e}")
+            logger.warning("Error fetching listing page %s: %s", url, e)
             continue
 
         links, pages = parse_manual_listing(r.text)
@@ -140,6 +143,7 @@ def parse_manual_text(text):
     return sections
 
 def main():
+    setup_logging()
     pdf_dir = "manual_pdfs"
     os.makedirs(pdf_dir, exist_ok=True)
     
@@ -151,20 +155,20 @@ def main():
     
     now_date_str = datetime.now().strftime("%Y-%m-%d")
     
-    print("Fetching manual list...")
+    logger.info("Fetching manual list...")
     links = get_manual_links()
-    print(f"Found {len(links)} manual links.")
+    logger.info("Found %d manual links.", len(links))
     
     results = []
     
     for i, disease in enumerate(links):
         name = disease['name']
         list_url = disease['url']
-        print(f"[{i+1}/{len(links)}] Processing {name}...")
-        
+        logger.info("[%d/%d] Processing %s...", i + 1, len(links), name)
+
         pdf_url = get_actual_pdf_link(list_url)
         if not pdf_url:
-            print(f"  Could not find PDF link for {name}")
+            logger.warning("Could not find PDF link for %s", name)
             continue
             
         old_record = existing_data.get(name)
@@ -174,11 +178,11 @@ def main():
         try:
             text, pdf_path, current_hash = download_pdf(pdf_url, pdf_dir, name, expected_hash)
         except Exception as e:
-            print(f"  Download/extract error: {e}")
+            logger.warning("Download/extract error: %s", e)
             continue
 
         if text is None and current_hash == expected_hash:
-            print(f"  Unchanged! (Hash Matched). Skipping extraction.")
+            logger.info("  Unchanged (hash matched); skipping extraction.")
             # Update the URL just in case
             old_record['url'] = pdf_url
             if 'last_pdf_update' not in old_record:
@@ -186,7 +190,7 @@ def main():
             results.append(old_record)
             continue
 
-        print(f"  Update detected: {name} (Hash: {current_hash[:6]})")
+        logger.info("  Update detected: %s (hash %s)", name, current_hash[:6])
 
         # Parse
         parsed_sections = parse_manual_text(text)
@@ -215,7 +219,7 @@ def main():
 
     write_csv("disease_manuals.csv", results)
 
-    print(f"Finished parsing {len(results)} manuals.")
+    logger.info("Finished parsing %d manuals.", len(results))
 
 if __name__ == "__main__":
     main()

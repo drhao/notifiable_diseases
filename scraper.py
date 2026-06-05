@@ -5,10 +5,13 @@ import json
 import time
 import difflib
 import html
+import logging
 
 from pdf_fetcher import fetch_disease_links, get_actual_pdf_url, download_and_extract_pdf
 from data_parser import parse_disease_content
-from cdc_common import write_csv
+from cdc_common import write_csv, setup_logging
+
+logger = logging.getLogger(__name__)
 
 def diff_texts(old_text, new_text):
     # The text comes from PDFs (untrusted) and is rendered via innerHTML in the
@@ -34,6 +37,7 @@ def diff_texts(old_text, new_text):
 
 
 def main():
+    setup_logging()
     try:
         with open("diseases.json", "r", encoding="utf-8") as f:
             existing_data = {d['name']: d for d in json.load(f)}
@@ -43,7 +47,7 @@ def main():
     links = fetch_disease_links()
     # Filter out confidential AIDS case report – it should not be parsed into case definitions
     links = [d for d in links if "後天免疫缺乏症候群（AIDS）個案報告單" not in d.get('name', '')]
-    print(f"Filtered out confidential entries, remaining {len(links)} links.")
+    logger.info("Filtered out confidential entries, remaining %d links.", len(links))
     
     results = []
     status_records = []
@@ -53,14 +57,14 @@ def main():
     now_date_str = datetime.now().strftime("%Y-%m-%d")
     
     for i, disease in enumerate(links):
-        print(f"[{i+1}/{len(links)}] Processing {disease['name']} ({disease.get('source_category', 'N/A')})...")
+        logger.info("[%d/%d] Processing %s (%s)...", i + 1, len(links), disease['name'], disease.get('source_category', 'N/A'))
         
         record = {'name': disease['name'], 'category': disease.get('source_category', 'N/A'), 'status': 'Fail', 'issues': [], 'updated_now': False}
         
         actual_pdf_url = get_actual_pdf_url(disease['url'])
         
         if not actual_pdf_url:
-            print(f"  Failed to get PDF URL for {disease['name']}")
+            logger.warning("Failed to get PDF URL for %s", disease['name'])
             record['issues'].append("No PDF Link")
             status_records.append(record)
             continue
@@ -75,7 +79,7 @@ def main():
         
         if not content and current_hash and current_hash == expected_hash:
             # Hash matched perfectly, no need to parse or update
-            print(f"  Unchanged! (Hash Matched). Skipping extraction.")
+            logger.info("  Unchanged (hash matched); skipping extraction.")
             old_disease['source_category'] = disease.get('source_category', old_disease.get('source_category'))
             # Update the URL just in case CDC changed the URL but kept the same precise file byte-for-byte
             old_disease['actual_pdf_url'] = actual_pdf_url
@@ -87,13 +91,13 @@ def main():
             continue
             
         if content is None and current_hash is None:
-            print(f"  Failed to extract content for {disease['name']}")
+            logger.warning("Failed to extract content for %s", disease['name'])
             record['issues'].append("Download/Extract Failed")
             status_records.append(record)
             continue
             
         # If we reach here, the Hash is different, it's either new or honestly updated
-        print(f"  Update detected: {disease['name']} (Hash {current_hash[:6]})")
+        logger.info("  Update detected: %s (hash %s)", disease['name'], current_hash[:6])
         
         disease['pdf_hash'] = current_hash
         disease['last_pdf_update'] = now_date_str
@@ -135,7 +139,7 @@ def main():
     
     cols = ["name", "url", "source_category", "pdf_path", "臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"]
     write_csv("diseases.csv", results, columns=cols)
-    print("Saved diseases.json and diseases.csv")
+    logger.info("Saved diseases.json and diseases.csv")
 
     # Save metadata with timestamp
     from datetime import datetime
@@ -146,7 +150,7 @@ def main():
     # Generate Status Report
     generate_report(status_records, len(links), now_str, updated_diseases)
 
-    print("Done.")
+    logger.info("Done.")
 
 
 def generate_report(records, total_links, timestamp, updated_diseases=None):
@@ -206,7 +210,7 @@ def generate_report(records, total_links, timestamp, updated_diseases=None):
     with open("status_report.md", "w", encoding="utf-8") as f:
         f.write(report_content)
         
-    print(f"Generated status_report.md with {len(records)} records.")
+    logger.info("Generated status_report.md with %d records.", len(records))
 
 
 if __name__ == "__main__":

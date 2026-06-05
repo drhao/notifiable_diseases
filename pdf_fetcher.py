@@ -3,10 +3,13 @@ pdf_fetcher.py - Functions for fetching disease links and PDF content from Taiwa
 Saves PDFs locally and extracts disease category from page structure.
 """
 import re
+import logging
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 from cdc_common import BASE_URL, fetch, download_pdf
+
+logger = logging.getLogger(__name__)
 
 TARGET_URL = "https://www.cdc.gov.tw/Category/DiseaseDefine/ZW54U0FpVVhpVGR3UkViWm8rQkNwUT09"
 PDF_DIR = "pdfs"
@@ -18,11 +21,11 @@ def fetch_disease_links():
     Extracts disease category from page structure.
     Returns list of dicts: {name, url, source_category}
     """
-    print(f"Fetching {TARGET_URL}...")
+    logger.info("Fetching %s ...", TARGET_URL)
     try:
         response = fetch(TARGET_URL)
     except Exception as e:
-        print(f"Error fetching main page: {e}")
+        logger.error("Error fetching main page: %s", e)
         return []
 
     soup = BeautifulSoup(response.content, 'html.parser')
@@ -94,14 +97,14 @@ def get_actual_pdf_url(viewer_url):
                 if '#' in pdf_href:
                     pdf_href = pdf_href.split('#')[0]
             else:
-                print(f"  No PDF link found in {viewer_url}")
+                logger.warning("No PDF link found in %s", viewer_url)
                 return None
         else:
             pdf_href = pdf_link_tag.get('href')
             
         return urljoin(BASE_URL, pdf_href)
     except Exception as e:
-        print(f"  Error finding PDF URL on {viewer_url}: {e}")
+        logger.warning("Error finding PDF URL on %s: %s", viewer_url, e)
         return None
 
 def download_and_extract_pdf(full_pdf_url, disease_name, expected_hash=None):
@@ -114,6 +117,6 @@ def download_and_extract_pdf(full_pdf_url, disease_name, expected_hash=None):
     try:
         return download_pdf(full_pdf_url, PDF_DIR, disease_name, expected_hash)
     except Exception as e:
-        print(f"  Error processing {full_pdf_url}: {e}")
+        logger.warning("Error processing %s: %s", full_pdf_url, e)
         return None, None, None
 
