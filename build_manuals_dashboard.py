@@ -307,6 +307,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     <script>
         const DATA = __DATA_PLACEHOLDER__;
+
+        // --- XSS hardening ------------------------------------------------
+        // PDF-extracted text is untrusted. esc() escapes raw values for
+        // innerHTML; renderDiff() permits ONLY the four diff tags emitted by
+        // diff_texts() and escapes everything else, so even diff HTML written
+        // by older runs cannot inject markup.
+        const esc = (s) => s == null ? '' : String(s).replace(/[&<>"']/g,
+            c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        const DIFF_RE = /(<del style="color: #9ca3af;">|<\/del>|<b style="color: #ea580c; background: #ffedd5;">|<\/b>)/g;
+        const DIFF_TAGS = new Set(['<del style="color: #9ca3af;">', '</del>',
+            '<b style="color: #ea580c; background: #ffedd5;">', '</b>']);
+        const renderDiff = (s) => s == null ? '' :
+            String(s).split(DIFF_RE).map(p => DIFF_TAGS.has(p) ? p : esc(p)).join('');
         const tbody = document.getElementById('tableBody');
         const searchInput = document.getElementById('searchInput');
 
@@ -337,7 +350,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             
             const banner = document.getElementById('recentUpdatesBanner');
             if (recentUpdates.length > 0) {
-                const namesHtml = recentUpdates.map(name => `<a href="javascript:searchInput.value='${name}';render('${name}')" style="color:#b45309; text-decoration:underline; margin-right:8px; font-weight:500">${name}</a>`).join('');
+                const namesHtml = recentUpdates.map(name => `<a href="javascript:searchInput.value='${esc(name)}';render('${esc(name)}')" style="color:#b45309; text-decoration:underline; margin-right:8px; font-weight:500">${esc(name)}</a>`).join('');
                 banner.innerHTML = `<span style="font-weight:600; color:#92400e;">✨ 剛更新 (最近30天內):</span> ${namesHtml}`;
                 banner.style.display = 'block';
             } else {
@@ -363,12 +376,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 const updatedBadgeHtml = isUpdated ? `<span class="badge-update">✨ 剛更新</span>` : '';
                 
                 let html = `<td>
-                    <div style="font-weight:600; font-size:1.05rem; margin-bottom:4px;">${d.name}${updatedBadgeHtml}</div>
+                    <div style="font-weight:600; font-size:1.05rem; margin-bottom:4px;">${esc(d.name)}${updatedBadgeHtml}</div>
                     <a href="${d.url}" target="_blank" class="pdf-link">下載 PDF 手冊 📥</a>
                 </td>`;
                 
                 COLS.forEach(key => {
-                    const text = (isUpdated && d[key + "_diff"]) ? d[key + "_diff"] : (d[key] || "");
+                    const text = (isUpdated && d[key + "_diff"]) ? renderDiff(d[key + "_diff"]) : esc(d[key] || "");
                     html += `<td>
                         <div class="cell-content">${text}</div>
                         ${text.length > 100 ? '<button class="toggle-btn" onclick="toggle(this)" style="display:none">Show More</button>' : ''}

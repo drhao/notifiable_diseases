@@ -66,6 +66,11 @@ pytest
 * **PDF 處理**: 使用 `pdfplumber` 進行文字提取。
 * **版本控管快取**: 以擷取出的真實下載連結與 JSON 檔案相互比對，在尚未更新期間避免重複下載大量 PDF 以節省資源。
 * **前後端分離 (SSG)**: Python 做為資料整理，產生含有所有內容的單一 HTML 檔案，內嵌 CSS/JS 與搜尋機制，完全不需要後端伺服器 (Serverless) 即可部屬於 Github Pages 上。
+* **更新訂閱**: 每次執行會產生 `feed.xml`（RSS 2.0）並隨 Pages 一併發布，可用 RSS 閱讀器訂閱最新異動。
+
+## 授權
+
+本專案程式碼以 [MIT License](LICENSE) 釋出。原始疾病資料來自衛生福利部疾病管制署（Taiwan CDC）公開資訊，其著作權與使用條款依該署規定。
 
 ---
 *Created by Antigravity*

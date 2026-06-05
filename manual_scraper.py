@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 from scraper import diff_texts
-from cdc_common import BASE_URL, fetch, download_pdf
+from cdc_common import BASE_URL, fetch, download_pdf, write_csv
 
 MANUAL_LIST_URL = "https://www.cdc.gov.tw/Category/DiseaseManual/bU9xd21vK0l5S3gwb3VUTldqdVNnQT09"
 
@@ -212,14 +212,9 @@ def main():
 
     with open("disease_manuals.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-        
-    try:
-        import pandas as pd
-        df_all = pd.DataFrame(results)
-        df_all.to_csv("disease_manuals.csv", index=False, encoding="utf-8-sig")
-    except ImportError:
-        pass
-    
+
+    write_csv("disease_manuals.csv", results)
+
     print(f"Finished parsing {len(results)} manuals.")
 
 if __name__ == "__main__":

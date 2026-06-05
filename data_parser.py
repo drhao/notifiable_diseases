@@ -349,16 +349,10 @@ def main():
         print(f"\nUpdated {json_path} with parsed data from {processed_count} PDFs.")
         
         # Also update CSV
-        try:
-            import pandas as pd
-            df = pd.DataFrame(updated_data)
-            cols = ["name", "url", "source_category", "pdf_path", "臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"]
-            # Filter cols
-            final_cols = [c for c in cols if c in df.columns]
-            df[final_cols].to_csv("diseases.csv", index=False, encoding="utf-8-sig")
-            print("Updated diseases.csv")
-        except ImportError:
-            pass
+        from cdc_common import write_csv
+        cols = ["name", "url", "source_category", "pdf_path", "臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"]
+        write_csv("diseases.csv", updated_data, columns=cols)
+        print("Updated diseases.csv")
 
 if __name__ == "__main__":
     main()

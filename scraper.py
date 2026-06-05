@@ -4,27 +4,32 @@ scraper.py - Main script to fetch and parse Taiwan CDC notifiable disease defini
 import json
 import time
 import difflib
+import html
 
 from pdf_fetcher import fetch_disease_links, get_actual_pdf_url, download_and_extract_pdf
 from data_parser import parse_disease_content
+from cdc_common import write_csv
 
 def diff_texts(old_text, new_text):
+    # The text comes from PDFs (untrusted) and is rendered via innerHTML in the
+    # dashboards, so every text segment is HTML-escaped here. Only the diff
+    # wrapper tags below are real markup.
     if not old_text:
-        return new_text
+        return html.escape(new_text or "")
     if not new_text:
         return ""
-        
+
     matcher = difflib.SequenceMatcher(None, old_text, new_text)
     result = []
     for tag, i1, i2, j1, j2 in matcher.get_opcodes():
         if tag == 'equal':
-            result.append(new_text[j1:j2])
+            result.append(html.escape(new_text[j1:j2]))
         elif tag == 'insert' or tag == 'replace':
             if tag == 'replace':
-                result.append(f'<del style="color: #9ca3af;">{old_text[i1:i2]}</del>')
-            result.append(f'<b style="color: #ea580c; background: #ffedd5;">{new_text[j1:j2]}</b>')
+                result.append(f'<del style="color: #9ca3af;">{html.escape(old_text[i1:i2])}</del>')
+            result.append(f'<b style="color: #ea580c; background: #ffedd5;">{html.escape(new_text[j1:j2])}</b>')
         elif tag == 'delete':
-            result.append(f'<del style="color: #9ca3af;">{old_text[i1:i2]}</del>')
+            result.append(f'<del style="color: #9ca3af;">{html.escape(old_text[i1:i2])}</del>')
     return "".join(result)
 
 
@@ -128,18 +133,9 @@ def main():
     with open("diseases.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     
-    try:
-        import pandas as pd
-        df = pd.DataFrame(results)
-        
-        cols = ["name", "url", "source_category", "pdf_path", "臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"]
-        existing_cols = df.columns.tolist()
-        final_cols = [c for c in cols if c in existing_cols]
-        
-        df[final_cols].to_csv("diseases.csv", index=False, encoding="utf-8-sig")
-        print("Saved diseases.json and diseases.csv")
-    except Exception as e:
-        print(f"Could not save CSV: {e}")
+    cols = ["name", "url", "source_category", "pdf_path", "臨床條件", "檢驗條件", "流行病學條件", "通報定義", "疾病分類", "檢體採檢送驗事項"]
+    write_csv("diseases.csv", results, columns=cols)
+    print("Saved diseases.json and diseases.csv")
 
     # Save metadata with timestamp
     from datetime import datetime

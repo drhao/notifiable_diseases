@@ -362,6 +362,20 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     <script>
         const DATA = __DATA_PLACEHOLDER__;
+
+        // --- XSS hardening ------------------------------------------------
+        // PDF-extracted text is untrusted. esc() escapes raw values for
+        // innerHTML; renderDiff() permits ONLY the four diff tags emitted by
+        // diff_texts() and escapes everything else, so even diff HTML written
+        // by older runs cannot inject markup.
+        const esc = (s) => s == null ? '' : String(s).replace(/[&<>"']/g,
+            c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        const DIFF_RE = /(<del style="color: #9ca3af;">|<\/del>|<b style="color: #ea580c; background: #ffedd5;">|<\/b>)/g;
+        const DIFF_TAGS = new Set(['<del style="color: #9ca3af;">', '</del>',
+            '<b style="color: #ea580c; background: #ffedd5;">', '</b>']);
+        const renderDiff = (s) => s == null ? '' :
+            String(s).split(DIFF_RE).map(p => DIFF_TAGS.has(p) ? p : esc(p)).join('');
+
         const tbody = document.getElementById('tableBody');
         const catNav = document.getElementById('catNav');
         const searchInput = document.getElementById('searchInput');
@@ -404,7 +418,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         if (recentUpdates.length > 0) {
             banner.style.display = 'block';
             let html = `<strong>✨ 剛更新 (最近30天內):</strong> `;
-            const links = recentUpdates.map(d => `<a href="#" onclick="searchInput.value='${d.name}'; render(searchInput.value); return false;" style="color:#a16207; font-weight:500; text-decoration:none;">${d.name}</a>`);
+            const links = recentUpdates.map(d => `<a href="#" onclick="searchInput.value='${esc(d.name)}'; render(searchInput.value); return false;" style="color:#a16207; font-weight:500; text-decoration:none;">${esc(d.name)}</a>`);
             html += links.join("、");
             banner.innerHTML = html;
         }
@@ -466,8 +480,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 
                 // Name Col with tag inline + English Name
                 let html = `<td>
-                    <div><span style="font-weight:600">${d.name}</span>${d.category_tag ? `<span class="tag">${d.category_tag}</span>` : ''}${updatedBadgeHtml}</div>
-                    ${d.english_name ? `<div style="font-size:0.8rem; color:#555; margin-top:2px">${d.english_name}</div>` : ''}
+                    <div><span style="font-weight:600">${esc(d.name)}</span>${d.category_tag ? `<span class="tag">${esc(d.category_tag)}</span>` : ''}${updatedBadgeHtml}</div>
+                    ${d.english_name ? `<div style="font-size:0.8rem; color:#555; margin-top:2px">${esc(d.english_name)}</div>` : ''}
                     <a href="${d.url}" target="_blank" class="pdf-link">View PDF</a>
                 </td>`;
                 
@@ -483,7 +497,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         
                         const printCase = (caseRaw, caseDiff) => {
                             if (!caseRaw) return '';
-                            return (isUpdated && caseDiff) ? caseDiff : caseRaw;
+                            return (isUpdated && caseDiff) ? renderDiff(caseDiff) : esc(caseRaw);
                         };
                         
                         if (d.suspected_case) {
@@ -505,7 +519,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         <button class="toggle-btn" onclick="toggle(this)" style="display:none">Show More</button>
                         </td>`;
                     } else {
-                        const text = (isUpdated && d[key + "_diff"]) ? d[key + "_diff"] : (d[key] || "");
+                        const text = (isUpdated && d[key + "_diff"]) ? renderDiff(d[key + "_diff"]) : esc(d[key] || "");
                         html += `<td>
                             <div class="cell-content">${text}</div>
                             ${text ? '<button class="toggle-btn" onclick="toggle(this)" style="display:none">Show More</button>' : ''}

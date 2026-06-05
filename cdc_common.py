@@ -8,6 +8,7 @@ pipeline used to cache PDFs and detect updates.
 """
 import os
 import re
+import csv
 import hashlib
 
 import requests
@@ -53,6 +54,34 @@ def fetch(url, timeout=DEFAULT_TIMEOUT):
     res = get_session().get(url, timeout=timeout)
     res.raise_for_status()
     return res
+
+
+def write_csv(path, records, columns=None):
+    """
+    Write a list of dict records to a UTF-8-SIG (Excel-friendly) CSV.
+
+    If columns is given, only those that actually appear in the data are
+    written, in that order; otherwise the union of keys (first-seen order) is
+    used. Replaces the previous pandas dependency for these small exports.
+    """
+    records = records or []
+    if columns is not None:
+        present = set().union(*(r.keys() for r in records)) if records else set()
+        fieldnames = [c for c in columns if c in present]
+    else:
+        fieldnames = []
+        seen = set()
+        for r in records:
+            for k in r:
+                if k not in seen:
+                    seen.add(k)
+                    fieldnames.append(k)
+
+    with open(path, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        writer.writeheader()
+        for r in records:
+            writer.writerow(r)
 
 
 def safe_filename(name):
