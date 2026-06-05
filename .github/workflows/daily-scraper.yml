@@ -53,6 +53,11 @@ jobs:
     - name: Build RSS feed
       run: python build_feed.py
 
+    # Guardrail: if the CDC layout changed and parsing collapsed, fail here so
+    # the broken data is neither committed nor published (and an issue opens).
+    - name: Check parse coverage
+      run: python check_coverage.py
+
     # Only the structured data + status report are version-controlled; the
     # large generated HTML is published to Pages (below) instead of committed,
     # which keeps the git history from ballooning on every run.

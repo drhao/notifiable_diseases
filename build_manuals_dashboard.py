@@ -3,7 +3,7 @@ import os
 import logging
 from datetime import datetime
 
-from dashboard_common import SECURITY_JS
+from dashboard_common import SECURITY_JS, embed_json
 
 logger = logging.getLogger(__name__)
 
@@ -371,7 +371,7 @@ __SECURITY_JS__
                 
                 let html = `<td>
                     <div style="font-weight:600; font-size:1.05rem; margin-bottom:4px;">${esc(d.name)}${updatedBadgeHtml}</div>
-                    <a href="${d.url}" target="_blank" class="pdf-link">下載 PDF 手冊 📥</a>
+                    <a href="${esc(safeUrl(d.url))}" target="_blank" class="pdf-link">下載 PDF 手冊 📥</a>
                 </td>`;
                 
                 COLS.forEach(key => {
@@ -437,7 +437,7 @@ def main():
         logger.error("disease_manuals.json not found")
         return
 
-    json_str = json.dumps(data, ensure_ascii=False).replace("</script>", "<\\/script>")
+    json_str = embed_json(data)
     
     last_updated = datetime.now().strftime("%Y-%m-%d %H:%M")
     

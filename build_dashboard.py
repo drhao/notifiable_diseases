@@ -4,7 +4,7 @@ import re
 import logging
 from datetime import datetime
 
-from dashboard_common import SECURITY_JS
+from dashboard_common import SECURITY_JS, embed_json
 
 logger = logging.getLogger(__name__)
 
@@ -476,14 +476,14 @@ __SECURITY_JS__
                 let html = `<td>
                     <div><span style="font-weight:600">${esc(d.name)}</span>${d.category_tag ? `<span class="tag">${esc(d.category_tag)}</span>` : ''}${updatedBadgeHtml}</div>
                     ${d.english_name ? `<div style="font-size:0.8rem; color:#555; margin-top:2px">${esc(d.english_name)}</div>` : ''}
-                    <a href="${d.url}" target="_blank" class="pdf-link">View PDF</a>
+                    <a href="${esc(safeUrl(d.url))}" target="_blank" class="pdf-link">View PDF</a>
                 </td>`;
                 
                 COLS.forEach(key => {
                     // For 檢體採檢送驗事項, show PDF link instead of content
                     if (key === "檢體採檢送驗事項") {
                         html += `<td>
-                            <a href="${d.url}" target="_blank" class="pdf-link" style="opacity:1">詳見 PDF</a>
+                            <a href="${esc(safeUrl(d.url))}" target="_blank" class="pdf-link" style="opacity:1">詳見 PDF</a>
                         </td>`;
                     } else if (key === "疾病分類" && (d.suspected_case || d.probable_case || d.confirmed_case)) {
                         // Render structured case definitions
@@ -638,7 +638,7 @@ def main():
     # Sort order: 1, 5, 2, 3, 4, others (99)
     custom_order = {1: 0, 5: 1, 2: 2, 3: 3, 4: 4, 99: 5}
     data.sort(key=lambda x: (custom_order.get(x['sort_key'], 5), x['name']))
-    json_str = json.dumps(data, ensure_ascii=False).replace("</script>", "<\\/script>")
+    json_str = embed_json(data)
     
     # Determine last updated time
     # Priority: metadata.json > diseases.json mtime > now
