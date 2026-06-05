@@ -17,6 +17,7 @@ sample_download
 index.html
 manuals.html
 feed.xml
+api/
 _site/
 
 # Derived CSV exports — regenerated from the JSON each run and not served by

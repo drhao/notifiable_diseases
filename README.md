@@ -68,6 +68,19 @@ pytest
 * **前後端分離 (SSG)**: Python 做為資料整理，產生含有所有內容的單一 HTML 檔案，內嵌 CSS/JS 與搜尋機制，完全不需要後端伺服器 (Serverless) 即可部屬於 Github Pages 上。
 * **更新訂閱**: 每次執行會產生 `feed.xml`（RSS 2.0）並隨 Pages 一併發布，可用 RSS 閱讀器訂閱最新異動。
 
+## 開放資料 API
+
+每次更新會把結構化資料以**靜態 JSON** 發布到 GitHub Pages 的 `api/v1/`（純靜態檔、由 CDN 服務，可程式化取用）：
+
+| 端點 | 內容 |
+|---|---|
+| `api/v1/summary.json` | 精簡清單（名稱／英文名／分類／更新日期）— **建議優先使用** |
+| `api/v1/diseases.json` | 完整病例定義 |
+| `api/v1/manuals.json` | 完整防治工作手冊 |
+| `api/v1/meta.json` | 筆數、產生時間、授權與資料來源 |
+
+請善用 HTTP 快取（CDN 已提供 `ETag`，重複抓取以 `If-None-Match` 取得 `304` 可大幅節省流量）。
+
 ## 授權
 
 本專案程式碼以 [MIT License](LICENSE) 釋出。原始疾病資料來自衛生福利部疾病管制署（Taiwan CDC）公開資訊，其著作權與使用條款依該署規定。

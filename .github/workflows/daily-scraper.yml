@@ -58,6 +58,9 @@ jobs:
     - name: Check parse coverage
       run: python check_coverage.py
 
+    - name: Build JSON API
+      run: python build_api.py
+
     # Only the structured data + status report are version-controlled; the
     # large generated HTML is published to Pages (below) instead of committed,
     # which keeps the git history from ballooning on every run.
@@ -77,6 +80,7 @@ jobs:
       run: |
         mkdir -p _site
         cp index.html manuals.html feed.xml .nojekyll _site/
+        cp -r api _site/
 
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v3

@@ -103,10 +103,13 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         /* Table */
         .table-container {
             flex: 1;
+            min-width: 0; /* let this flex item shrink so the wide table scrolls
+                             inside it instead of stretching the whole page */
             overflow: auto;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             background: #fff;
+            -webkit-overflow-scrolling: touch;
         }
 
         table {
@@ -171,7 +174,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         }
 
         @media (max-width: 768px) {
-            body { padding: 1rem; }
+            body { padding: 1rem; overflow-x: hidden; }
+            h1 { font-size: 1.1rem; }
+            th, td { padding: 0.6rem; font-size: 0.85rem; }
+            .cell-content { max-height: 140px; }
+            th:first-child, td:first-child { width: 130px; min-width: 130px; }
             .header-top { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
             #searchInput { width: 100%; }
         }
