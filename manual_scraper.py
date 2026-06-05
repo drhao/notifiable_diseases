@@ -7,29 +7,77 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 
 from scraper import diff_texts
-from cdc_common import fetch, download_pdf
+from cdc_common import BASE_URL, fetch, download_pdf
 
-def get_manual_links(base_url="https://www.cdc.gov.tw/Category/DiseaseManual/bU9xd21vK0l5S3gwb3VUTldqdVNnQT09"):
-    """Fetches the list of all disease manual links from the main page."""
-    r = fetch(base_url)
-    r.encoding = 'utf-8'
-    soup = BeautifulSoup(r.text, 'html.parser')
-    
+MANUAL_LIST_URL = "https://www.cdc.gov.tw/Category/DiseaseManual/bU9xd21vK0l5S3gwb3VUTldqdVNnQT09"
+
+
+def parse_manual_listing(html):
+    """
+    Parse one manual listing page's HTML.
+    Returns (manual_links, pagination_urls):
+      - manual_links: list of {'name', 'url'} disease entries on this page
+      - pagination_urls: absolute URLs of other listing pages linked from here
+    Kept pure (no network) so it can be unit-tested offline.
+    """
+    soup = BeautifulSoup(html, 'html.parser')
+
     links = []
-    # Find links pointing to /File/Get/ inside the main list
     for a in soup.select('ul.infectious_disease_ul a[href]'):
         href = a['href']
         text = a.text.strip().replace('工作手冊', '').replace('.pdf', '')
         if '/File/' in href or '/Category/MPage/' in href or '/Category/ListContent/' in href:
-            full_url = urllib.parse.urljoin("https://www.cdc.gov.tw", href)
-            # Avoid duplicates and check if not empty
-            if text and not any(l['url'] == full_url for l in links):
+            full_url = urllib.parse.urljoin(BASE_URL, href)
+            if text:
                 links.append({'name': text, 'url': full_url})
-    
-    # Also check pagination if we missed it
-    pages = soup.select('div.pagination a')
-    # For now, let's assume it's one long list or handle pagination if needed later
-    return links
+
+    pagination_urls = []
+    for a in soup.select('.pagination a[href], nav.pagination a[href], ul.pagination a[href]'):
+        href = a.get('href', '').strip()
+        if href and href not in ('#',):
+            pagination_urls.append(urllib.parse.urljoin(BASE_URL, href))
+
+    return links, pagination_urls
+
+
+def get_manual_links(base_url=MANUAL_LIST_URL, max_pages=30):
+    """
+    Fetch all disease manual links, following pagination if present.
+
+    Crawls the listing starting at base_url, discovering further pages from the
+    pagination bar (bounded by max_pages). De-duplicates by URL. If the site has
+    no pagination this simply returns the single page's links, matching the
+    previous behaviour.
+    """
+    to_visit = [base_url]
+    visited = set()
+    seen_urls = set()
+    results = []
+
+    while to_visit and len(visited) < max_pages:
+        url = to_visit.pop(0)
+        if url in visited:
+            continue
+        visited.add(url)
+
+        try:
+            r = fetch(url)
+            r.encoding = 'utf-8'
+        except Exception as e:
+            print(f"  Error fetching listing page {url}: {e}")
+            continue
+
+        links, pages = parse_manual_listing(r.text)
+        for link in links:
+            if link['url'] not in seen_urls:
+                seen_urls.add(link['url'])
+                results.append(link)
+
+        for page_url in pages:
+            if page_url not in visited and page_url not in to_visit:
+                to_visit.append(page_url)
+
+    return results
 
 def get_actual_pdf_link(detail_url):
     """Fetches the detail page and extracts the actual .pdf upload link."""
@@ -159,46 +207,8 @@ def main():
                     record[k + "_diff"] = diff_texts(val_old, val_new)
                     
         results.append(record)
-        
-        # Save individual JSON and CSV
-        manual_data_dir = "manual_data"
-        os.makedirs(manual_data_dir, exist_ok=True)
-        safe_name = name.replace('/', '_')
-        indiv_json_path = os.path.join(manual_data_dir, f"{safe_name}.json")
-        indiv_csv_path = os.path.join(manual_data_dir, f"{safe_name}.csv")
-        
-        with open(indiv_json_path, "w", encoding="utf-8") as f:
-            json.dump(record, f, ensure_ascii=False, indent=2)
-            
-        try:
-            import pandas as pd
-            df_indiv = pd.DataFrame([record])
-            df_indiv.to_csv(indiv_csv_path, index=False, encoding="utf-8-sig")
-        except ImportError:
-            pass
-            
-        time.sleep(0.5)
 
-    # Save index
-    index_records = []
-    for r in results:
-        safe_name = r['name'].replace('/', '_')
-        index_records.append({
-            'name': r['name'],
-            'pdf_url': r['url'],
-            'json_path': f"manual_data/{safe_name}.json",
-            'csv_path': f"manual_data/{safe_name}.csv"
-        })
-        
-    with open("manuals_index.json", "w", encoding="utf-8") as f:
-        json.dump(index_records, f, ensure_ascii=False, indent=2)
-        
-    try:
-        import pandas as pd
-        df_index = pd.DataFrame(index_records)
-        df_index.to_csv("manuals_index.csv", index=False, encoding="utf-8-sig")
-    except ImportError:
-        pass
+        time.sleep(0.5)
 
     with open("disease_manuals.json", "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)

@@ -50,6 +50,9 @@ jobs:
     - name: Build Manuals Dashboard
       run: python build_manuals_dashboard.py
 
+    - name: Build RSS feed
+      run: python build_feed.py
+
     # Only the structured data + status report are version-controlled; the
     # large generated HTML is published to Pages (below) instead of committed,
     # which keeps the git history from ballooning on every run.
@@ -68,7 +71,7 @@ jobs:
     - name: Assemble Pages site
       run: |
         mkdir -p _site
-        cp index.html manuals.html .nojekyll _site/
+        cp index.html manuals.html feed.xml .nojekyll _site/
 
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v3

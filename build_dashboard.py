@@ -10,6 +10,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taiwan Notifiable Diseases Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="alternate" type="application/rss+xml" title="法定傳染病更新 RSS" href="feed.xml">
     <style>
         :root {
             --bg-color: #ffffff;
