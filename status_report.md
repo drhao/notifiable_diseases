@@ -1,13 +1,13 @@
 # Scraper Status Report
-**Execution Time:** 2026-06-11 13:54
+**Execution Time:** 2026-06-12 12:51
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 73
-- **Failed:** 1
+- **Successfully Fetched & Parsed:** 72
+- **Failed:** 2
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -67,7 +67,7 @@
 | 發熱伴血小板減少綜合症 | ✅ Success | 第四類 | - |
 | 萊姆病 | ✅ Success | 第四類 | - |
 | 肉毒桿菌中毒 | ✅ Success | 第四類 | - |
-| 庫賈氏病 | ✅ Success | 第四類 | - |
+| 庫賈氏病 | ❌ Fail | 第四類 | **No PDF Link** |
 | 弓形蟲感染症 | ✅ Success | 第四類 | - |
 | 布氏桿菌病 | ✅ Success | 第四類 | - |
 | 流感併發重症 | ✅ Success | 第四類 | - |
