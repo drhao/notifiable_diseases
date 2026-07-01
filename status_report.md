@@ -1,13 +1,14 @@
 # Scraper Status Report
-**Execution Time:** 2026-06-30 12:06
+**Execution Time:** 2026-07-01 12:30
 
 ## 📢 Latest PDF Updates
-*No updates detected in this run.*
+The following disease definitions were updated in this run:  
+- **伊波拉病毒感染**
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 73
-- **Failed:** 1
+- **Successfully Fetched & Parsed:** 72
+- **Failed:** 2
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -81,8 +82,8 @@
 | 黃熱病 | ✅ Success | 第五類 | - |
 | 裂谷熱 | ✅ Success | 第五類 | - |
 | 中東呼吸症候群冠狀病毒感染症 | ✅ Success | 第五類 | - |
-| 拉薩熱 | ✅ Success | 第五類 | - |
+| 拉薩熱 | ❌ Fail | 第五類 | **No PDF Link** |
 | 馬堡病毒出血熱 | ✅ Success | 第五類 | - |
-| 伊波拉病毒感染 | ✅ Success | 第五類 | - |
+| 伊波拉病毒感染 | ✅ 💡 Updated Success | 第五類 | - |
 | 立百病毒感染症 | ✅ Success | 第五類 | - |
 | 球黴菌症 | ✅ Success | 其他 | - |
