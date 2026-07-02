@@ -1,14 +1,14 @@
 # Scraper Status Report
-**Execution Time:** 2026-07-01 12:30
+**Execution Time:** 2026-07-02 12:04
 
 ## 📢 Latest PDF Updates
 The following disease definitions were updated in this run:  
-- **伊波拉病毒感染**
+- **侵襲性b型嗜血桿菌感染症**
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 72
-- **Failed:** 2
+- **Successfully Fetched & Parsed:** 73
+- **Failed:** 1
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -50,7 +50,7 @@ The following disease definitions were updated in this run:
 | 急性病毒性E型肝炎 | ✅ Success | 第三類 | - |
 | 流行性腮腺炎 | ✅ Success | 第三類 | - |
 | 百日咳 | ✅ Success | 第三類 | - |
-| 侵襲性b型嗜血桿菌感染症 | ✅ Success | 第三類 | - |
+| 侵襲性b型嗜血桿菌感染症 | ✅ 💡 Updated Success | 第三類 | - |
 | 退伍軍人病 | ✅ Success | 第三類 | - |
 | 人類免疫缺乏病毒(愛滋病毒)感染 | ✅ Success | 第三類 | - |
 | 梅毒 | ✅ Success | 第三類 | - |
@@ -82,8 +82,8 @@ The following disease definitions were updated in this run:
 | 黃熱病 | ✅ Success | 第五類 | - |
 | 裂谷熱 | ✅ Success | 第五類 | - |
 | 中東呼吸症候群冠狀病毒感染症 | ✅ Success | 第五類 | - |
-| 拉薩熱 | ❌ Fail | 第五類 | **No PDF Link** |
+| 拉薩熱 | ✅ Success | 第五類 | - |
 | 馬堡病毒出血熱 | ✅ Success | 第五類 | - |
-| 伊波拉病毒感染 | ✅ 💡 Updated Success | 第五類 | - |
+| 伊波拉病毒感染 | ✅ Success | 第五類 | - |
 | 立百病毒感染症 | ✅ Success | 第五類 | - |
 | 球黴菌症 | ✅ Success | 其他 | - |
