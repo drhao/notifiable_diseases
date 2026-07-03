@@ -1,9 +1,8 @@
 # Scraper Status Report
-**Execution Time:** 2026-07-02 12:04
+**Execution Time:** 2026-07-03 12:02
 
 ## 📢 Latest PDF Updates
-The following disease definitions were updated in this run:  
-- **侵襲性b型嗜血桿菌感染症**
+*No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
@@ -50,7 +49,7 @@ The following disease definitions were updated in this run:
 | 急性病毒性E型肝炎 | ✅ Success | 第三類 | - |
 | 流行性腮腺炎 | ✅ Success | 第三類 | - |
 | 百日咳 | ✅ Success | 第三類 | - |
-| 侵襲性b型嗜血桿菌感染症 | ✅ 💡 Updated Success | 第三類 | - |
+| 侵襲性b型嗜血桿菌感染症 | ✅ Success | 第三類 | - |
 | 退伍軍人病 | ✅ Success | 第三類 | - |
 | 人類免疫缺乏病毒(愛滋病毒)感染 | ✅ Success | 第三類 | - |
 | 梅毒 | ✅ Success | 第三類 | - |
