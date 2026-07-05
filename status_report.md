@@ -1,19 +1,19 @@
 # Scraper Status Report
-**Execution Time:** 2026-07-04 11:20
+**Execution Time:** 2026-07-05 11:25
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 73
-- **Failed:** 1
+- **Successfully Fetched & Parsed:** 72
+- **Failed:** 2
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
 | --- | --- | --- | --- |
 | 狂犬病 | ✅ Success | 第一類 | - |
-| 鼠疫 | ✅ Success | 第一類 | - |
+| 鼠疫 | ❌ Fail | 第一類 | **No PDF Link** |
 | 嚴重急性呼吸道症候群 | ✅ Success | 第一類 | - |
 | 天花 | ✅ Success | 第一類 | - |
 | M痘 | ✅ Success | 第二類 | - |
