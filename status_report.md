@@ -1,26 +1,26 @@
 # Scraper Status Report
-**Execution Time:** 2026-07-12 11:06
+**Execution Time:** 2026-07-13 12:34
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 72
-- **Failed:** 2
+- **Successfully Fetched & Parsed:** 70
+- **Failed:** 4
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
 | --- | --- | --- | --- |
 | 狂犬病 | ✅ Success | 第一類 | - |
-| 鼠疫 | ✅ Success | 第一類 | - |
+| 鼠疫 | ❌ Fail | 第一類 | **No PDF Link** |
 | 嚴重急性呼吸道症候群 | ✅ Success | 第一類 | - |
 | 天花 | ✅ Success | 第一類 | - |
 | M痘 | ✅ Success | 第二類 | - |
 | 登革熱 | ✅ Success | 第二類 | - |
 | 屈公病 | ✅ Success | 第二類 | - |
 | 瘧疾 | ✅ Success | 第二類 | - |
-| 茲卡病毒感染症 | ✅ Success | 第二類 | - |
+| 茲卡病毒感染症 | ❌ Fail | 第二類 | **No PDF Link** |
 | 西尼羅熱 | ✅ Success | 第二類 | - |
 | 流行性斑疹傷寒 | ❌ Fail | 第二類 | **No PDF Link** |
 | 腸道出血性大腸桿菌感染症 | ✅ Success | 第二類 | - |
@@ -29,7 +29,7 @@
 | 桿菌性痢疾 | ✅ Success | 第二類 | - |
 | 阿米巴性痢疾 | ✅ Success | 第二類 | - |
 | 霍亂 | ✅ Success | 第二類 | - |
-| 急性病毒性A型肝炎 | ✅ Success | 第二類 | - |
+| 急性病毒性A型肝炎 | ❌ Fail | 第二類 | **No PDF Link** |
 | 小兒麻痺症/急性無力肢體麻痺 | ✅ Success | 第二類 | - |
 | 炭疽病 | ✅ Success | 第二類 | - |
 | 多重抗藥性結核病 | ✅ Success | 第二類 | - |
@@ -59,7 +59,7 @@
 | 新生兒破傷風 | ✅ Success | 第三類 | - |
 | 漢生病 | ✅ Success | 第三類 | - |
 | 急性病毒性肝炎未定型 | ✅ Success | 第三類 | - |
-| 新冠併發重症 | ❌ Fail | 第四類 | **No PDF Link** |
+| 新冠併發重症 | ⚠️ Success | 第四類 | Missing: Missing 流行病學條件 |
 | 李斯特菌症 | ✅ Success | 第四類 | - |
 | 水痘併發症 | ✅ Success | 第四類 | - |
 | 恙蟲病 | ✅ Success | 第四類 | - |
