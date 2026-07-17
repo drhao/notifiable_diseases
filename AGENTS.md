@@ -237,5 +237,34 @@ python manual_scraper.py                 # manuals
 LOG_LEVEL=DEBUG python scraper.py        # verbose logging
 ```
 
+**Recovering when `main` diverged while you worked (you WILL hit this).** The daily bot pushes
+`🤖 Auto-update disease data` commits straight to `main`, so by the time you go to fast-forward,
+`main` is often dozens of commits ahead of your branch point. Your fast-forward is rejected. Fix:
+
+```bash
+git fetch origin main
+git rebase origin/main            # your code/docs commits replay cleanly
+# The ONLY expected conflict is diseases.json / disease_manuals.json (bot changed data,
+# you changed data). Do NOT hand-merge JSON — regenerate: take the bot's fresh copy, then
+# re-apply your pure transform (e.g. the english_name backfill) on top:
+git checkout origin/main -- diseases.json
+python - <<'PY'
+import json; from data_parser import extract_english_name, normalize_text
+d = json.load(open("diseases.json"))
+for r in d:
+    if not r.get("english_name"):
+        en = extract_english_name(normalize_text(r.get("content", "")))
+        if en: r["english_name"] = en
+json.dump(d, open("diseases.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+PY
+git add diseases.json && GIT_EDITOR=true git rebase --continue
+git push --force-with-lease origin <your-branch>       # branch only; never force-push main
+git push origin $(git rev-parse HEAD):main             # fast-forward main (retry if bot raced you again)
+```
+
+The lesson generalises: **any data change you make must be expressible as a pure, re-runnable
+transform** (migration/backfill), never a hand-edit — because you'll have to replay it against
+whatever the bot committed in the meantime.
+
 Keep this file honest and current. The next agent — maybe a different model — inherits only what
 is written down here.
