@@ -299,8 +299,24 @@ def parse_case_definitions(classification_text):
     # Save last buffer
     if current_key:
         definitions[current_key] = "\n".join(buffer).strip()
-        
+
     return definitions
+
+
+def build_record(content):
+    """
+    Turn raw extracted PDF text into the full structured field set for a case
+    definition: the parsed sections (incl. cleaned structured suspected/probable/
+    confirmed_case) plus english_name.
+
+    This is the SINGLE parse path shared by the daily scraper (scraper.main) and
+    the offline reprocessor (data_parser.main), so english_name and the sections
+    can never drift apart again. Pure: no network / file IO.
+    """
+    fields = parse_disease_content(content)  # normalises + cleans internally
+    fields["english_name"] = extract_english_name(normalize_text(content))
+    return fields
+
 
 def main():
     """
@@ -349,15 +365,10 @@ def main():
             logger.warning("Error reading %s: %s", filename, e)
             continue
             
-        # Parse
-        normalized_text = normalize_text(text)
-        parsed = parse_disease_content(normalized_text) # parse_disease_content already normalizes, but it's safe to do it again or pass stripped
-        english_name = extract_english_name(normalized_text) # Extract English name from CLEAN text
-        
-        # Parse Case Definitions from '疾病分類'
-        case_defs = parse_case_definitions(parsed.get("疾病分類", ""))
-        parsed.update(case_defs)
-        
+        # Parse (single shared path: sections + case defs + english_name)
+        parsed = build_record(text)
+        english_name = parsed["english_name"]
+
         # Check if parsing found anything
         filled_sections = sum(1 for v in parsed.values() if v)
         logger.info("Parsed %s: found %d/9 sections, English: %s", disease_name, filled_sections, english_name)
@@ -371,17 +382,16 @@ def main():
                 break
         
         if record:
-            # Only update the parsed fields, keep existing url, source_category, etc.
+            # Only update the parsed fields (incl. english_name), keep existing
+            # url, source_category, etc.
             for k, v in parsed.items():
                 record[k] = v
             record['content'] = normalize_text(text.strip())
-            record['english_name'] = english_name
             updated_data.append(record)
         else:
             # Create new record stub (no url available)
             new_record = {'name': disease_name, 'content': normalize_text(text.strip())}
             new_record.update(parsed)
-            new_record['english_name'] = english_name
             updated_data.append(new_record)
             logger.warning("No existing record found for %s", disease_name)
             

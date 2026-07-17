@@ -113,7 +113,7 @@ verbatim. Consequence below in §6.
 | `build_feed.py` | RSS 2.0 feed | pure core (`build_feed`) |
 | `build_api.py` | static JSON API | pure core (`build_api_payloads`) |
 | `check_coverage.py` | CI coverage gate | pure core (`dataset_stats`,`evaluate`) |
-| `tests/` | 80 offline tests; `conftest.py` puts repo root on `sys.path` | — |
+| `tests/` | 85 offline tests; `conftest.py` puts repo root on `sys.path` | — |
 
 ---
 
@@ -171,58 +171,52 @@ verbatim. Consequence below in §6.
   history. Generated artifacts are gitignored to prevent re-bloat. (The closed PR that referenced
   the old objects may keep them on GitHub's server, but fresh clones are small.)
 - **Branch/merge workflow in use:** develop on a `claude/*` feature branch, then **fast-forward
-  `main`** to it (`git push origin <sha>:main`). No PR review gate. This is fast but see the open
-  question in §9.
+  `main`** to it (`git push origin <sha>:main`). No PR review gate.
+- **Data stays in git (decided 2026-06).** `diseases.json` + `disease_manuals.json` are committed
+  every daily run. Chosen over publish-only because the per-day git diff is exactly what a future
+  version-history page (C2) will read, and ~1.5 MB is years away from being a problem. Revisit if
+  `main` history grows unwieldy: periodic squash, or move the largest file to a Pages/Release
+  artifact.
+- **Fast-forward to `main`, no PR gate (decided 2026-06).** AI work lands via
+  `git push origin <sha>:main` once CI is green; acceptable because it's a solo project and the
+  pytest + coverage gates are the real guard. Revisit (switch to PR + required checks) when a
+  second human/AI contributor joins.
 
 ---
 
 ## 8. Known issues & backlog (verified, with reasoning)
 
-**Bugs / correctness (fix these first):**
-1. **English name is a dead feature.** `extract_english_name()` is only called in the offline
-   `data_parser.main()`, never in the daily `scraper.main()`. Result: **0/73** records have
-   `english_name`, so the dashboard's English search/sort and the API `english_name` field silently
-   do nothing. Fix: call it in `scraper.main()` after `parse_disease_content` and store it. (Needs
-   a re-scrape or migration to backfill existing records — see §6 hash-cache note.)
-2. **Transient failure silently drops a disease.** In `scraper.main`, a disease that fails
-   `get_actual_pdf_url`/download is not appended to `results`, so it disappears from
-   `diseases.json` that run. A single CDN hiccup removes a disease until the next good run; the
-   coverage gate only catches *mass* shrinkage (>30%). Fix: on failure, fall back to the previous
-   record (like the hash-match path already does).
-3. **Two divergent parse paths** (`scraper.main` vs `data_parser.main`) — the drift between them is
-   the root cause of #1, and `data_parser.main` redundantly re-runs `parse_case_definitions`.
-   Consider a single `build_record(content)` used by both.
-
-**Cleanup:**
-4. **`diseases_raw.json` is orphaned** — 283 entries, tracked, referenced by no code. Remove it.
+**Recently fixed — do not reintroduce (see git log, 2026-06):**
+- **English name now populated in the daily path.** `scraper.main` and `data_parser.main` share one
+  parse path, `data_parser.build_record(content)` (sections + case defs + `english_name`). Existing
+  records were backfilled offline from their stored `content` (72/73 have a name; the one without
+  simply has no parenthetical English in its PDF). It *was* a dead feature (0/73).
+- **Transient failure no longer drops a disease.** `scraper._keep_previous()` re-appends the
+  last-known-good record when `get_actual_pdf_url`/download fails, so a CDN hiccup can't silently
+  shrink `diseases.json`.
+- **Single parse path.** The old drift between `scraper.main` and `data_parser.main` (the root
+  cause of the english_name bug, plus a redundant `parse_case_definitions`) is gone.
+- **`diseases_raw.json` removed** (was orphaned: 283 entries, tracked, referenced by no code).
 
 **Parser quality (deferred, higher risk — see git history "Strip PDF footer/form noise"):**
-5. Table-structured content (e.g. 採檢時程表) is mangled by column-wise PDF text extraction; would
+1. Table-structured content (e.g. 採檢時程表) is mangled by column-wise PDF text extraction; would
    need `pdfplumber.extract_tables()` for those specific sections.
-6. Chinese sentences are hard-wrapped mid-sentence (`\n` inside a sentence); could be re-joined
+2. Chinese sentences are hard-wrapped mid-sentence (`\n` inside a sentence); could be re-joined
    conservatively (only lines not ending in punctuation / list markers) with tests.
 
 **Features not yet built:**
-- **C2 版本歷史頁** — a per-disease change timeline. Interesting because git already versions the
-  data JSON, but see the §9 data-in-git question first.
-- **C5 i18n** — an English UI toggle.
+- **C2 版本歷史頁** — a per-disease change timeline. Now unblocked: data stays in git (see §7), so
+  the per-day diff history is available to build it from.
+- **C5 i18n** — an English UI toggle (english_name is now populated, so this is more useful).
 
 ---
 
 ## 9. Open questions for the human (raise, don't silently assume)
 
-These are judgment calls where the current approach may be suboptimal and the answer changes
-architecture. If unresolved, ask before building on top of them:
-
-1. **Data-in-git vs bloat.** `diseases.json` + `disease_manuals.json` (~1.5 MB together) are
-   committed on every daily run, so `main` history grows forever — the same class of problem that
-   forced the one-time history slim. Committing the data *does* enable a git-based version-history
-   feature (C2). Tension worth a human decision: keep data in git (diffable history, enables C2) or
-   publish it only as Pages/Release artifacts (small forever)? A middle path: keep data in git but
-   periodically squash, or move only the largest file out.
-2. **No-review fast-forward to `main`.** AI changes land on the production default branch with no PR
-   gate, and that same branch takes daily bot auto-commits. Fine for a solo project + green CI;
-   risky if more contributors or higher stakes. Consider PR-based merges with required checks.
+No open questions right now. The two that used to live here — data-in-git vs bloat, and
+no-review fast-forward to `main` — were decided in 2026-06 and moved to the §7 decision log
+(each with a "revisit when …" trigger). When you hit a judgment call whose answer changes
+architecture, add it here and ask the human before building on top of it.
 
 ---
 
@@ -230,7 +224,7 @@ architecture. If unresolved, ask before building on top of them:
 
 ```bash
 pip install -r requirements-dev.txt     # requests, bs4, lxml, pdfplumber, pytest
-python -m pytest -q                      # all offline; must stay green (currently 80 passing)
+python -m pytest -q                      # all offline; must stay green (currently 85 passing)
 
 # Rebuild the published artifacts locally from committed JSON (no network needed):
 python build_dashboard.py && python build_manuals_dashboard.py

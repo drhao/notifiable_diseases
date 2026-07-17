@@ -8,10 +8,23 @@ import html
 import logging
 
 from pdf_fetcher import fetch_disease_links, get_actual_pdf_url, download_and_extract_pdf
-from data_parser import parse_disease_content
+from data_parser import build_record
 from cdc_common import write_csv, setup_logging
 
 logger = logging.getLogger(__name__)
+
+
+def _keep_previous(results, record, old_disease):
+    """
+    On a fetch/extract failure, retain the last-known-good record so a transient
+    CDC hiccup doesn't silently drop the disease from diseases.json for that run.
+    Returns True if a previous record was kept.
+    """
+    if old_disease:
+        results.append(old_disease)
+        record['issues'].append("kept previous record")
+        return True
+    return False
 
 def diff_texts(old_text, new_text):
     # The text comes from PDFs (untrusted) and is rendered via innerHTML in the
@@ -60,19 +73,20 @@ def main():
         logger.info("[%d/%d] Processing %s (%s)...", i + 1, len(links), disease['name'], disease.get('source_category', 'N/A'))
         
         record = {'name': disease['name'], 'category': disease.get('source_category', 'N/A'), 'status': 'Fail', 'issues': [], 'updated_now': False}
-        
+
+        old_disease = existing_data.get(disease['name'])
         actual_pdf_url = get_actual_pdf_url(disease['url'])
-        
+
         if not actual_pdf_url:
             logger.warning("Failed to get PDF URL for %s", disease['name'])
             record['issues'].append("No PDF Link")
+            _keep_previous(results, record, old_disease)
             status_records.append(record)
             continue
-            
+
         disease['actual_pdf_url'] = actual_pdf_url
-        
+
         # Check cache via Hash
-        old_disease = existing_data.get(disease['name'])
         expected_hash = old_disease.get('pdf_hash') if old_disease else None
         
         content, pdf_path, current_hash = download_and_extract_pdf(actual_pdf_url, disease['name'], expected_hash)
@@ -93,6 +107,7 @@ def main():
         if content is None and current_hash is None:
             logger.warning("Failed to extract content for %s", disease['name'])
             record['issues'].append("Download/Extract Failed")
+            _keep_previous(results, record, old_disease)
             status_records.append(record)
             continue
             
@@ -107,7 +122,7 @@ def main():
         
         disease['content'] = content
         disease['pdf_path'] = pdf_path
-        structured_fields = parse_disease_content(content)
+        structured_fields = build_record(content)  # sections + case defs + english_name
         disease.update(structured_fields)
         
         # Compute diffs if updated

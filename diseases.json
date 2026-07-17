@@ -16,7 +16,8 @@
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件及流行病學條\n件。",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "5226912de887645667070a8671be65e4966f35d27149fc09cbadb815795ad722"
+    "pdf_hash": "5226912de887645667070a8671be65e4966f35d27149fc09cbadb815795ad722",
+    "english_name": "Rabies"
   },
   {
     "name": "鼠疫",
@@ -35,7 +36,8 @@
     "檢體採檢送驗事項": "請參閱「傳染病檢體採檢手冊」（https：//gov.tw/pK8）",
     "suspected_case": "NA",
     "probable_case": "符合臨床條件雖未經實驗室證實，但與\n實驗室證實之確定病例 具有流行病學之關聯。",
-    "confirmed_case": "符合臨床條件及檢驗條件。"
+    "confirmed_case": "符合臨床條件及檢驗條件。",
+    "english_name": "Plague"
   },
   {
     "name": "嚴重急性呼吸道症候群",
@@ -54,7 +56,8 @@
     "probable_case": "符合臨床條件，且與確定病例具有流行病學之關聯。",
     "confirmed_case": "1. 兩次流行期之間：同時符合臨床條件、流行病學條件及檢\n驗條件。\n2. 爆發流行時：符合檢驗條件與流行病學條件第一項至第三\n項之任一條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "25289a7442c20649d117fa33df9f5546c2f9ba0fb128c03de645aa311a2b378a"
+    "pdf_hash": "25289a7442c20649d117fa33df9f5546c2f9ba0fb128c03de645aa311a2b378a",
+    "english_name": "Severe Acute Respiratory Syndrome, SARS"
   },
   {
     "name": "天花",
@@ -73,7 +76,8 @@
     "probable_case": "病患並未出現符合臨床通報定義之症狀，但臨床醫師高\n度懷疑 是天花，且與確定病例具有流行病學之關聯。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件。\n2. 符合臨床條件，且與確定病例具有流行病學之關聯。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "35248ba4c64a19fcc7cdcf74f9e61cdbd47ef64749263a4178d3e6cfdbd13429"
+    "pdf_hash": "35248ba4c64a19fcc7cdcf74f9e61cdbd47ef64749263a4178d3e6cfdbd13429",
+    "english_name": "Smallpox"
   },
   {
     "name": "M痘",
@@ -92,7 +96,8 @@
     "probable_case": "符合臨床條件及流病條件。",
     "confirmed_case": "符合檢驗條件。\n1",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "3f9f1473cb23a0ebe0210ff9c1fff2d87e6bc1fe9cd3757933e492714e32b413"
+    "pdf_hash": "3f9f1473cb23a0ebe0210ff9c1fff2d87e6bc1fe9cd3757933e492714e32b413",
+    "english_name": "Mpox"
   },
   {
     "name": "登革熱",
@@ -111,7 +116,8 @@
     "檢體採檢送驗事項": "傳染病 採檢項目 採檢目 採檢時間 採檢量及 送驗方式 應保存種類 注意事項\n名稱 的 規定 （應保存時\n間）\n血清檢體見 2.8.3 及 2.8.4\n急性期\n病毒株（30備註說明及血清採檢步驟\n（發病7\n2-8°C（B 日）；陽性血請參考第3.3 節。\n日內採\n病 原 體 以無菌試 類感 清（30 日）\n檢）\n登革熱 血清 檢測；抗 管收集 3 染性物質\n體檢測 恢復期 mL 血清。 P650 包\n（發病 裝） 陽 性 血 清\n14-40 日 （30 日）\n之間）",
     "suspected_case": "符合臨床條件及流行病學條件。",
     "probable_case": "符合臨床條件及檢驗結果陽性定義之第四項。",
-    "confirmed_case": "符合以下二項條件任一者。\n1. 符合檢驗結果陽性定義之第一、二、五項之任一項者。\n2. 符合檢驗結果陽性定義之第三項（限流行區，或由疾病管\n制署或其認可實驗室執行者）。"
+    "confirmed_case": "符合以下二項條件任一者。\n1. 符合檢驗結果陽性定義之第一、二、五項之任一項者。\n2. 符合檢驗結果陽性定義之第三項（限流行區，或由疾病管\n制署或其認可實驗室執行者）。",
+    "english_name": "Dengue Fever"
   },
   {
     "name": "屈公病",
@@ -130,7 +136,8 @@
     "probable_case": "符合臨床條件及檢驗結果陽性定義之第三項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、四項之任一項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "de4f024284388ccca04c88d8ec8ff0047bf330b8cf2fc3b8392615f7e98128f4"
+    "pdf_hash": "de4f024284388ccca04c88d8ec8ff0047bf330b8cf2fc3b8392615f7e98128f4",
+    "english_name": "Chikungunya Fever"
   },
   {
     "name": "瘧疾",
@@ -149,7 +156,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "1c4280788a4e9eb2cdc5dd081ce9a50712f281455f25a4de868be2257507160b"
+    "pdf_hash": "1c4280788a4e9eb2cdc5dd081ce9a50712f281455f25a4de868be2257507160b",
+    "english_name": "Malaria"
   },
   {
     "name": "茲卡病毒感染症",
@@ -168,7 +176,8 @@
     "檢體採檢送驗事項": "傳染病 採檢量 應保存種類\n採檢項目 採檢目的 採檢時間 送驗方式 注意事項\n名稱 及規定 （應保存時間）\n以無菌 1. 檢體勿加\n2-8°C\n茲卡病 病原體檢 急性期（發 血清管 入任何添\n血清 測；抗體 收集 3~5 （B類感染 病毒株（30日） 加物。\n毒感染 病7日內採\n檢測 mL血 性物質 ；血清（30日） 2. 血清檢體\n症 檢） 清。 見2.8.3 及\n包裝）\n2.8.4 備註\n說明及血\n清採檢步\n驟請參考\n恢復期（發\n第3.3 節。\n病14-40 日 3. 尿液採檢\n之間） 步驟請參\n考第3.4\n節。\n以無菌 4. 血清及尿\n離心管\n病原體檢 發病1~14 病毒株（30日） 液為必採\n尿液 收集 10\n測 日採檢 ；尿液（30日） 項目。\nmL尿\n液。\n以無菌\n須經臨床醫師\n試管收\n認定有額外檢\n集 1 mL\n急性期（發 驗需求，且經\n體液（如羊 病原體檢 臍帶血 病毒株（30日）\n病7日內採 與本署各區管\n水、臍帶血、 測 或 3mL ；體液（30日）\n檢） 中心連繫後，\n唾液、脊髓液） 羊水、唾\n認有必要者，\n液、脊髓\n才需採檢。\n液。\n實施日期：110 年9月6日\n通報「重點監視項目」之「茲卡病毒篩檢」原則\n不符合茲卡病毒感染症通報定義，但有茲卡病毒之檢驗需求者，僅限：\n1. 孕婦於懷孕期間具有茲卡病毒暴露史*。\n2. 新生兒/胎兒具有小頭畸形或疑似感染茲卡病毒症狀，但生母無茲卡\n病毒暴露史*或暴露史不明。\n*暴露史定義：懷孕期間，或其性伴侶於該孕婦懷孕前六個月內或懷孕期間，\n有茲卡病毒感染症流行地區相關活動史，或活動範圍內有茲卡病毒感染症確定\n病例。",
     "suspected_case": "NA",
     "probable_case": "符合流行病學條件及檢驗結果陽性定義之第三項。",
-    "confirmed_case": "符合檢驗結果陽性定義之第一、二、四項之任一項。"
+    "confirmed_case": "符合檢驗結果陽性定義之第一、二、四項之任一項。",
+    "english_name": "Zika Virus Infection"
   },
   {
     "name": "西尼羅熱",
@@ -187,7 +196,8 @@
     "probable_case": "符合臨床條件及檢驗結果陽性定義之第四項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、三、五項之任一項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "dc660a963ce884ba35de4d83e97b9129ee7ef0382ee90f89923f825475b3a797"
+    "pdf_hash": "dc660a963ce884ba35de4d83e97b9129ee7ef0382ee90f89923f825475b3a797",
+    "english_name": "West Nile Fever"
   },
   {
     "name": "腸道出血性大腸桿菌感染症",
@@ -206,7 +216,8 @@
     "probable_case": "符合臨床條件，雖未經實驗室檢驗證實，但與確定病例具有流\n行病學之關聯。",
     "confirmed_case": "符合臨床條件和檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "ce7a375ddaac077e54b304f8e1a2ddad933b20877d492cb9b4dadfdd02db26e2"
+    "pdf_hash": "ce7a375ddaac077e54b304f8e1a2ddad933b20877d492cb9b4dadfdd02db26e2",
+    "english_name": "Enterohaemorrhagic E. coli Infection"
   },
   {
     "name": "傷寒",
@@ -225,7 +236,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "ff2c547c500eaf1f184c82b4bc486aaa1f2952b35e830f9cc20dee616c79912c"
+    "pdf_hash": "ff2c547c500eaf1f184c82b4bc486aaa1f2952b35e830f9cc20dee616c79912c",
+    "english_name": "Typhoid Fever"
   },
   {
     "name": "副傷寒",
@@ -244,7 +256,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "ca0f0b890205e94759a41c8e60bc9d6af0205afee2c08fd057b300ddd731d55f"
+    "pdf_hash": "ca0f0b890205e94759a41c8e60bc9d6af0205afee2c08fd057b300ddd731d55f",
+    "english_name": "Paratyphoid Fever"
   },
   {
     "name": "桿菌性痢疾",
@@ -263,7 +276,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "1f44d53be3c81aca7555f448acd00f6858a04562248c208fb14bacf564058e04"
+    "pdf_hash": "1f44d53be3c81aca7555f448acd00f6858a04562248c208fb14bacf564058e04",
+    "english_name": "Shigellosis"
   },
   {
     "name": "阿米巴性痢疾",
@@ -282,7 +296,8 @@
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合檢驗條件第一項。\n2. 符合臨床條件第二項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "919fb042cc099dccc0e105690c3e1008b5c9739aacf81c2cb237121a30f4145d"
+    "pdf_hash": "919fb042cc099dccc0e105690c3e1008b5c9739aacf81c2cb237121a30f4145d",
+    "english_name": "Amebiasis"
   },
   {
     "name": "霍亂",
@@ -301,7 +316,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "b064cf3d9cc87cb890a7a6a5b9101b2e8f5786db15cc2296290ed767a41ce04b"
+    "pdf_hash": "b064cf3d9cc87cb890a7a6a5b9101b2e8f5786db15cc2296290ed767a41ce04b",
+    "english_name": "Cholera"
   },
   {
     "name": "急性病毒性A型肝炎",
@@ -320,7 +336,8 @@
     "檢體採檢送驗事項": "請參閱「傳染病檢體採檢手冊」（路徑：衛生福利部疾病管制署全球資訊\n網（https：//www.cdc.gov.tw/）/應用專區/檢驗/傳染病檢體採檢手冊）。\n2024年11月12日修訂，2025年1月1日實施",
     "suspected_case": "NA",
     "probable_case": "符合臨床條件及流行病學條件者。",
-    "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件（一）。\n2. 符合檢驗條件（二）。\n2024年11月12日修訂，2025年1月1日實施"
+    "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件（一）。\n2. 符合檢驗條件（二）。\n2024年11月12日修訂，2025年1月1日實施",
+    "english_name": "Acute Hepatitis A"
   },
   {
     "name": "小兒麻痺症/急性無力肢體麻痺",
@@ -339,7 +356,8 @@
     "probable_case": "",
     "confirmed_case": "",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "300955f44a0657cc6893ade406f00e2d7860312161e40cbc1f5307c0543fd4e9"
+    "pdf_hash": "300955f44a0657cc6893ade406f00e2d7860312161e40cbc1f5307c0543fd4e9",
+    "english_name": "Acute Flaccid Paralysis and Poliomyelitis"
   },
   {
     "name": "炭疽病",
@@ -358,7 +376,8 @@
     "probable_case": "符合臨床條件，且與確定病例具有流行病學之關聯。",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "42c61ba8840c9f33e8fd166108205f412ffce0fd8f80292a58890685588a01eb"
+    "pdf_hash": "42c61ba8840c9f33e8fd166108205f412ffce0fd8f80292a58890685588a01eb",
+    "english_name": "Anthrax"
   },
   {
     "name": "多重抗藥性結核病",
@@ -377,7 +396,8 @@
     "probable_case": "符合檢驗條件。",
     "confirmed_case": "同時具備下列兩項條件：\n1. 符合極可能病例。\n2. 藥物感受性試驗檢驗單位，傳統檢測須為疾病管制署\n或多重抗藥性結核病認可實驗室，分子檢測須為疾病\n管制署或指定實驗室。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "82c918c99026795080390437e5216fb2aa702f2e7209557164e60cd563a04067"
+    "pdf_hash": "82c918c99026795080390437e5216fb2aa702f2e7209557164e60cd563a04067",
+    "english_name": "Multidrug-Resistant Tuberculosis"
   },
   {
     "name": "麻疹",
@@ -396,7 +416,8 @@
     "probable_case": "",
     "confirmed_case": "符合下列條件之一者，並經防疫醫師審查判定確定者：\n1. 經實驗室檢驗確認者。\n2. 符合通報定義，且與實驗室確診個案有流行病學相關者。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "c00ee0794888a6ea46ab4863925c3ebd3bef296d1cb36f4d4ba832674bf44d6a"
+    "pdf_hash": "c00ee0794888a6ea46ab4863925c3ebd3bef296d1cb36f4d4ba832674bf44d6a",
+    "english_name": "Measles"
   },
   {
     "name": "德國麻疹",
@@ -415,7 +436,8 @@
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件及流行病學條件任一\n項。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件。\n2. 符合臨床條件，未接種德國麻疹相關疫苗或接種史不明，\n且符合流行病學條件",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "417798088c4fd2f3bfa4566bd250c46ccbb23274e805e3df318914d312343ad5"
+    "pdf_hash": "417798088c4fd2f3bfa4566bd250c46ccbb23274e805e3df318914d312343ad5",
+    "english_name": "Rubella"
   },
   {
     "name": "白喉",
@@ -434,7 +456,8 @@
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件和檢驗條件。\n2. 符合臨床條件，雖未經實驗室檢驗證實，但與經實驗室\n證實之確定病例具有流行病學之關聯。\n1",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "7655fe45e7ea6270af3f13a92b41bb1631282b22a5d06d29f75750f0f111a432"
+    "pdf_hash": "7655fe45e7ea6270af3f13a92b41bb1631282b22a5d06d29f75750f0f111a432",
+    "english_name": "Diphtheria"
   },
   {
     "name": "流行性腦脊髓膜炎",
@@ -453,7 +476,8 @@
     "probable_case": "符合臨床條件（噁心、嘔吐除外）及流行病學條件。",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "c3032b734a3a1648f2f786f1525a6f9e477b369cff964b03d06250b23843ee09"
+    "pdf_hash": "c3032b734a3a1648f2f786f1525a6f9e477b369cff964b03d06250b23843ee09",
+    "english_name": "Meningococcal Meningitis"
   },
   {
     "name": "漢他病毒症候群",
@@ -472,7 +496,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件（二）及檢驗條件（二）或（三）或（四）之任一項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "b6d762958a2873eafcab5828fbb116dcd6241d17fdb227e4a1e832bc816bf6b6"
+    "pdf_hash": "b6d762958a2873eafcab5828fbb116dcd6241d17fdb227e4a1e832bc816bf6b6",
+    "english_name": "Hantavirus syndrome"
   },
   {
     "name": "後天免疫缺乏症候群",
@@ -491,7 +516,8 @@
     "probable_case": "NA",
     "confirmed_case": "排除 HIV 急性初期感染，且符合臨床條件或檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "31e9b52a22e2089ef539c99043a3192251190115504d7c29924ef8e01ce38f76"
+    "pdf_hash": "31e9b52a22e2089ef539c99043a3192251190115504d7c29924ef8e01ce38f76",
+    "english_name": "AIDS"
   },
   {
     "name": "急性病毒性B型肝炎",
@@ -510,7 +536,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "838adbe0e81b15ef8edbc34e7d06261c48a67cc8335a1e7fb02c4574352709e4"
+    "pdf_hash": "838adbe0e81b15ef8edbc34e7d06261c48a67cc8335a1e7fb02c4574352709e4",
+    "english_name": "Acute Hepatitis B"
   },
   {
     "name": "日本腦炎",
@@ -529,7 +556,8 @@
     "probable_case": "符合臨床條件及檢驗結果陽性定義之第三項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、四項之任一項。\n2017年05月",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "3cc81560b21408759787e18cf47b6810912cf2abc620b9819aac55f51cbf8b8d"
+    "pdf_hash": "3cc81560b21408759787e18cf47b6810912cf2abc620b9819aac55f51cbf8b8d",
+    "english_name": "Japanese Encephalitis"
   },
   {
     "name": "急性病毒性C型肝炎",
@@ -548,7 +576,8 @@
     "檢體採檢送驗事項": "傳染病 採檢量及 應保存種類\n採檢項目 採檢目的 採檢時間 送驗方式 注意事項\n名稱 規定 應保存時間\n抗體檢測\n1. 檢體請勿加\n入任何添加\n物。\n2. 血清檢體採\n檢注意事項\n急性 2–8 °C\n抗原檢測 以無菌試管 請參閱「傳染\n病毒性 B類感染性 陽性血清\n血清 立即採檢 收集3 mL血 病檢體採檢\nC型 物質P650 （30日）\n清 手冊」2.8.3\n肝炎 包裝\n及 2.8.4備註\n說明，血清檢\n體採檢步驟\n請參閱該手\n病原體 冊第3.3節。\n檢測\n備註：\n1. C型肝炎病毒之檢驗方法、步驟及結果判定等資訊，可參閱「傳染病標準檢驗方法手冊」。\n2. 「傳染病檢體採檢手冊」及「傳染病標準檢驗方法手冊」可至疾病管制署全球資訊網\n（https：//www.cdc.gov.tw）首頁之檢驗（傳染病檢驗資訊與規定）項下查詢。\n2021年2月",
     "suspected_case": "NA。",
     "probable_case": "NA。",
-    "confirmed_case": "符合臨床條件及檢驗條件第（一）項，或符合檢驗條件\n第（二）項至第（五）項之任一項。"
+    "confirmed_case": "符合臨床條件及檢驗條件第（一）項，或符合檢驗條件\n第（二）項至第（五）項之任一項。",
+    "english_name": "Acute Hepatitis C"
   },
   {
     "name": "腸病毒感染併發重症",
@@ -567,7 +596,8 @@
     "probable_case": "符合臨床條件但無實驗室確認，或高度懷疑為腸病毒感染。",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "be97bbc2e55287285898d88e3c607d9add49bd08d27c58b1e03dd21aebc742e3"
+    "pdf_hash": "be97bbc2e55287285898d88e3c607d9add49bd08d27c58b1e03dd21aebc742e3",
+    "english_name": "Enteroviruses Infection with Severe Complications"
   },
   {
     "name": "急性病毒性D型肝炎",
@@ -586,7 +616,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "1120319b65a62b2d1f737b6fabab915a877ec46d5aa9ab93ea22c88e4ee84b28"
+    "pdf_hash": "1120319b65a62b2d1f737b6fabab915a877ec46d5aa9ab93ea22c88e4ee84b28",
+    "english_name": "Acute Hepatitis D"
   },
   {
     "name": "結核病",
@@ -605,7 +636,8 @@
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合檢驗條件第一項，或\n2. 符合臨床條件第一項且胸部X 光進步或臨床症狀改善，或\n3. 符合檢驗條件第二項及第四項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "e56e9fef8080d7907f026053d3a53e21abc02d9d248ef9d93e7ade1ef0887802"
+    "pdf_hash": "e56e9fef8080d7907f026053d3a53e21abc02d9d248ef9d93e7ade1ef0887802",
+    "english_name": "Tuberculosis"
   },
   {
     "name": "先天性德國麻疹症候群",
@@ -624,7 +656,8 @@
     "probable_case": "NA",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件（第一項中任二種缺陷；或第一、二項中任\n一種）與檢驗條件。\n2. 符合臨床條件及流行病學條件。\n3. 任何死產嬰兒，排除其他可能致死原因並符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "ba9c5de6a50a2ef85996da43c16718a4bce296c014522a27a6f8057258219eb3"
+    "pdf_hash": "ba9c5de6a50a2ef85996da43c16718a4bce296c014522a27a6f8057258219eb3",
+    "english_name": "Congenital Rubella Syndrome"
   },
   {
     "name": "急性病毒性E型肝炎",
@@ -643,7 +676,8 @@
     "probable_case": "符合臨床條件及流行病學條件。",
     "confirmed_case": "符合臨床條件及任一項檢驗條件。\n2019年7月",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "d589d7e5a925f3bb9bcf9a37b63a58341893a46243deb7548022d2023338cf5b"
+    "pdf_hash": "d589d7e5a925f3bb9bcf9a37b63a58341893a46243deb7548022d2023338cf5b",
+    "english_name": "Acute Hepatitis E"
   },
   {
     "name": "流行性腮腺炎",
@@ -663,7 +697,8 @@
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床及檢驗條件。\n2. 符合臨床條件，且與經實驗室證實之確定病例具有流行病\n學之關聯。",
     "last_pdf_update": "2026-03-01",
     "檢驗條件_diff": "具有下列任一個條件：\n（一）臨床檢體<b style=\"color: #ea580c; background: #ffedd5;\">（頰腔擦拭液）</b>分離並鑑定出腮腺炎病毒（Mumps\nvirus）。\n（二）臨床檢體分子生物學核酸檢測陽性。",
-    "pdf_hash": "fb39e0c9a89385f7b762855d42963a9ce7ba882a7cf1db88f56049cde6b10250"
+    "pdf_hash": "fb39e0c9a89385f7b762855d42963a9ce7ba882a7cf1db88f56049cde6b10250",
+    "english_name": "Mumps"
   },
   {
     "name": "百日咳",
@@ -682,7 +717,8 @@
     "probable_case": "符合流行病學條件，且近期有咳嗽史。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗條件。\n2. 符合臨床條件及流行病學條件。\n3. 具有急性咳嗽（不須符合臨床條件）及符合檢驗條件第一\n項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "e053e2015900c72825e707dedec7ce0f91d302181acd74d73fdc042111c5c337"
+    "pdf_hash": "e053e2015900c72825e707dedec7ce0f91d302181acd74d73fdc042111c5c337",
+    "english_name": "Paroxysmal cough"
   },
   {
     "name": "侵襲性b型嗜血桿菌感染症",
@@ -702,7 +738,8 @@
     "suspected_case": "符合臨床條件。",
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
-    "檢體採檢送驗事項_diff": "採檢項目 檢體種類 採檢目的 採檢時機 採檢規定 運送條件 注意事項\n以 採 血 管 採 全 1. 全血採檢請\n血，立即注入嗜氧 參考第 3.1<del style=\"color: #9ca3af;\"> 節。</del><b style=\"color: #ea580c; background: #ffedd5;\">\n全血 性血瓶（血液與培 節。\n養液比例為1：5至 2. 腦脊髓液採檢</b>\n未投藥前立<del style=\"color: #9ca3af;\">\n全血 性血瓶（血液與培 2. 腦脊髓液採\n即採檢\n養液比例為 </del>1：<del style=\"color: #9ca3af;\">5 至 檢</del><b style=\"color: #ea580c; background: #ffedd5;\">10）。 </b>步驟請參考第\n<del style=\"color: #9ca3af;\">1：10）。 3.6 節，由醫師採\n</del>病原體檢測<del style=\"color: #9ca3af;\"> 常溫\n</del><b style=\"color: #ea580c; background: #ffedd5;\">\n即採檢 </b>以無菌容器收集 <del style=\"color: #9ca3af;\">檢。\n腦 脊 髓</del><b style=\"color: #ea580c; background: #ffedd5;\">3.6 節，由醫</b>\n侵襲性 b<b style=\"color: #ea580c; background: #ffedd5;\">\n腦 脊 髓</b> 至少 1 mL 腦脊髓<del style=\"color: #9ca3af;\"> 3. 肋膜液、關節</del><b style=\"color: #ea580c; background: #ffedd5;\">22-35°C 師採檢。\n型嗜血桿</b>\n液、肋膜 <del style=\"color: #9ca3af;\">未投藥前立\n液等體液採檢請\n型嗜血桿 </del>液或體液。或直接<del style=\"color: #9ca3af;\">\n</del><b style=\"color: #ea580c; background: #ffedd5;\"> （B 類感染 3. 肋膜</b>液、關節<del style=\"color: #9ca3af;\">液 即採檢 參考第 3.10 節。</del>\n菌感染症<b style=\"color: #ea580c; background: #ffedd5;\">\n液、關節液</b> 接種於巧克力培<del style=\"color: #9ca3af;\">\n</del><b style=\"color: #ea580c; background: #ffedd5;\"> 性物質 液</b>等<del style=\"color: #9ca3af;\">\n</del><b style=\"color: #ea580c; background: #ffedd5;\">體液採檢\n等 </b>養基。<del style=\"color: #9ca3af;\">\n常溫\n</del><b style=\"color: #ea580c; background: #ffedd5;\"> P650 包 請參考第 3.15\n裝） 節。\n已分離菌株\n疑似菌株\n時 </b>接種於巧克力培\n<del style=\"color: #9ca3af;\">未投藥前立</del><b style=\"color: #ea580c; background: #ffedd5;\">菌株鑑定；\n</b>養基，以封口膜\n<del style=\"color: #9ca3af;\">菌株 菌株</del><b style=\"color: #ea580c; background: #ffedd5;\">血清型別</b>鑑<del style=\"color: #9ca3af;\">定 （B 類感染\n即採檢 </del><b style=\"color: #ea580c; background: #ffedd5;\">\n認可檢驗機</b>（paraffin）<b style=\"color: #ea580c; background: #ffedd5;\"> </b>密封，\n<del style=\"color: #9ca3af;\">性物質包\n</del><b style=\"color: #ea580c; background: #ffedd5;\">定\n確認菌株 透確認的菌</b>並加夾鏈袋運送。\n<del style=\"color: #9ca3af;\">裝）</del><b style=\"color: #ea580c; background: #ffedd5;\">株</b>"
+    "檢體採檢送驗事項_diff": "採檢項目 檢體種類 採檢目的 採檢時機 採檢規定 運送條件 注意事項\n以 採 血 管 採 全 1. 全血採檢請\n血，立即注入嗜氧 參考第 3.1<del style=\"color: #9ca3af;\"> 節。</del><b style=\"color: #ea580c; background: #ffedd5;\">\n全血 性血瓶（血液與培 節。\n養液比例為1：5至 2. 腦脊髓液採檢</b>\n未投藥前立<del style=\"color: #9ca3af;\">\n全血 性血瓶（血液與培 2. 腦脊髓液採\n即採檢\n養液比例為 </del>1：<del style=\"color: #9ca3af;\">5 至 檢</del><b style=\"color: #ea580c; background: #ffedd5;\">10）。 </b>步驟請參考第\n<del style=\"color: #9ca3af;\">1：10）。 3.6 節，由醫師採\n</del>病原體檢測<del style=\"color: #9ca3af;\"> 常溫\n</del><b style=\"color: #ea580c; background: #ffedd5;\">\n即採檢 </b>以無菌容器收集 <del style=\"color: #9ca3af;\">檢。\n腦 脊 髓</del><b style=\"color: #ea580c; background: #ffedd5;\">3.6 節，由醫</b>\n侵襲性 b<b style=\"color: #ea580c; background: #ffedd5;\">\n腦 脊 髓</b> 至少 1 mL 腦脊髓<del style=\"color: #9ca3af;\"> 3. 肋膜液、關節</del><b style=\"color: #ea580c; background: #ffedd5;\">22-35°C 師採檢。\n型嗜血桿</b>\n液、肋膜 <del style=\"color: #9ca3af;\">未投藥前立\n液等體液採檢請\n型嗜血桿 </del>液或體液。或直接<del style=\"color: #9ca3af;\">\n</del><b style=\"color: #ea580c; background: #ffedd5;\"> （B 類感染 3. 肋膜</b>液、關節<del style=\"color: #9ca3af;\">液 即採檢 參考第 3.10 節。</del>\n菌感染症<b style=\"color: #ea580c; background: #ffedd5;\">\n液、關節液</b> 接種於巧克力培<del style=\"color: #9ca3af;\">\n</del><b style=\"color: #ea580c; background: #ffedd5;\"> 性物質 液</b>等<del style=\"color: #9ca3af;\">\n</del><b style=\"color: #ea580c; background: #ffedd5;\">體液採檢\n等 </b>養基。<del style=\"color: #9ca3af;\">\n常溫\n</del><b style=\"color: #ea580c; background: #ffedd5;\"> P650 包 請參考第 3.15\n裝） 節。\n已分離菌株\n疑似菌株\n時 </b>接種於巧克力培\n<del style=\"color: #9ca3af;\">未投藥前立</del><b style=\"color: #ea580c; background: #ffedd5;\">菌株鑑定；\n</b>養基，以封口膜\n<del style=\"color: #9ca3af;\">菌株 菌株</del><b style=\"color: #ea580c; background: #ffedd5;\">血清型別</b>鑑<del style=\"color: #9ca3af;\">定 （B 類感染\n即採檢 </del><b style=\"color: #ea580c; background: #ffedd5;\">\n認可檢驗機</b>（paraffin）<b style=\"color: #ea580c; background: #ffedd5;\"> </b>密封，\n<del style=\"color: #9ca3af;\">性物質包\n</del><b style=\"color: #ea580c; background: #ffedd5;\">定\n確認菌株 透確認的菌</b>並加夾鏈袋運送。\n<del style=\"color: #9ca3af;\">裝）</del><b style=\"color: #ea580c; background: #ffedd5;\">株</b>",
+    "english_name": "Invasive Haemophilus influenzae Type b Infection"
   },
   {
     "name": "退伍軍人病",
@@ -721,7 +758,8 @@
     "檢體採檢送驗事項": "採檢項目 檢體種類 採檢目的 採檢時機 採檢規定 運送條件 注意事項\n痰液、呼 1. 勿以棉花拭\n吸道分泌病原體檢 以無菌容器收集直接喀 子採集痰液、呼\n物、胸膜測 出之痰液。 吸道分泌物、胸\n立即採檢\n液 膜液等檢體。\n以無菌容器收集 10 mL 2. 勿採患者口\n尿液 抗原檢測\n尿液。 低溫 水。\n急 性 期 3. 痰液檢體採\n（ 立 即 採 檢請參考第 3.9\n以無菌試管收集至少 3\n血清 抗體檢測 檢）；恢復 節。\nmL 血清。\n期 （4-12 4. 胸膜液等體\n週） 液採檢請參考\n1. 水龍頭、蓮蓬頭、飲水 第 3.10 節。\n機等水源：（1）以細菌拭 5. 尿液檢體見\n子之棉棒在欲採樣之 2.8.2 備註說\n水源下潤溼後，伸入水 明，尿液檢體採\n源出水口內部，上下左 檢步驟請參考\n退伍軍人\n右旋轉數次後，插入 第 3.4 節。\n病\n水龍頭、 Cary-Blair 保存輸送培 6. 血清檢體見\n蓮蓬頭、 養基。或者（2）以無菌棉 2.8.3 及 2.8.4\n飲水機、病原體檢配合陽性 棒在欲採樣之水源下 備註說明，血清\n低溫\n冷卻水塔測 案例 潤溼後，伸入水源出水 採檢步驟請參\n等水源環 口內部，上下左右旋轉 考第 3.3 節。\n境檢體 數次後，折斷棉棒置於 7. 環境檢體\n無 菌 容 器 或 採 水 袋 （水龍頭、蓮蓬\n中，再續接 200 mL 環 頭、飲水機等水\n境水於同一容器中 源）：細菌拭子\n2. 冷卻水塔水源：以無菌 （1）或一袋水\n容器或採水袋收集約 （2），擇一送\n100 mL 冷卻水塔水。 檢。\n純化之菌株以拭子沾滿 8. 菌株為陽性\n一圈後置入 Cary-Blair 保 個案臨床分離\n已分離菌 低 溫 / 常\n菌株 菌株鑑定 存輸送培養基，或接種於 株及其相關環\n株時 溫\nBCYE 培養基，以封口膜 境分離株。\n密封，並加夾鏈袋運送。",
     "suspected_case": "符合臨床條件。",
     "probable_case": "具有下列任一個條件：\n1. 符合臨床條件及血清學檢測之恢復期抗體效價出現上升，\n但未達 4 倍上升。\n2. 符合臨床條件及流行病學條件。",
-    "confirmed_case": "符合臨床條件和檢驗條件。"
+    "confirmed_case": "符合臨床條件和檢驗條件。",
+    "english_name": "Legionnaires' disease"
   },
   {
     "name": "人類免疫缺乏病毒(愛滋病毒)感染",
@@ -740,7 +778,8 @@
     "probable_case": "符合檢驗條件第（二）項或第（三）項或流行病學條件第\n（一）項。",
     "confirmed_case": "符合檢驗條件第（一）項。如同時符合流行病學條件第\n（二）項，則為急性初期感染。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "02531d37229f949c01759f469562efe615b10d2d38b695bb15e231f93092ac09"
+    "pdf_hash": "02531d37229f949c01759f469562efe615b10d2d38b695bb15e231f93092ac09",
+    "english_name": "HIV Infection"
   },
   {
     "name": "梅毒",
@@ -759,7 +798,8 @@
     "probable_case": "NA",
     "confirmed_case": "1. 一期梅毒：符合臨床條件第（一）項及檢驗條件\n2. 二期梅毒：符合臨床條件第（二）項及檢驗條件\n3. 三期梅毒：符合臨床條件第（三）項及檢驗條件\n4. 潛伏性梅毒：無臨床症狀，但符合檢驗條件",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "6bc668c96d63a8d5423d0edf99685f98819142670dbeea871bdaa221f16c60de"
+    "pdf_hash": "6bc668c96d63a8d5423d0edf99685f98819142670dbeea871bdaa221f16c60de",
+    "english_name": "Syphilis"
   },
   {
     "name": "先天性梅毒",
@@ -783,7 +823,8 @@
     "檢驗條件_diff": "（一） 血清學特異性梅毒螺旋體試驗（treponemal test）1陽性。\n（二） 血清學非特異性梅毒螺旋體試驗（non-treponemal test）2陽性。\n（三） 臨床檢體（病灶滲出液、組織、胎盤、臍帶、屍體、鼻腔分泌物\n等）以暗視野顯微鏡、螢光抗體檢驗或核酸檢驗檢測出梅毒螺<del style=\"color: #9ca3af;\">\n旋</del><b style=\"color: #ea580c; background: #ffedd5;\">旋\n</b>體。\n（四） 血清學特異性梅毒螺旋體 IgM 試驗（treponemal-specific IgM）<del style=\"color: #9ca3af;\">\n</del>3<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>陽性。\n（五） 腦脊髓液性病研究實驗室試驗（CSF-VDRL）陽性。\n註<b style=\"color: #ea580c; background: #ffedd5;\"> </b>1：<del style=\"color: #9ca3af;\"> </del>特異性梅毒螺旋體試驗（treponemal test）：梅毒螺旋體血液凝集試驗\n（TPHA）、梅毒螺旋體粒子凝集試驗（TPPA）、梅毒抗體間接螢光染<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>色法<del style=\"color: #9ca3af;\">\n</del>（FTA-abs）、梅毒螺旋體乳膠凝集試驗（TPLA）、梅毒螺旋體酵<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>素<b style=\"color: #ea580c; background: #ffedd5;\"> </b>免<b style=\"color: #ea580c; background: #ffedd5;\"> </b>疫<b style=\"color: #ea580c; background: #ffedd5;\"> </b>分<del style=\"color: #9ca3af;\">\n</del><b style=\"color: #ea580c; background: #ffedd5;\"> </b>析<b style=\"color: #ea580c; background: #ffedd5;\"> </b>法<del style=\"color: #9ca3af;\">（</del><b style=\"color: #ea580c; background: #ffedd5;\"> （ </b>EIA<del style=\"color: #9ca3af;\">）</del><b style=\"color: #ea580c; background: #ffedd5;\"> ） </b>或<del style=\"color: #9ca3af;\">梅毒螺旋體</del><b style=\"color: #ea580c; background: #ffedd5;\"> 梅 毒 螺 旋 體 化 學 冷 光 免 疫 分 析 法\n（CIA/CLIA/CMIA）、梅毒螺旋體電</b>化學<del style=\"color: #9ca3af;\">冷</del><b style=\"color: #ea580c; background: #ffedd5;\">發</b>光免疫分析法（<b style=\"color: #ea580c; background: #ffedd5;\">E</b>C<del style=\"color: #9ca3af;\">IA）</del><b style=\"color: #ea580c; background: #ffedd5;\">LIA）等</b>。\n註<b style=\"color: #ea580c; background: #ffedd5;\"> </b>2：<del style=\"color: #9ca3af;\"> </del>非特異性梅毒螺旋體試驗（non-treponemal test）：快速血漿反應素試驗\n（RPR）或性病研究實驗室試驗（VDRL）。\n註<b style=\"color: #ea580c; background: #ffedd5;\"> </b>3：<del style=\"color: #9ca3af;\"> </del>特異性梅毒螺旋體<del style=\"color: #9ca3af;\">IgM</del><b style=\"color: #ea580c; background: #ffedd5;\"> IgM </b>試驗（treponemal-specific IgM）：梅毒螺旋體<b style=\"color: #ea580c; background: #ffedd5;\"> </b>IgM\n酵素免疫分析法（IgM EIA）或梅毒<del style=\"color: #9ca3af;\">IgM</del><b style=\"color: #ea580c; background: #ffedd5;\"> IgM </b>抗體間接螢光染色法（<del style=\"color: #9ca3af;\">IgM </del>FTA-<del style=\"color: #9ca3af;\">\n</del>abs<del style=\"color: #9ca3af;\">）。</del><b style=\"color: #ea580c; background: #ffedd5;\">\nIgM）。</b>",
     "疾病分類_diff": "（一） 可能病例：\nNA\n（二） 極可能病例：\n具有下列任一個條件：\n1. 符合流行病學條件第（一）項。\n2. 符合流行病學條件第（二）項，且符合檢驗條件第（一）、<del style=\"color: #9ca3af;\">（二）、\n</del><b style=\"color: #ea580c; background: #ffedd5;\">\n（二）、</b>（四）、（五）之任一項。\n3. 符合臨床條件，且符合檢驗條件第（一）、（二）、（四）、<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>（五）之任<del style=\"color: #9ca3af;\">\n</del>一項。\n（三） 確定病例：\n具有下列任一個條件：\n1. 符合檢驗條件第（二）項及第（四）項。\n2. 符合檢驗條件第（二）項，且嬰兒效價大於母親生產時效價<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>之四<del style=\"color: #9ca3af;\">\n</del>倍以上。\n3. 符合檢驗條件第（三）項。\n4. 符合檢驗條件第（五）項，且腦脊髓液符合下列任一項細胞<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>計數<del style=\"color: #9ca3af;\">\n</del>和生化檢查異常情形：\n（1） 年齡未滿 1 個月：>15 WBC/microL， protein >120 mg/dL<b style=\"color: #ea580c; background: #ffedd5;\">。</b>\n（2） 年齡 1 個月以上：>5 WBC/microL， protein >40 mg/dL<b style=\"color: #ea580c; background: #ffedd5;\">。</b>\n5. 年齡 15 個月以上，符合檢驗條件第（一）項，且排除後天梅<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>毒<del style=\"color: #9ca3af;\">\n</del>暴露史。",
     "probable_case_diff": "具有下列任一個條件：\n1. 符合流行病學條件第（一）項。\n2. 符合流行病學條件第（二）項，且符合檢驗條件第（一）、<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>（二）、<del style=\"color: #9ca3af;\">\n</del>（四）、（五）之任一項。\n3. 符合臨床條件，且符合檢驗條件第（一）、（二）、（四）、<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>（五）之任<del style=\"color: #9ca3af;\">\n</del>一項。",
-    "confirmed_case_diff": "具有下列任一個條件：\n1. 符合檢驗條件第（二）項及第（四）項。\n2. 符合檢驗條件第（二）項，且嬰兒效價大於母親生產時效價<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>之四<del style=\"color: #9ca3af;\">\n</del>倍以上。\n3. 符合檢驗條件第（三）項。\n4. 符合檢驗條件第（五）項，且腦脊髓液符合下列任一項細胞<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>計數<del style=\"color: #9ca3af;\">\n</del>和生化檢查異常情形：\n（1） 年齡未滿 1 個月：>15 WBC/microL， protein >120 mg/dL<b style=\"color: #ea580c; background: #ffedd5;\">。</b>\n（2） 年齡 1 個月以上：>5 WBC/microL， protein >40 mg/dL<b style=\"color: #ea580c; background: #ffedd5;\">。</b>\n5. 年齡 15 個月以上，符合檢驗條件第（一）項，且排除後天梅<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>毒<del style=\"color: #9ca3af;\">\n</del>暴露史。"
+    "confirmed_case_diff": "具有下列任一個條件：\n1. 符合檢驗條件第（二）項及第（四）項。\n2. 符合檢驗條件第（二）項，且嬰兒效價大於母親生產時效價<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>之四<del style=\"color: #9ca3af;\">\n</del>倍以上。\n3. 符合檢驗條件第（三）項。\n4. 符合檢驗條件第（五）項，且腦脊髓液符合下列任一項細胞<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>計數<del style=\"color: #9ca3af;\">\n</del>和生化檢查異常情形：\n（1） 年齡未滿 1 個月：>15 WBC/microL， protein >120 mg/dL<b style=\"color: #ea580c; background: #ffedd5;\">。</b>\n（2） 年齡 1 個月以上：>5 WBC/microL， protein >40 mg/dL<b style=\"color: #ea580c; background: #ffedd5;\">。</b>\n5. 年齡 15 個月以上，符合檢驗條件第（一）項，且排除後天梅<b style=\"color: #ea580c; background: #ffedd5;\">\n</b>毒<del style=\"color: #9ca3af;\">\n</del>暴露史。",
+    "english_name": "Congenital Syphilis"
   },
   {
     "name": "淋病",
@@ -802,7 +843,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "43717574993de6196fb9278a4f446d16ef994e1b37bfbe490d7c039ac3def773"
+    "pdf_hash": "43717574993de6196fb9278a4f446d16ef994e1b37bfbe490d7c039ac3def773",
+    "english_name": "Gonorrhea"
   },
   {
     "name": "破傷風",
@@ -821,7 +863,8 @@
     "probable_case": "NA",
     "confirmed_case": "NA",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "11d5dc7c3f6a293b718d54b9dc77845aff83331aef98280c8b18062231a90689"
+    "pdf_hash": "11d5dc7c3f6a293b718d54b9dc77845aff83331aef98280c8b18062231a90689",
+    "english_name": "Tetanus"
   },
   {
     "name": "新生兒破傷風",
@@ -840,7 +883,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件，且相關就醫病歷資料經專家審查判定。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "cad7a94600938cdb0ae4144d9df26bff3f1d95ef3f84d8498de16d5c0216ff5c"
+    "pdf_hash": "cad7a94600938cdb0ae4144d9df26bff3f1d95ef3f84d8498de16d5c0216ff5c",
+    "english_name": "Neonatal Tetanus"
   },
   {
     "name": "漢生病",
@@ -859,7 +903,8 @@
     "probable_case": "NA",
     "confirmed_case": "同時符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "7311f3b077ac9b96104fb1f835981d131f5b344eb8451874272d07eddf736d54"
+    "pdf_hash": "7311f3b077ac9b96104fb1f835981d131f5b344eb8451874272d07eddf736d54",
+    "english_name": "Hansen’s Disease"
   },
   {
     "name": "急性病毒性肝炎未定型",
@@ -878,7 +923,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "62389d0542672ecc1ff4545b254e3e26e88b2b61beaca2107dcf1f4c15c88d54"
+    "pdf_hash": "62389d0542672ecc1ff4545b254e3e26e88b2b61beaca2107dcf1f4c15c88d54",
+    "english_name": "Acute Viral Hepatitis Unspecified"
   },
   {
     "name": "新冠併發重症",
@@ -897,7 +943,8 @@
     "檢體採檢送驗事項": "送驗方 保存種類應 注意事項\n傳染病名稱 採檢項目 採檢目的 採檢時間\n式 保存時間\n病毒株（30 1.醫師可視病情\n日） ；咽喉 變化再度送檢。\n擦拭液（30 2.見 2.8.5 備註說\n日） 明及咽喉採檢 步\n驟請參考第 3.7\n鼻咽或咽喉 節 。\n擦拭液 3.建議使用有 o-\nring 或其他防滲\n漏設計之檢體 容\n器送驗，若檢 驗單\n病原體檢測 發病3 日內 2-8°C\n位發現檢 體滲漏，\n（B 類感 則不予 檢驗。\n新冠併發重症\n染性物 病毒株（30 1.適用於輕症咳\n質P650 日） ；痰液 嗽有痰、肺炎或 重\n包裝） （30 日 症者。\n痰液或下呼 2.醫師可視病情\n吸道抽取物 變化再度送檢。\n3.勿採患者口水。\n4.痰液採檢步驟\n請參考第 3.9節。\n急性期（發病 血清（30 日） 血清檢體見 2.8.3\n抗體檢測 1-5日）； 及 2.8.4 備註說明\n血清\n（檢體保留） 恢復期（發病 及血清採檢步驟\n14-40 日） 請參考第3.3節。",
     "suspected_case": "",
     "probable_case": "",
-    "confirmed_case": "符合臨床條件及檢驗條件。"
+    "confirmed_case": "符合臨床條件及檢驗條件。",
+    "english_name": "Severe Complicated COVID-19"
   },
   {
     "name": "李斯特菌症",
@@ -916,7 +963,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。\n李斯特菌症（Listeriosis）病例定義-1",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "dbb90f8470b2b428487178b0d5da0eb068f2bdf5e9f1c47d43301528ad53fa96"
+    "pdf_hash": "dbb90f8470b2b428487178b0d5da0eb068f2bdf5e9f1c47d43301528ad53fa96",
+    "english_name": "Listeriosis"
   },
   {
     "name": "水痘併發症",
@@ -935,7 +983,8 @@
     "probable_case": "NA",
     "confirmed_case": "1. 符合臨床條件（一）。\n2. 同時符合臨床條件（二）、流病條件及任一檢驗條件。\n水痘併發症檢體採檢與檢驗方法\n採檢項目 採檢單位 檢體種類 採檢規定 運送條件 檢驗方法 檢驗期間 收件單位 備註\n將乾燥痂皮由皮膚\n痂皮 取下置於無菌試管 常溫\n輸送\n以無菌針頭掀開水\n泡表層， 以病毒拭\n水泡病灶拭子 子之採檢棒擦拭水\n3-5工作日\n泡基底皮膚後插入 聚合脢連鎖反應（PCR）\n病毒保存輸送管\n疾病管制署\n全國各醫療院 以無菌檢體小管收\n水痘併發症 腦脊髓液 昆陽辦公室\n所 集1 ml腦脊髓液\n低溫\n以無菌試管收集20\n羊水\nmL羊水\n疑似個案必要\n時得於距第一\n以無菌試管收2 mL 抗體檢測\n血清 7-10工作日 次採檢後6個\n血清 （ELISA-IgM，ELISA-IgG）\n月再採第二次\n血清送驗。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "6e9461fda100bfc89ef2e40913bee6b51172f644fea91fc8cafa4bf2f6351765"
+    "pdf_hash": "6e9461fda100bfc89ef2e40913bee6b51172f644fea91fc8cafa4bf2f6351765",
+    "english_name": "Complicated Varicella"
   },
   {
     "name": "恙蟲病",
@@ -954,7 +1003,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合檢驗結果陽性定義之任一項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "465a70061c0e55ca918ee753e53506009ce515415fc626ab2b3a78a05ef056d9"
+    "pdf_hash": "465a70061c0e55ca918ee753e53506009ce515415fc626ab2b3a78a05ef056d9",
+    "english_name": "Scrub Typhus"
   },
   {
     "name": "地方性斑疹傷寒",
@@ -973,7 +1023,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合檢驗結果陽性定義之任一項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "1f32c4e03d6b6eac5350037f2b11ede480ab3f39e2c595763ed2f13384299f4f"
+    "pdf_hash": "1f32c4e03d6b6eac5350037f2b11ede480ab3f39e2c595763ed2f13384299f4f",
+    "english_name": "Endemic Typhus Fever"
   },
   {
     "name": "發熱伴血小板減少綜合症",
@@ -992,7 +1043,8 @@
     "probable_case": "符合檢驗結果陽性定義之第四項。",
     "confirmed_case": "符合檢驗結果陽性定義之第一、二、三項之任一項。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "aa96862c44c0c827f2dfcfdbcf678357fe26c0faa5c7944e98f70b95d130cc6f"
+    "pdf_hash": "aa96862c44c0c827f2dfcfdbcf678357fe26c0faa5c7944e98f70b95d130cc6f",
+    "english_name": "Severe Fever with Thrombocytopenia Syndrome, SFTS"
   },
   {
     "name": "萊姆病",
@@ -1011,7 +1063,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "2eb752dc415ce9201f7344dcc6433f22708af5e264b09d3d472c8da2cd13066a"
+    "pdf_hash": "2eb752dc415ce9201f7344dcc6433f22708af5e264b09d3d472c8da2cd13066a",
+    "english_name": "Lyme Disease"
   },
   {
     "name": "肉毒桿菌中毒",
@@ -1030,7 +1083,8 @@
     "probable_case": "符合臨床條件（一）及流行病學條件之（六）、（七）或（八），並\n排除流行病學條件之（一）、（二）、（三）、（四）及（五）。",
     "confirmed_case": "一歲以上且符合臨床條件（一）及檢驗條件之（二）或（一）血液或糞\n便檢體陽性，並排除流行病學條件之（一）、（二）、（三）、（四）及（五）。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "c5cd3d498786aca4bc59a714544fb27c459badba7738104d9c5132ae79dae203"
+    "pdf_hash": "c5cd3d498786aca4bc59a714544fb27c459badba7738104d9c5132ae79dae203",
+    "english_name": "Botulism"
   },
   {
     "name": "庫賈氏病",
@@ -1049,7 +1103,8 @@
     "檢體採檢送驗事項": "應保存種類\n傳染病\n採檢項目 採檢目的 採檢時間 採檢量及規定 送驗方式 （應保存時 注意事項\n名稱\n間）\n1. 請參閱「庫賈\n氏病及其他人\n1. 防漏無菌試管（塑\n類傳播性海綿\n臨床測定 膠材質）收集腦脊\n樣腦症感染管\n庫賈氏病 （EEG、 髓液至少2 mL。\n制與病例通報\n腦脊髓液 標示蛋白 MRI、 2. 每 管 外 覆 吸 水 -\n指引手冊」。\n檢測 CTScan） 紙，並以夾鏈袋密2-8oC\n2. 脊髓液採檢步\n疑似時 封，再置於檢體罐（B類感染\n驟請參考第 3.6\n（第二層容器）中。性物質包\n節，由醫師採\n裝）\n檢。\n臨床測定\n以含抗凝劑\n（EEG、\n基因型別 （heparin或EDTA）\nMRI、 -\n檢測* 採血管採集5-10 mL\nCTScan）\n抗凝固全血採檢\n抗凝固全 血液檢體。\n疑似時 步驟請參考第 3.2\n血\n以含抗凝劑 22-35oC 節。\n庫賈氏病\n普利昂蛋 病例審查 （heparin或EDTA）（B類感染\n白檢測 會建議時 採血管採集5-10 mL 性物質包\n血液檢體2管。 裝）\n1.無菌容\n器之組織\n以冷凍方\n請參閱「庫賈氏病\n扁桃腺組織分別以 式運送。 及其他人類傳播\n1.無菌容器收集至\n2.泡置於 性海綿樣腦症\n扁桃腺組 普利昂蛋 病例審查 福馬林之 感染管制與病例\n少50 mg。\n織檢體 白檢測 會建議時 組織以常 通報指引手冊」及\n2.含有福馬林之容\n溫22-35 「醫療機構感染\n器收集至少50 mg。 oC運送。 管制手冊彙編」。\n（B類感染\n性物質包\n裝）\n*基於倫理考量，有關基因型別檢測請醫師對病患本人或其法定代理人或家屬說明檢測\n之原因、效益，請其填妥後附之同意書（1 式 2 份）後始得為之，並請於檢體送驗時\n併附同意書正本1份。\n庫賈氏病通報個案 基因檢測說明書\n一、疾病簡介：\n人類普利昂病又稱人類傳播性海綿樣腦症，係指庫賈氏病（CJD）、新\n型庫賈氏病（vCJD）等，其中的庫賈氏病（CJD）分為散發型、醫源型及\n遺傳型3種型式。依據國外文獻資料顯示，散發型庫賈氏病佔總病例數約85\n%，發生原因不明；醫源型庫賈氏病佔總病例數少於1%，為各種醫療行為\n所造成之感染；遺傳型庫賈氏病佔總病例數10~15%，吉斯曼-史特斯勤-先\n克症候群（Gerstmann-Sträussler-Scheinker syndrome，GSS）與致死性家族\n性失眠症（Fatal Familial Insomnia，FFI）均為家族顯性遺傳型普利昂病，\n可應用基因檢測「普利昂蛋白質基因（PRNP）」協助診斷此類遺傳型庫賈\n氏病。\n依文獻資料顯示，吉斯曼-史特斯勤-先克症候群（GSS）每年發生率約\n為千萬分之一，病患皆有家族史，發病年齡平均為43-48歲，發病後平均壽\n命為5年；而致命性家族性失眠症（FFI），平均發病年齡為56歲，發病後平\n均壽命為13個月。\n二、檢測效益：\n本項基因檢測可瞭解庫賈氏病通報個案是否有普利昂蛋白質基因\n（PRNP）變異，其結果可提供本人疾病診斷之依據。\n三、檢體種類：\n5-10 c.c.血液。\n四、檢測風險：\n與一般抽血檢驗相同，少數人抽血部位會因皮下滲血而瘀青。\n五、檢體處理與保存：\n抽取之血液將置於含抗凝劑（heparin或EDTA）之試管，以低溫（2-8°C）\n運送至衛生福利部疾病管制署研究檢驗中心。受檢者之檢體會被妥善使\n用、處理與保存，檢測完畢後，檢測單位將以無法辨認個人資料的方式保\n存或確實銷毀。\n六、檢驗費用及報告時程：\n庫賈氏病為第4類法定傳染病，檢驗費用由公務預算支應。實驗室於接\n獲檢體後3個月內將檢驗結果提供給通報醫師。\n七、其他事項\n基因檢測有其侷限性，檢驗結果無法明確預測近親罹患遺傳型庫賈氏\n病的機率，僅供臨床參考。\n庫賈氏病通報個案 基因檢測同意書\n病人： ，出生於民國 年 月 日，因疑似罹患庫\n賈氏病，同意接受特異性普利昂蛋白質基因（PRNP）基因檢測。立同意書\n人已經與醫師討論過接受這個檢測的效益與風險，對醫師的說明都已充分\n了解且同意由 醫院代為抽血送交衛生福利部疾病管制署進\n行該項基因檢測，並同意將檢驗結果提供疾病管制署及通報醫院作為疾病\n研判的參考。\n檢驗結果是否提供立同意書人（請勾選）：\n□提供，檢驗結果寄送地址：\n□不提供\n立同意書人： （簽章） 身分證字號：\n與病人之關係（請圈選）：本人、配偶、父、母、兒、女、其他：___\n住址： 電話：\n日期：民國 年 月 日",
     "suspected_case": "符合臨床條件二、（一） 與\n臨床條件二、（二）5 項中至少 4 項症狀 及\n檢驗條件二、（一），且經衛生福利部疾病管制署庫賈氏病之病\n例審查會議專家審查確定。",
     "probable_case": "具有下列任一個條件，且經衛生福利部疾病管制署庫賈氏病之\n病例審查會議專家審查確定：\n1. 符合臨床條件二、（一） 與\n臨床條件二、（二）5 項中至少 4 項症狀 及\n檢驗條件二、（一）與（二）。\n2. 符合臨床條件二、（一） 及\n檢驗條件二、（三）。",
-    "confirmed_case": "符合臨床條件二、（一）第 1 項症狀 與 檢驗條件二、（四），\n且經衛生福利部疾病管制署庫賈氏病之病例審查會議專家審\n查確定。"
+    "confirmed_case": "符合臨床條件二、（一）第 1 項症狀 與 檢驗條件二、（四），\n且經衛生福利部疾病管制署庫賈氏病之病例審查會議專家審\n查確定。",
+    "english_name": "Creutzfeldt-Jakob Disease"
   },
   {
     "name": "弓形蟲感染症",
@@ -1068,7 +1123,8 @@
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學\n條件。",
     "confirmed_case": "符合臨床條件及任一項檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "13c74b53d3d46aca55fae19d35af5fb32ff27c40874c99c6767bbc5c74590611"
+    "pdf_hash": "13c74b53d3d46aca55fae19d35af5fb32ff27c40874c99c6767bbc5c74590611",
+    "english_name": "Toxoplasmosis"
   },
   {
     "name": "布氏桿菌病",
@@ -1087,7 +1143,8 @@
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學條件。",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "aca2a1c2dc19d7a39c03245cd528e216a0af2e2ecfcf6c31c0e53a2d432a9391"
+    "pdf_hash": "aca2a1c2dc19d7a39c03245cd528e216a0af2e2ecfcf6c31c0e53a2d432a9391",
+    "english_name": "Brucellosis"
   },
   {
     "name": "流感併發重症",
@@ -1106,7 +1163,8 @@
     "檢體採檢送驗事項": "傳染病 採檢 採檢 採檢 應保存種類\n採檢量及規定 送驗方式 注意事項\n名稱 項目 目的 時間 （應保存時間）\n見本署傳染病檢\n以病毒拭子之棉 2-8oC\n體採檢手冊 2.8.5\n咽喉 病原\n流感併 發病3棒擦拭咽喉，插 （B類感染\n備註說明；咽喉採\n擦拭 體檢 病毒株（30日）\n發重症 天內 入病毒保存輸送 性物質包\n檢步驟請參考第\n液 測\n管。 裝）\n3.7節及圖3.7。\n2",
     "suspected_case": "符合臨床條件。",
     "probable_case": "符合臨床條件及流行病學條件。",
-    "confirmed_case": "符合臨床條件及檢驗條件。\n1"
+    "confirmed_case": "符合臨床條件及檢驗條件。\n1",
+    "english_name": "Severe Complicated Influenza"
   },
   {
     "name": "侵襲性肺炎鏈球菌感染症",
@@ -1125,7 +1183,8 @@
     "probable_case": "NA。",
     "confirmed_case": "符合臨床條件及檢驗條件者。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "5005d9e5b2430731b2d1250acb7918ea35eef4d48ce9120a510657d449e561c5"
+    "pdf_hash": "5005d9e5b2430731b2d1250acb7918ea35eef4d48ce9120a510657d449e561c5",
+    "english_name": "Invasive Pneumococcal Disease"
   },
   {
     "name": "Q熱",
@@ -1144,7 +1203,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合間接免疫螢光抗體法（IFA）檢驗結果陽性定\n義。\n2019年3月",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "44e3c51f98d7027f3ac4f22817fbc7b6e6c3b8773c74df00f73be845ed482363"
+    "pdf_hash": "44e3c51f98d7027f3ac4f22817fbc7b6e6c3b8773c74df00f73be845ed482363",
+    "english_name": "Q fever"
   },
   {
     "name": "類鼻疽",
@@ -1163,7 +1223,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "a08d7bf10ac9c7644f5c1851abb26a5f7d2cba6f97bff8210596f86a65cea76c"
+    "pdf_hash": "a08d7bf10ac9c7644f5c1851abb26a5f7d2cba6f97bff8210596f86a65cea76c",
+    "english_name": "Melioidosis"
   },
   {
     "name": "鉤端螺旋體病",
@@ -1182,7 +1243,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "da300267cfdec6264fb99ef3f878a932e5de08ac82ef1304172c4f6f0c98e2e4"
+    "pdf_hash": "da300267cfdec6264fb99ef3f878a932e5de08ac82ef1304172c4f6f0c98e2e4",
+    "english_name": "Leptospirosis"
   },
   {
     "name": "兔熱病",
@@ -1201,7 +1263,8 @@
     "probable_case": "NA",
     "confirmed_case": "符合臨床條件及檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "62c71988e66332d06e92ee1a426384e4cb7a53f7ebf33d6acfa4407ce5cc5f64"
+    "pdf_hash": "62c71988e66332d06e92ee1a426384e4cb7a53f7ebf33d6acfa4407ce5cc5f64",
+    "english_name": "Tularemia"
   },
   {
     "name": "疱疹B病毒感染症",
@@ -1220,7 +1283,8 @@
     "檢體採檢送驗事項": "採檢項目 檢體種類 採檢目的 採檢時間 採檢量及規定 送驗方式 注意事項\n以病毒拭子之棉 1. 切勿於受傷當日採集\n傷口擦拭 病原體檢 傷口未清潔處棒擦拭傷口，插 脊髓液送驗。受傷當\n液 測 理之當日 入病毒保存輸送 日採集之血清僅做為\n管。 建立參照基準值用。\n發病 3 天內第 2. 在發生創傷時，愈早\n一次基準血清 採樣愈佳，傷口病毒\n病原體檢\n（愈接近受傷以無菌試管收集 拭子採檢後，須浸入\n血清 測；抗體\n時愈佳）；恢復至少 3 mL血清。 保存液，保持潮濕。\n疱疹B病 檢測\n期（受傷後 3-6 低溫 3. 傷口擦拭液採檢步驟\n毒感染症\n週之間） 請參考第 3.11 節。\n4. 血清檢體見 2.8.3 及\n2.8.4 備註說明，採檢\n以無菌容器收集 步驟見第 3.3 節。\n病原體檢\n腦脊髓液 發病 3 天內 至少1.5 mL脊髓 5. 脊髓液採檢步驟請參\n測\n液。 考第 3.6 節。",
     "suspected_case": "NA",
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件及流行病學條件。",
-    "confirmed_case": "符合檢驗條件。"
+    "confirmed_case": "符合檢驗條件。",
+    "english_name": "Herpesvirus B Infection"
   },
   {
     "name": "新型A型流感",
@@ -1239,7 +1303,8 @@
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件，且於發病前 10 日\n內，曾經與出現症狀的確定病例有密切接觸者。",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "a54b508c0d168ddd949032f42c48fb8d978fb7bf3761939765bf43ca5638206f"
+    "pdf_hash": "a54b508c0d168ddd949032f42c48fb8d978fb7bf3761939765bf43ca5638206f",
+    "english_name": "≧38°C"
   },
   {
     "name": "黃熱病",
@@ -1258,7 +1323,8 @@
     "probable_case": "具有下列任一個條件：\n1. 符合臨床條件及檢驗結果陽性定義之第三項。\n2. 符合臨床條件及流行病學條件。",
     "confirmed_case": "具有下列任一個條件：\n1. 符合檢驗結果陽性定義之第一、二、四項之任一項。\n2. 符合臨床條件，且與經實驗室證實之病例或突發流行疫情具有\n流行病學上相關聯。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "a17558efe477fe39d144969525e139ca83fadeb6e024385e7ace6dfdec404776"
+    "pdf_hash": "a17558efe477fe39d144969525e139ca83fadeb6e024385e7ace6dfdec404776",
+    "english_name": "Yellow Fever"
   },
   {
     "name": "裂谷熱",
@@ -1277,7 +1343,8 @@
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學條件。",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "9ad423b043c7cf1cf47b46eef1a52e954846cd4532fe1f6202e7d14cd6e62b24"
+    "pdf_hash": "9ad423b043c7cf1cf47b46eef1a52e954846cd4532fe1f6202e7d14cd6e62b24",
+    "english_name": "Rift Valley Fever"
   },
   {
     "name": "中東呼吸症候群冠狀病毒感染症",
@@ -1296,7 +1363,8 @@
     "probable_case": "雖未經實驗室檢驗證實，但符合臨床條件，且於發病前\n14 日內，曾經與出現症狀之確定病例有密切接觸者。",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "4746f90c1e255bf74111cb3fcbacf1a896234daa6b4a253c13512cc965a8eaec"
+    "pdf_hash": "4746f90c1e255bf74111cb3fcbacf1a896234daa6b4a253c13512cc965a8eaec",
+    "english_name": "Middle East Respiratory Syndrome Coronavirus Infections"
   },
   {
     "name": "拉薩熱",
@@ -1315,7 +1383,8 @@
     "檢體採檢送驗事項": "請參閱「傳染病檢體採檢手冊」（https：//gov.tw/pK8）",
     "suspected_case": "",
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學條件。",
-    "confirmed_case": "符合檢驗條件。"
+    "confirmed_case": "符合檢驗條件。",
+    "english_name": "Lassa Fever"
   },
   {
     "name": "馬堡病毒出血熱",
@@ -1334,7 +1403,8 @@
     "probable_case": "雖未經實驗室證實，但符合臨床條件，且於發病前 3 週\n內接觸確定病例之血液或體液者。",
     "confirmed_case": "符合檢驗條件。",
     "last_pdf_update": "2023-01-01",
-    "pdf_hash": "dd533fa775324fef60c8c725d071caa10cdecd0f5a158df6501a5bbf3d51b904"
+    "pdf_hash": "dd533fa775324fef60c8c725d071caa10cdecd0f5a158df6501a5bbf3d51b904",
+    "english_name": "Marburg Virus Disease"
   },
   {
     "name": "伊波拉病毒感染",
@@ -1354,7 +1424,8 @@
     "suspected_case": "",
     "probable_case": "雖未經實驗室證實，但符合臨床條件，且於發病前 3 週\n內接觸確定病例之血液或體液者。",
     "confirmed_case": "符合檢驗條件。",
-    "檢體採檢送驗事項_diff": "<del style=\"color: #9ca3af;\">請參閱「</del>傳染病<b style=\"color: #ea580c; background: #ffedd5;\"> 採檢 送驗方 應保存種類\n採檢目的 採檢時間 採檢量及規定 注意事項\n名稱 項目 式 （應保存時間）\n以含抗凝劑\n抗凝固全 （EDTA） 病毒株（30日）； 1.採集</b>檢體<del style=\"color: #9ca3af;\">採檢手冊」（https：//gov</del><b style=\"color: #ea580c; background: #ffedd5;\">\n血 採血管採集 2-8°C 抗凝固全血（30日） 應穿戴適當\n個人防護裝\n5mL血液。 （A 類\n伊波拉 備。\n病原體 以無菌病毒拭 感染性\n病毒感 立即採檢 2</b>.<del style=\"color: #9ca3af;\">tw/pK8）</del><b style=\"color: #ea580c; background: #ffedd5;\">*無抗凝固\n檢測 子擦拭口腔內 物質\n染 病毒株（30日）； 全血檢體情\n口腔/咽喉 之臉頰內側處 P620包\n況下，採口\n口腔/咽喉擦拭液\n擦拭液* /咽喉，插入病裝） 腔/咽喉擦拭\n（30日）\n毒 保 存 輸 送 液送驗。\n管。</b>"
+    "檢體採檢送驗事項_diff": "<del style=\"color: #9ca3af;\">請參閱「</del>傳染病<b style=\"color: #ea580c; background: #ffedd5;\"> 採檢 送驗方 應保存種類\n採檢目的 採檢時間 採檢量及規定 注意事項\n名稱 項目 式 （應保存時間）\n以含抗凝劑\n抗凝固全 （EDTA） 病毒株（30日）； 1.採集</b>檢體<del style=\"color: #9ca3af;\">採檢手冊」（https：//gov</del><b style=\"color: #ea580c; background: #ffedd5;\">\n血 採血管採集 2-8°C 抗凝固全血（30日） 應穿戴適當\n個人防護裝\n5mL血液。 （A 類\n伊波拉 備。\n病原體 以無菌病毒拭 感染性\n病毒感 立即採檢 2</b>.<del style=\"color: #9ca3af;\">tw/pK8）</del><b style=\"color: #ea580c; background: #ffedd5;\">*無抗凝固\n檢測 子擦拭口腔內 物質\n染 病毒株（30日）； 全血檢體情\n口腔/咽喉 之臉頰內側處 P620包\n況下，採口\n口腔/咽喉擦拭液\n擦拭液* /咽喉，插入病裝） 腔/咽喉擦拭\n（30日）\n毒 保 存 輸 送 液送驗。\n管。</b>",
+    "english_name": "Ebola Disease"
   },
   {
     "name": "立百病毒感染症",
@@ -1373,7 +1444,8 @@
     "檢體採檢送驗事項": "",
     "suspected_case": "",
     "probable_case": "雖未經實驗室證實，但符合臨床條件及流行病學條件。",
-    "confirmed_case": "符合檢驗條件。"
+    "confirmed_case": "符合檢驗條件。",
+    "english_name": "Nipah Virus Infection"
   },
   {
     "name": "球黴菌症",

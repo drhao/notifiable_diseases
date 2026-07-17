@@ -13,6 +13,7 @@ from data_parser import (
     extract_english_name,
     parse_case_definitions,
     clean_section_text,
+    build_record,
 )
 from manual_scraper import parse_manual_text
 
@@ -169,3 +170,20 @@ def test_clean_is_idempotent():
 def test_clean_empty_passthrough():
     assert clean_section_text("") == ""
     assert clean_section_text(None) is None
+
+
+# --- build_record: single shared parse path (sections + english_name) ------
+
+def test_build_record_includes_english_name_and_sections():
+    content = ("登革熱\n（Dengue Fever）\n一、臨床條件\nfever\n"
+               "五、疾病分類\n（一）可能病例：x")
+    rec = build_record(content)
+    assert rec["english_name"] == "Dengue Fever"
+    assert rec["臨床條件"] == "fever"
+    assert rec["suspected_case"] == "x"       # case defs derived too
+
+
+def test_build_record_english_name_empty_when_absent():
+    rec = build_record("某疾病\n一、臨床條件\n發燒")
+    assert rec["english_name"] == ""
+    assert rec["臨床條件"] == "發燒"
