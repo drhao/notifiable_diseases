@@ -1,13 +1,13 @@
 # Scraper Status Report
-**Execution Time:** 2026-07-19 11:06
+**Execution Time:** 2026-07-20 12:10
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 72
-- **Failed:** 2
+- **Successfully Fetched & Parsed:** 73
+- **Failed:** 1
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -59,7 +59,7 @@
 | 新生兒破傷風 | ✅ Success | 第三類 | - |
 | 漢生病 | ✅ Success | 第三類 | - |
 | 急性病毒性肝炎未定型 | ✅ Success | 第三類 | - |
-| 新冠併發重症 | ❌ Fail | 第四類 | **No PDF Link, kept previous record** |
+| 新冠併發重症 | ✅ Success | 第四類 | - |
 | 李斯特菌症 | ✅ Success | 第四類 | - |
 | 水痘併發症 | ✅ Success | 第四類 | - |
 | 恙蟲病 | ✅ Success | 第四類 | - |
