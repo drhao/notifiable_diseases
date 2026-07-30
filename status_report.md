@@ -1,13 +1,13 @@
 # Scraper Status Report
-**Execution Time:** 2026-07-29 11:57
+**Execution Time:** 2026-07-30 11:47
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 73
-- **Failed:** 1
+- **Successfully Fetched & Parsed:** 72
+- **Failed:** 2
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -19,7 +19,7 @@
 | M痘 | ✅ Success | 第二類 | - |
 | 登革熱 | ✅ Success | 第二類 | - |
 | 屈公病 | ✅ Success | 第二類 | - |
-| 瘧疾 | ✅ Success | 第二類 | - |
+| 瘧疾 | ❌ Fail | 第二類 | **No PDF Link, kept previous record** |
 | 茲卡病毒感染症 | ✅ Success | 第二類 | - |
 | 西尼羅熱 | ✅ Success | 第二類 | - |
 | 流行性斑疹傷寒 | ❌ Fail | 第二類 | **No PDF Link** |
