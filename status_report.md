@@ -1,9 +1,8 @@
 # Scraper Status Report
-**Execution Time:** 2026-08-04 11:58
+**Execution Time:** 2026-08-05 11:52
 
 ## 📢 Latest PDF Updates
-The following disease definitions were updated in this run:  
-- **布氏桿菌病**
+*No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
@@ -70,7 +69,7 @@ The following disease definitions were updated in this run:
 | 肉毒桿菌中毒 | ✅ Success | 第四類 | - |
 | 庫賈氏病 | ✅ Success | 第四類 | - |
 | 弓形蟲感染症 | ✅ Success | 第四類 | - |
-| 布氏桿菌病 | ✅ 💡 Updated Success | 第四類 | - |
+| 布氏桿菌病 | ✅ Success | 第四類 | - |
 | 流感併發重症 | ✅ Success | 第四類 | - |
 | 侵襲性肺炎鏈球菌感染症 | ✅ Success | 第四類 | - |
 | Q熱 | ✅ Success | 第四類 | - |
