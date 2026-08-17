@@ -1,13 +1,13 @@
 # Scraper Status Report
-**Execution Time:** 2026-08-16 10:15
+**Execution Time:** 2026-08-17 10:24
 
 ## 📢 Latest PDF Updates
 *No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
-- **Successfully Fetched & Parsed:** 73
-- **Failed:** 1
+- **Successfully Fetched & Parsed:** 72
+- **Failed:** 2
 
 ## Detailed Status
 | Disease | Status | Category | Issues |
@@ -39,7 +39,7 @@
 | 流行性腦脊髓膜炎 | ✅ Success | 第二類 | - |
 | 漢他病毒症候群 | ✅ Success | 第二類 | - |
 | 後天免疫缺乏症候群 | ✅ Success | 第三類 | - |
-| 急性病毒性B型肝炎 | ✅ Success | 第三類 | - |
+| 急性病毒性B型肝炎 | ❌ Fail | 第三類 | **No PDF Link, kept previous record** |
 | 日本腦炎 | ✅ Success | 第三類 | - |
 | 急性病毒性C型肝炎 | ✅ Success | 第三類 | - |
 | 腸病毒感染併發重症 | ✅ Success | 第三類 | - |
