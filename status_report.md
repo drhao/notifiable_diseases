@@ -1,9 +1,8 @@
 # Scraper Status Report
-**Execution Time:** 2026-08-21 10:22
+**Execution Time:** 2026-08-22 10:15
 
 ## 📢 Latest PDF Updates
-The following disease definitions were updated in this run:  
-- **中東呼吸症候群冠狀病毒感染症**
+*No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
@@ -81,7 +80,7 @@ The following disease definitions were updated in this run:
 | 新型A型流感 | ✅ Success | 第五類 | - |
 | 黃熱病 | ✅ Success | 第五類 | - |
 | 裂谷熱 | ✅ Success | 第五類 | - |
-| 中東呼吸症候群冠狀病毒感染症 | ✅ 💡 Updated Success | 第五類 | - |
+| 中東呼吸症候群冠狀病毒感染症 | ✅ Success | 第五類 | - |
 | 拉薩熱 | ✅ Success | 第五類 | - |
 | 馬堡病毒出血熱 | ✅ Success | 第五類 | - |
 | 伊波拉病毒感染 | ✅ Success | 第五類 | - |
