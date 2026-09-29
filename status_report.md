@@ -1,8 +1,9 @@
 # Scraper Status Report
-**Execution Time:** 2026-09-28 17:54
+**Execution Time:** 2026-09-29 16:16
 
 ## 📢 Latest PDF Updates
-*No updates detected in this run.*
+The following disease definitions were updated in this run:  
+- **阿米巴性痢疾**
 
 ## Summary
 - **Total Diseases Found:** 74
@@ -27,7 +28,7 @@
 | 傷寒 | ✅ Success | 第二類 | - |
 | 副傷寒 | ✅ Success | 第二類 | - |
 | 桿菌性痢疾 | ✅ Success | 第二類 | - |
-| 阿米巴性痢疾 | ✅ Success | 第二類 | - |
+| 阿米巴性痢疾 | ✅ 💡 Updated Success | 第二類 | - |
 | 霍亂 | ✅ Success | 第二類 | - |
 | 急性病毒性A型肝炎 | ✅ Success | 第二類 | - |
 | 小兒麻痺症/急性無力肢體麻痺 | ✅ Success | 第二類 | - |
