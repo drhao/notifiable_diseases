@@ -1,9 +1,8 @@
 # Scraper Status Report
-**Execution Time:** 2026-10-29 16:32
+**Execution Time:** 2026-10-30 16:24
 
 ## 📢 Latest PDF Updates
-The following disease definitions were updated in this run:  
-- **兔熱病**
+*No updates detected in this run.*
 
 ## Summary
 - **Total Diseases Found:** 74
@@ -76,7 +75,7 @@ The following disease definitions were updated in this run:
 | Q熱 | ✅ Success | 第四類 | - |
 | 類鼻疽 | ✅ Success | 第四類 | - |
 | 鉤端螺旋體病 | ✅ Success | 第四類 | - |
-| 兔熱病 | ✅ 💡 Updated Success | 第四類 | - |
+| 兔熱病 | ✅ Success | 第四類 | - |
 | 疱疹B病毒感染症 | ✅ Success | 第四類 | - |
 | 新型A型流感 | ✅ Success | 第五類 | - |
 | 黃熱病 | ✅ Success | 第五類 | - |
